@@ -7,4 +7,9 @@
         select *
         from user;
     </select>
+    <select id="selectById" parameterType="Integer" resultType="com.ares.design.domain.User">
+        select *
+        from user
+        where id = #{id}
+    </select>
 </mapper>
