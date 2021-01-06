@@ -2,20 +2,27 @@ package com.ares.design.domain;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class User {
-    private int id;
-    private String name;
-    private String account;
-    private String password;
+    private Integer userId;
+    private String userName;
+    private String userPassword;
+    private String userEmail;
+    private Integer userLevel;
+    private String userAvatar;
+    private Date userRegisterTime;
+    private Date userLastLoginTime;
+    private Integer userStatus;
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name +
-                ", account=" + account +
-                ", password='" + password +
+                "id=" + userId +
+                ", name='" + userName +
+                ", password=" + userPassword +
+                ", Email='" + userEmail +
                 '}';
     }
 }

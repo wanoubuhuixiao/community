@@ -14,7 +14,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "test")
+    @RequestMapping(value = "/test")
     public String test(ModelMap model) {
         model.put("user", getUser(1));
         model.put("users", getAllUsers());
@@ -23,11 +23,11 @@ public class UserController {
     }
 
     private List<User> getAllUsers() {
-        return userService.findAll();
+        return userService.getAllUser();
     }
 
     private User getUser(Integer id) {
-        return userService.selectById(id);
+        return userService.getUserById(id);
     }
 
 }
