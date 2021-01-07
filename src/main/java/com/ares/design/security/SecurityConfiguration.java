@@ -33,12 +33,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/", "/index").permitAll() // 这三个目录不做安全控制
                 .anyRequest().authenticated()
-                .and()
 
+                .and()
                 .formLogin().loginPage("/login")// 自定义的登录页面
                 .permitAll()
-                .and()
 
+                .and()
                 .logout()
                 .logoutSuccessUrl("/index");
     }

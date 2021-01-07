@@ -2,7 +2,7 @@ package com.ares.design.service.impl;
 
 import com.ares.design.domain.User;
 import com.ares.design.service.UserService;
-import com.ares.design.service.dao.UserDao;
+import com.ares.design.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,8 +32,6 @@ public class UserServiceImpl implements UserService {
         userDao.insert(user);
         return user;
     }
-
-
 
     @Override
     public void updateUser(User user) {

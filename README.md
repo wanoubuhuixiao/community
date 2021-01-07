@@ -15,7 +15,7 @@ maven 3.6.3
 Springboot
 Spring MVC
 MyBatis
-Freemaker
+Freemarker
 RESTful风格
 
 ## 选择各工具的理由
