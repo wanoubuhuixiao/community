@@ -1,0 +1,4286 @@
+.personal-userCenter-tabLeftFrame {
+    float: left
+}
+
+.personal-userCenter-columns {
+    width: 184px;
+    border-right: none
+}
+
+ul.personal-userCenter-columnList li {
+    width: 177px;
+    margin: 0 auto;
+    color: #787878;
+    margin-bottom: 11px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .15)
+}
+
+ul.personal-userCenter-columnList li.active {
+    background-color: #3b68b8;
+    color: #fff
+}
+
+ul.personal-userCenter-columnList li>a {
+    display: block;
+    text-align: center;
+    background-color: #f5f7f9;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px
+}
+
+.active a {
+    color: #ffffff!important;
+    font-weight: 800;
+}
+.right-author .auth-img img {
+
+    position: absolute;
+    top: -30px;
+    margin-left:6%;
+    border-radius: 100%;
+    border: 5px solid #fff;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    vertical-align: center;
+    transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+}
+.namecard {
+    background-color:rgba(0, 0, 0, 0.7);
+    box-shadow:2px 2px 2px #999;
+    border-radius: 15px;
+}
+.right-author .auth-name span {
+    color: #ffffff;
+}
+
+.auth-name p{
+    color: rgb(255, 255, 255);
+}
+.right-author .auth-info li {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+}
+.right-author .auth-info li span {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+}
+ul.personal-userCenter-columnList li.active>a {
+    background-color: #3b68b8;
+}
+
+ul.personal-userCenter-columnList li>span {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ef6459;
+    border-radius: 50%
+}
+
+.personal-userCenter-contentRightFrame {
+    padding-left: 208px
+}
+
+.personal-favorites-contentBox, .personal-friendTrack-contentBox, .personal-infoConfig-contentBox, .personal-myFire-contentBox, .personal-taskAndIntegral-contentBox, .personal-userCenter-msgInfo-contentBox {
+    min-height: 800px;
+    width: 710px;
+    border-top: 2px solid #3b68b8;
+    float: left
+}
+
+.personal-userCenter-rightSideBar {
+    float: right;
+    width: 323px
+}
+
+.personal-userCenter-rightSideBar .barItem {
+    border-top: 2px solid #3b68b8;
+    margin-bottom: 25px
+}
+
+.personal-userCenter-rightSideBar .userCenter-userInfo {
+    background-color: #f7f7f7
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .name-and-level {
+    min-height: 42px
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .name-and-level>span {
+    display: block;
+    text-align: center
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .name-and-level .username {
+    font-size: 18px;
+    color: #444;
+    font-weight: 700;
+    line-height: 42px
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .name-and-level .vip-date {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 5px
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .back-and-head {
+    width: 100%;
+    height: 162px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 34px
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .back-and-head .headImg {
+    width: 98px;
+    height: 98px;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    padding-top: 6px
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .back-and-head .headImg>img {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .back-and-head .headImg .head_border {
+    position: absolute;
+    left: -27px;
+    top: -27px;
+    width: 151px;
+    height: 151px
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .back-and-head .headImg .head_border>img {
+    width: 100%;
+    height: 100%
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .back-and-head .headImg .level {
+    position: absolute;
+    width: 100%;
+    bottom: -12px;
+    text-align: center
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .back-and-head .headImg .level>div {
+    width: 54px;
+    height: 20px;
+    background-image: url(https://static.iyingdi.cn/achievement/badge/board/moderator.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .follows-and-fans>div {
+    display: inline-block;
+    width: 50%;
+    padding: 12px;
+    cursor: pointer
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .follows-and-fans>div>p {
+    text-align: center;
+    font-size: 14px;
+    color: #444
+}
+
+.personal-userCenter-rightSideBar .personal-userCenter-userInfoBar .follows-and-fans>div>p.num {
+    font-size: 18px
+}
+
+.personal-userCenter-rightSideBar .userCenter-friendInfo {
+    padding: 14px;
+    background-color: #f7f7f7;
+    border-radius: 4px
+}
+
+.personal-userCenter-rightSideBar .userCenter-friendInfo-title {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px
+}
+
+.personal-userCenter-rightSideBar .userCenter-friendInfo-search>input {
+    background: #f3f3f3;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    width: 100%;
+    height: 27px;
+    cursor: pointer;
+    padding-left: 10px
+}
+
+.personal-userCenter-rightSideBar ul.userCenter-friendList>li .friend-headImg {
+    position: relative;
+    float: left;
+    margin-top: 4px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 2px
+}
+
+.personal-userCenter-rightSideBar ul.userCenter-friendList>li .friend-headImg>img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%
+}
+
+.personal-userCenter-rightSideBar ul.userCenter-friendList>li .friend-headImg .head_border {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    left: 0;
+    top: -12px
+}
+
+.personal-userCenter-rightSideBar ul.userCenter-friendList>li .friend-headImg .head_border>img {
+    width: 100%;
+    height: 100%
+}
+
+.personal-userCenter-rightSideBar ul.userCenter-friendList>li {
+    padding: 14px 0;
+    min-height: 83px
+}
+
+.personal-userCenter-rightSideBar li.userCenter-friendListItem .right {
+    margin-left: 39px
+}
+
+.personal-userCenter-rightSideBar li.userCenter-friendListItem .right>div {
+    padding-top: 15px
+}
+
+.personal-userCenter-rightSideBar li.userCenter-friendListItem .right .level {
+    margin-left: 8px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+    width: 40px;
+    background-image: url(https://static.iyingdi.cn/achievement/badge/board/moderator.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    vertical-align: text-bottom
+}
+
+li.userCenter-friendListItem+li.userCenter-friendListItem {
+    border-top: 1px solid #e7eff6
+}
+
+.personal-userCenter-rightSideBar .right-bar-seed-all {
+    text-align: center;
+    font-size: 16px;
+    color: #3b68b8;
+    cursor: pointer
+}
+
+.personal-userCenter-rightSideBar .right-bar-seed-all>span:after {
+    font-family: SimSun;
+    content: '>';
+    font-size: 18px;
+    vertical-align: middle;
+    font-weight: bolder;
+    margin-left: 4px
+}
+
+ul.userCenter-friendList-footer.personal-home-pagination {
+    overflow: hidden;
+    margin-top: 10px
+}
+
+ul.userCenter-friendList-footer.personal-home-pagination>li {
+    float: left;
+    margin-right: 5px
+}
+
+ul.userCenter-friendList-footer.personal-home-pagination>li>a {
+    background-color: #f7f7f7;
+    border: 1px solid #3b68b8;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    display: block;
+    text-align: center;
+    color: #3b68b8
+}
+
+ul.userCenter-friendList-footer.personal-home-pagination>li>a.active {
+    background-color: #3b68b8;
+    color: #fff
+}
+
+ul.userCenter-friendList-footer.personal-home-pagination>li.page_end>a, ul.userCenter-friendList-footer.personal-home-pagination>li.page_first>a {
+    width: 44px
+}
+
+ul.userCenter-friendList-footer.personal-home-pagination>li.page_down>a, ul.userCenter-friendList-footer.personal-home-pagination>li.page_up>a {
+    width: 56px
+}
+
+.personal-userCenter-contentRightFrame .loading-msg {
+    text-align: center;
+    padding: 10px;
+    color: #9b9b9b
+}
+
+.personal-userCenter-contentRightFrame .loadingTip {
+    padding: 15px 0;
+    color: #c8c8c8;
+    font-size: 16px
+}
+
+.personal-userCenter-columnList .user_red_prompt {
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    height: 15px;
+    line-height: 16px;
+    text-align: center;
+    display: inline-block;
+    background: #ef6459;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 3px;
+    padding: 0 11px
+}
+
+.personal-userCenter-columnList li.active .user_red_prompt {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    display: inline-block;
+    background: #ef6459;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 3px;
+    padding: 0 11px
+}
+
+.personal-friendTrack-contentBox .header {
+    font-size: 15px;
+    color: #000;
+    padding-top: 10px
+}
+
+.personal-friendTrack-contentBox ul.friend-track-list>li {
+    padding: 20px 0;
+    cursor: default
+}
+
+li.dynamic-item+li.dynamic-item {
+    border-top: 1px solid #e7eff6
+}
+
+ul.friend-track-list>li.dynamic-item .item-head {
+    overflow: hidden;
+    padding-top: 10px
+}
+
+ul.friend-track-list>li.dynamic-item .item-head .userHeadImg {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 2px
+}
+
+ul.friend-track-list>li.dynamic-item .item-head .userHeadImg>img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%
+}
+
+ul.friend-track-list>li.dynamic-item .item-head .userHeadImg .head_border {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 0;
+    top: -12px
+}
+
+ul.friend-track-list>li.dynamic-item .item-head .userHeadImg .head_border>img {
+    width: 100%;
+    height: 100%
+}
+
+ul.friend-track-list>li.dynamic-item .item-head-info {
+    margin-left: 50px
+}
+
+ul.friend-track-list>li.dynamic-item .item-head-info .username {
+    font-size: 14px;
+    color: #3b68b8;
+    margin-right: 6px;
+    cursor: pointer
+}
+
+ul.friend-track-list>li.dynamic-item .item-head-info .dynamic-type {
+    font-size: 14px;
+    color: #8f8f8f
+}
+
+ul.friend-track-list>li.dynamic-item .item-head-info .operate-area {
+    color: #9b9b9b
+}
+
+ul.friend-track-list>li.dynamic-item .item-head-info .item-head-foot {
+    font-size: 14px;
+    color: #8f8f8f
+}
+
+ul.friend-track-list>li.dynamic-item .item-content {
+    margin-top: 10px
+}
+
+ul.friend-track-list>li.dynamic-item .item-post-content {
+    border-radius: 4px;
+    margin-top: 10px
+}
+
+ul.friend-track-list>li.dynamic-item .item-post-content .item-post-txt {
+    font-size: 14px;
+    color: #6d6d6d;
+    font-weight: 700;
+    word-break: break-all;
+    line-height: 1.6
+}
+
+ul.friend-track-list>li.dynamic-item .item-post-content .item-post-topicInfo {
+    color: #bcbcbc;
+    margin-top: 10px
+}
+
+ul.friend-track-list>li.dynamic-item .item-articleComment-content, ul.friend-track-list>li.dynamic-item .item-postsComment-content, ul.friend-track-list>li.dynamic-item .item-publish-topic-content {
+    width: 100%;
+    border-radius: 4px;
+    padding: 2px
+}
+
+ul.friend-track-list>li.dynamic-item .item-articleComment-txt {
+    font-size: 14px;
+    color: #6d6d6d;
+    font-weight: 700;
+    word-break: break-all;
+    line-height: 1.6
+}
+
+ul.friend-track-list>li.dynamic-item .item-articleComment-articleInfo, ul.friend-track-list>li.dynamic-item .item-postComment-topicInfo {
+    border-left: 2px solid #d6d6d6;
+    padding-left: 6px;
+    margin-top: 10px
+}
+
+ul.friend-track-list>li.dynamic-item .item-originComment {
+    font-size: 14px;
+    color: #8f8f8f;
+    margin-bottom: 2px;
+    word-break: break-all;
+    line-height: 1.6
+}
+
+ul.friend-track-list>li.dynamic-item .item-articleComment-content .item-articleTitle, ul.friend-track-list>li.dynamic-item .item-postComment-topic-title {
+    font-size: 14px;
+    color: #3b68b8
+}
+
+ul.friend-track-list>li.dynamic-item .item-publish-topic-content .item-topic-title {
+    font-size: 14px;
+    color: #6d6d6d;
+    font-weight: 700;
+    word-break: break-all
+}
+
+ul.friend-track-list>li.dynamic-item .item-publish-topic-content .item-topic-Info {
+    font-size: 16px;
+    color: #bcbcbc;
+    margin-top: 10px
+}
+
+ul.friend-track-list>li.dynamic-item i.item-topic-pageview {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/yingdiWeb/images/article/feedPageView.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 14px;
+    height: 17px;
+    vertical-align: middle;
+    margin-right: 1px
+}
+
+ul.friend-track-list>li.dynamic-item i.item-topic-reply {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/article/commentReplyIcon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 14px;
+    height: 17px;
+    vertical-align: middle;
+    margin-right: 1px;
+    margin-left: 10px
+}
+
+ul.friend-track-list>li.dynamic-item .item-article-cover {
+    position: relative;
+    width: 191px;
+    height: 109px;
+    border-radius: 4px;
+    float: left;
+    overflow: hidden
+}
+
+ul.friend-track-list>li.dynamic-item .item-article-cover>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out
+}
+
+ul.friend-track-list>li.dynamic-item:hover .item-article-cover>img {
+    transform: scale(1.05);
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out
+}
+
+ul.friend-track-list>li.dynamic-item .right-part {
+    margin-left: 211px;
+    height: 109px
+}
+
+ul.friend-track-list>li.dynamic-item .right-part .title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #4a4a4a;
+    text-align: left;
+    cursor: pointer;
+    transition: color .3s ease-in-out
+}
+
+ul.friend-track-list>li.dynamic-item:hover .right-part .title {
+    color: #3b68b8;
+    transition: color .3s ease-in-out
+}
+
+ul.friend-track-list>li.dynamic-item .right-part .description {
+    font-size: 14px;
+    color: #646464;
+    line-height: 1.7;
+    max-height: 63px;
+    overflow: hidden;
+    word-break: break-all;
+    margin-top: 10px
+}
+
+ul.friend-track-list>li.dynamic-item .item-article-cover .item-article-cover-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: .9;
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0, #000 113%);
+    height: 60px;
+    padding: 13px 15px;
+    border-radius: 0 0 4px 4px
+}
+
+ul.friend-track-list>li.dynamic-item .item-article-cover .item-article-cover-footer>div {
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 18px;
+    word-break: break-all;
+    overflow: hidden;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .6);
+    letter-spacing: 2px
+}
+
+ul.friend-track-list>li.dynamic-item .item-article-cover span.seedTitle {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: rgba(0, 0, 0, .3);
+    border-radius: 3px;
+    color: #fff;
+    padding: 2px 9px;
+    font-size: 14px
+}
+
+.personal-secretLetter-contentBox .personal-secretLetter-content ul>li {
+    cursor: default
+}
+
+.personal-secretLetter-contentBox .officailAccountList>li:last-child {
+    border-bottom: 1px solid #ecf1f5
+}
+
+li.user-contact-item+li.user-contact-item {
+    border-top: 1px solid #ecf1f5
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .content-item-info {
+    position: relative;
+    text-align: left;
+    padding-top: 13px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item span.unread-remind-Num {
+    margin-left: 10px;
+    height: 15px;
+    line-height: 16px;
+    text-align: center;
+    background: #ef6459;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 3px;
+    vertical-align: text-top;
+    display: inline-block;
+    padding: 0 11px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .toChatPage {
+    position: absolute;
+    width: 56px;
+    height: 22px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #3b68b8;
+    border-radius: 3px;
+    color: #3b68b8;
+    top: 25px;
+    right: 0;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .toShieldOne {
+    position: absolute;
+    font-size: 14px;
+    color: #444;
+    bottom: 10px;
+    right: 100px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all .3s ease-in-out
+}
+
+.personal-secretLetter-contentBox li.user-contact-item:hover .toShieldOne {
+    opacity: 1
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .toDeleteOne {
+    position: absolute;
+    right: 53px;
+    bottom: 10px;
+    font-size: 14px;
+    color: #de2121;
+    opacity: 0;
+    transition: all .3s ease-in-out
+}
+
+.personal-secretLetter-contentBox li.user-contact-item:hover .toDeleteOne {
+    opacity: 1
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .toDeleteOne:hover {
+    text-decoration: underline
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .toChatPage:hover {
+    background-color: #3b68b8;
+    color: #fff
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact-item-userInfo {
+    overflow: hidden;
+    display: inline-block;
+    padding-top: 7px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item span.office-mark {
+    display: inline-block;
+    background-color: #3b68b8;
+    color: #fff;
+    padding: 2px 9px 3px 9px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 18px;
+    line-height: 17px;
+    margin-right: 5px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact_userHeadImg {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+    text-align: center;
+    padding-top: 2px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact_userHeadImg>img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact_userHeadImg .head_border {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 0;
+    top: -12px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact_userHeadImg .head_border>img {
+    width: 100%;
+    height: 100%
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact-name {
+    font-size: 16px;
+    color: #3b68b8
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .level {
+    margin-left: 6px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+    width: 40px;
+    background-image: url(https://static.iyingdi.cn/achievement/badge/board/moderator.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    vertical-align: text-bottom
+}
+
+.personal-secretLetter-contentBox span.unread-num {
+    background: #ef6459;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 3px;
+    padding: 1px 11px;
+    vertical-align: text-bottom;
+    margin-left: 10px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact-name:hover {
+    color: #3b68b8
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact_item_txtMsg {
+    clear: both;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #787878;
+    margin-bottom: 6px;
+    width: 550px;
+    overflow: hidden
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact_item_imgMsg>img {
+    max-width: 80px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .contact-item-foot>p {
+    font-size: 12px;
+    color: #9b9b9b
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .operate-area {
+    position: absolute;
+    top: 26px;
+    right: 0;
+    width: 28px
+}
+
+.personal-secretLetter-contentBox li.user-contact-item .unfold-logo {
+    position: absolute;
+    top: 32px;
+    right: 84px;
+    margin: 0 auto;
+    width: 12px;
+    height: 12px;
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/tools/cards/common/unfold_blue.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer
+}
+
+.personal-secretLetter-contentBox ul.contact-item-operate-menu {
+    position: absolute;
+    right: 20px;
+    top: 47px;
+    text-align: center;
+    width: 101px;
+    background: #f4f6f8;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+    font-size: 14px;
+    color: #444;
+    z-index: 2
+}
+
+.personal-secretLetter-contentBox ul.contact-item-operate-menu>li {
+    padding: 10px 0;
+    cursor: pointer
+}
+
+.personal-secretLetter-contentBox ul.contact-item-operate-menu>li:hover {
+    color: #3b68b8
+}
+
+.personal-userCenter-msgInfo-contentBox .personal-msgInfo-header {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #e5ecf1
+}
+
+.personal-msgInfo-header span.nav-tab {
+    margin-right: 30px;
+    font-size: 16px;
+    color: #9b9b9b;
+    cursor: pointer;
+    position: relative
+}
+
+.personal-msgInfo-header span.nav-tab.active {
+    color: #3b68b8
+}
+
+.personal-msgInfo-header span.nav-tab.active:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: -14px;
+    left: 0
+}
+
+.personal-msgInfo-contentBox ul.personal-msg-list>li {
+    padding: 20px 0;
+    cursor: default
+}
+
+li.dynamic-item+li.dynamic-item {
+    border-top: 1px solid #e7eff6
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head .userHeadImg {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 2px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head .userHeadImg>img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head .userHeadImg .head_border {
+    width: 66px;
+    height: 66px;
+    position: absolute;
+    left: 0;
+    top: -13px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head .userHeadImg .head_border>img {
+    width: 100%;
+    height: 100%
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info {
+    margin-left: 50px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .username {
+    font-size: 14px;
+    color: #3b68b8;
+    margin-right: 6px;
+    cursor: pointer
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .level {
+    color: #fff;
+    font-size: 12px;
+    margin-right: 10px;
+    display: inline-block;
+    width: 38px;
+    background-image: url(https://static.iyingdi.cn/achievement/badge/board/moderator.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align: center
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .dynamic-type {
+    font-size: 14px;
+    color: #8f8f8f
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .operate-area {
+    color: #9b9b9b;
+    position: relative
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .operate-area>ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    z-index: 2;
+    width: 100px;
+    background: #f7f7f7;
+    box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, .25);
+    border-radius: 3px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .operate-area.active>ul {
+    display: block
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .operate-area>ul>li {
+    text-align: center;
+    padding: 4px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-head-info .item-head-foot {
+    font-size: 14px;
+    color: #8f8f8f
+}
+
+ul.personal-msg-list>li.dynamic-item .item-content {
+    margin-top: 10px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-articleComment-content, ul.personal-msg-list>li.dynamic-item .item-postsComment-content, ul.personal-msg-list>li.dynamic-item .item-publish-topic-content {
+    width: 100%;
+    border-radius: 4px;
+    padding: 2px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-articleComment-txt {
+    font-size: 14px;
+    font-weight: 700;
+    color: #6d6d6d;
+    word-break: break-all;
+    line-height: 1.6
+}
+
+ul.personal-msg-list>li.dynamic-item .item-articleComment-articleInfo, ul.personal-msg-list>li.dynamic-item .item-postComment-topicInfo {
+    border-left: 2px solid #d6d6d6;
+    padding-left: 6px;
+    margin-top: 10px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-originComment {
+    font-size: 14px;
+    color: #8f8f8f;
+    margin-bottom: 2px;
+    max-width: 581px;
+    word-break: break-all;
+    line-height: 1.6
+}
+
+ul.personal-msg-list>li.dynamic-item .item-articleComment-content .item-articleTitle, ul.personal-msg-list>li.dynamic-item .item-postComment-topic-title {
+    font-size: 14px;
+    color: #3b68b8
+}
+
+ul.personal-msg-list>li.dynamic-item .item-postComment-post-title {
+    color: #3b68b8
+}
+
+ul.personal-msg-list>li.dynamic-item .item-topic-from {
+    display: none;
+    color: #8f8f8f;
+    font-size: 14px;
+    margin-top: 20px
+}
+
+ul.personal-msg-list>li.dynamic-item .item-topic-from .topic-title {
+    color: #3b68b8
+}
+
+ul.personal-msg-list>li.dynamic-item .item-publish-topic-content .item-topic-title {
+    font-size: 16px;
+    color: #444
+}
+
+ul.personal-msg-list>li.dynamic-item .item-publish-topic-content .item-topic-Info {
+    font-size: 16px;
+    color: #bcbcbc;
+    margin-top: 10px
+}
+
+.personal-msgInfo-contentBox .user-content-article {
+    position: relative;
+    padding: 26px 0 3px 50px;
+    border-radius: 3px;
+    overflow: initial;
+    border-bottom: 1px solid #e5ecf1;
+    z-index: initial;
+    cursor: default
+}
+
+.personal-msgInfo-contentBox .replyArticleComment {
+    position: absolute;
+    width: 74px;
+    height: 28px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #3b68b8;
+    border-radius: 3px;
+    color: #3b68b8;
+    top: 20px;
+    right: 0;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out
+}
+
+.personal-msgInfo-contentBox .replyArticleComment:hover {
+    background-color: #3b68b8;
+    color: #fff
+}
+
+.personal-msgInfo-contentBox .replyTopicComment {
+    position: absolute;
+    width: 74px;
+    height: 28px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #3b68b8;
+    border-radius: 3px;
+    color: #3b68b8;
+    top: 20px;
+    right: 0;
+    line-height: 21px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out
+}
+
+.personal-msgInfo-contentBox .replyTopicComment:hover {
+    background-color: #3b68b8;
+    color: #fff
+}
+
+.personal-msgInfo-contentBox .content-item-img {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: 3px solid #33589b
+}
+
+.personal-msgInfo-contentBox .content-item-img>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%
+}
+
+.personal-msgInfo-contentBox .content-item-info {
+    position: relative;
+    text-align: left
+}
+
+.personal-msgInfo-contentBox .content-item-info div.username {
+    color: #3b68b8;
+    font-size: 16px
+}
+
+.personal-msgInfo-contentBox .content-item-info div.receive-comment {
+    line-height: 1.7;
+    word-break: break-all;
+    text-align: justify;
+    color: #444;
+    font-size: 15px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    width: 600px
+}
+
+.personal-msgInfo-contentBox .content-item-info .content-old-item {
+    margin: 5px 0;
+    background-color: #f7f7f7;
+    padding: 6px 10px 6px 12px
+}
+
+.personal-msgInfo-contentBox .content-old-item div.myself-comment {
+    margin: 0;
+    line-height: 1.7;
+    word-break: break-all;
+    text-align: justify;
+    color: #444
+}
+
+.personal-msgInfo-contentBox .content-old-item div.myself-imgRemark>img {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+    object-fit: cover;
+    margin-top: 5px
+}
+
+.personal-msgInfo-contentBox .content-old-item div.content-old-itemTitle {
+    margin: 0;
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    color: #646464
+}
+
+.personal-msgInfo-contentBox .content-old-itemTitle span.publishFromSpan {
+    margin-left: 16px
+}
+
+.personal-msgInfo-contentBox .content-old-item div.content-old-itemTitle>a:hover {
+    color: #3b68b8
+}
+
+.personal-msgInfo-contentBox .user-content-reply {
+    margin-top: -3px;
+    position: relative;
+    padding: 20px 95px 10px 0;
+    background-color: inherit;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    overflow: hidden
+}
+
+.personal-msgInfo-contentBox .user-content-reply>.reply_btn {
+    position: absolute;
+    top: 10px;
+    right: 0
+}
+
+.personal-msgInfo-contentBox .arrow {
+    position: absolute;
+    bottom: 0;
+    left: 103px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e3e3e3;
+    margin-left: -6px
+}
+
+.personal-msgInfo-contentBox .user-content-reply .input>textarea {
+    margin: 0;
+    padding: 5px 2px 0 6px;
+    border: 1px solid #7289a5;
+    font-size: 12px;
+    word-wrap: break-word;
+    line-height: 18px;
+    overflow: hidden;
+    outline: 0;
+    height: 30px;
+    resize: none;
+    width: 100%;
+    border-radius: 3px
+}
+
+.personal-msgInfo-contentBox .user-content-reply button {
+    width: 75px;
+    height: 30px;
+    line-height: 8px;
+    margin-top: 10px
+}
+
+.personal-msgInfo-contentBox .user-content-article+.user-content-article {
+    margin: 0
+}
+
+.personal-msgInfo-contentBox .content-item-foot {
+    padding: 0;
+    overflow: hidden;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px
+}
+
+.personal-msgInfo-contentBox .content-item-foot>.time {
+    font-size: 12px;
+    color: #9b9b9b
+}
+
+.personal-msgInfo-contentBox .content-item-foot>span.pull-right {
+    color: #787878;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0
+}
+
+.personal-msgInfo-contentBox .content-item-foot>span.pull-right:hover {
+    color: #3b68b8
+}
+
+.personal-msgInfo-contentBox .content-item-foot i {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    vertical-align: text-top;
+    margin-right: 3px;
+    margin-left: 10px
+}
+
+.personal-msgInfo-contentBox .content-item-foot i.reply_img {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/personal/replyLogo_default_style.png)
+}
+
+.personal-msgInfo-contentBox .content-item-foot span.pull-right:hover i.reply_img {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/personal/replyLogo_hover_style.png)
+}
+
+.personal-msgInfo-contentBox .content-item-foot i.like_img {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/article/like.png)
+}
+
+.personal-msgInfo-contentBox .content-item-foot i.hate_img {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/article/hate.png)
+}
+
+.personal-msgInfo-header .user_msg_red_prompt {
+    position: absolute;
+    right: -18px;
+    top: 1px;
+    min-width: 15px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    padding: 0 2px;
+    background-color: #ef6459;
+    font-size: 12px;
+    border-radius: 3px;
+    color: #fff
+}
+
+.personal-msgInfo-contentBox .userMsg-receive-imageContent>img {
+    width: 100px;
+    height: 100px;
+    margin-right: 12px;
+    object-fit: cover
+}
+
+.personal-msgInfo-contentBox .userMsg-forum-imageContent>img {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+    object-fit: cover
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-sourceCommentInfo {
+    padding: 14px;
+    background-color: #f7f7f7;
+    margin-bottom: 5px
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-sourceCommentInfo .sourceCommentInfo-title {
+    margin-bottom: 5px
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-sourceCommentInfo .sourceCommentInfo-title span {
+    color: #4a4a4a;
+    font-weight: 700;
+    font-size: 14px
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-sourceCommentInfo .sourceCommentInfo-title span.sourceCommentUserName {
+    margin-right: 15px
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-sourceCommentInfo .sourceCommentInfo-title span.sourceCommentTime {
+    color: #787878;
+    font-weight: 400
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-sourceCommentInfo .sourceCommentInfo-text {
+    font-size: 16px;
+    color: #8f8f8f
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-header {
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #cbcbcb;
+    padding-left: 10px;
+    border-bottom: none;
+    border-top: 2px solid #3b68b8
+}
+
+.personal-msgInfo-reply-modal .personal-msgInfo-reply-header>span {
+    margin-right: 10px
+}
+
+.personal-msgInfo-reply-modal .send-faceImg {
+    width: 18px;
+    height: 18px;
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/personal/faceLogo_default_style.png);
+    background-size: contain;
+    margin-right: 5px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.personal-msgInfo-reply-modal .send-localImg {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.personal-msgInfo-reply-modal .face_bag {
+    position: absolute;
+    width: 660px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #cbcbcb
+}
+
+.personal-msgInfo-reply-modal .commentBox-imageContent {
+    overflow: hidden;
+    border-top: 1px dashed #4a4a4a
+}
+
+.personal-msgInfo-reply-modal .commentBox-imageContent>li {
+    float: left;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    position: relative;
+    cursor: default;
+    margin: 5px 3px
+}
+
+.personal-msgInfo-reply-modal .comment-imageBox>span, .personal-msgInfo-reply-modal .commentBox-imageBox>span, .personal-msgInfo-reply-modal .commentHot-imageBox>span {
+    margin-left: 5px
+}
+
+.personal-msgInfo-reply-modal .commentBox-imageContent>li>img {
+    width: 100%;
+    height: 100%
+}
+
+.personal-msgInfo-reply-modal .reply_img_close {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    cursor: pointer;
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static%2Fimages%2Fwebimg%2Freply%2Fclose.png);
+    display: inline-block;
+    background-size: 20px;
+    width: 20px;
+    height: 20px
+}
+
+.personal-msgInfo-reply-content textarea {
+    width: 100%;
+    height: 266px;
+    border: 1px solid #cbcbcb;
+    padding: 10px;
+    font-size: 16px;
+    outline: 0
+}
+
+.personal-msgInfo-reply-modal .facebag-area {
+    overflow: hidden;
+    width: 100%
+}
+
+.personal-msgInfo-reply-modal .facebag-series {
+    overflow: hidden;
+    padding: 5px 20px;
+    border-bottom: 1px solid #d5d5d5
+}
+
+.personal-msgInfo-reply-modal .facebag-series>ul>li {
+    float: left;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #787878;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px
+}
+
+.personal-msgInfo-reply-modal .facebag-series>ul>li.active {
+    color: #3b68b8
+}
+
+.personal-msgInfo-reply-modal .facebag-series>ul>li.active:after {
+    content: '';
+    position: absolute;
+    border-top: 2px solid #3b68b8;
+    width: 100%;
+    bottom: -5px;
+    left: 0
+}
+
+.personal-msgInfo-reply-modal .facebag-images {
+    clear: both;
+    overflow: auto;
+    padding: 10px 15px;
+    height: 223px
+}
+
+.personal-msgInfo-reply-modal .facebag-images>img {
+    float: left;
+    display: inline-block;
+    width: 91px;
+    height: 91px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 16px
+}
+
+.personal-sysMsgInfo-contentBox .user-content-nodata {
+    text-align: center;
+    padding: 20px;
+    color: #c8c8c8;
+    font-size: 16px
+}
+
+ul.sysMsgInfoList>li.sysMsgInfo-item {
+    padding: 10px 0;
+    cursor: default
+}
+
+.personal-sysMsgInfo-contentBox .sysMsgInfo-item-msgContent {
+    font-size: 16px;
+    width: 600px;
+    word-break: break-all;
+    margin-bottom: 5px
+}
+
+.sysMsgInfo-item+.sysMsgInfo-item {
+    border-top: 1px solid #e5ecf1
+}
+
+.personal-sysMsgInfo-contentBox .sysMsgInfo-item-msgDate>span {
+    color: #9b9b9b;
+    font-size: 12px
+}
+
+.personal-sysMsgInfo-contentBox li.sysMsgInfo-item .clickGet {
+    position: absolute;
+    right: 0;
+    top: 13px;
+    width: 83px;
+    height: 22px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #3b68b8;
+    border: 1px solid #3b68b8;
+    border-radius: 3px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out
+}
+
+.personal-sysMsgInfo-contentBox li.sysMsgInfo-item .clickGet:hover {
+    background-color: #3b68b8;
+    color: #fff
+}
+
+.personal-sysMsgInfo-contentBox span.click-get-achievement {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    color: #3b68b8;
+    cursor: pointer
+}
+
+.personal-get-achievement .prompting-txt {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700
+}
+
+.personal-get-achievement .achievement-img {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px
+}
+
+.personal-get-achievement .achievement-img>img {
+    width: 100%
+}
+
+.personal-get-achievement .achievement-title {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 5px
+}
+
+.personal-gameSys-modal .origin-user-comment {
+    font-size: 15px;
+    color: #4a4a4a;
+    line-height: 1.7
+}
+
+.personal-gameSys-modal .origin-img-area {
+    margin-top: 10px
+}
+
+.personal-gameSys-modal .origin-img-area>img {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px
+}
+
+.personal-gameSys-modal .official-reply-area {
+    position: relative;
+    margin-top: 10px;
+    padding-left: 85px
+}
+
+.personal-gameSys-modal .official-reply-area .text-head {
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.personal-gameSys-modal .official-reply-area .text-head>span {
+    font-size: 15px;
+    color: #4a4a4a
+}
+
+.personal-gameSys-modal .official-reply-area .text-head>i {
+    border-left: 5px solid #3b68b8;
+    margin-right: 5px
+}
+
+.personal-gameSys-modal .official-reply-area .official-reply {
+    font-size: 15px;
+    color: #9b9b9b
+}
+
+.personal-publicMsgInfo-contentBox ul.publicMsgInfoList>li {
+    padding: 10px 0;
+    cursor: default
+}
+
+.personal-publicMsgInfo-contentBox ul.publicMsgInfoList>li .sysMsgInfo-item-title {
+    font-size: 16px;
+    margin-bottom: 10px
+}
+
+.personal-publicMsgInfo-contentBox ul.publicMsgInfoList>li .sysMsgInfo-item-msgContent {
+    margin-bottom: 10px
+}
+
+.personal-publicMsgInfo-contentBox ul.publicMsgInfoList>li .sysMsgInfo-item-msgDate {
+    color: #9b9b9b;
+    font-size: 12px
+}
+
+.personal-favorites-contentBox .personal-favorites-header {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #e5ecf1
+}
+
+.personal-favorites-header span.nav-tab {
+    margin-right: 30px;
+    font-size: 16px;
+    color: #9b9b9b;
+    cursor: pointer;
+    position: relative
+}
+
+.personal-favorites-header span.nav-tab.active {
+    color: #3b68b8
+}
+
+.personal-favorites-contentBox li.topic-collection-item {
+    padding: 10px 0 10px 0;
+    overflow: hidden;
+    cursor: default
+}
+
+li.topic-collection-item+li.topic-collection-item {
+    border-top: 1px solid #e5ecf1
+}
+
+.personal-favorites-contentBox li.article-collection-item {
+    padding: 16px 0;
+    overflow: hidden;
+    cursor: default
+}
+
+li.article-collection-item+li.article-collection-item {
+    border-top: 1px solid #e5ecf1
+}
+
+.personal-favorites-contentBox .article-collection-item-articleIcon {
+    width: 190px;
+    height: 108px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.personal-favorites-contentBox .article-collection-item-articleIcon>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transform: scale(1);
+    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out
+}
+
+.personal-favorites-contentBox li.article-collection-item:hover .article-collection-item-articleIcon>img {
+    transform: scale(1.05);
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out
+}
+
+.personal-favorites-contentBox .article-collection-item-articleIcon .seedTitle {
+    position: absolute;
+    left: 7px;
+    bottom: 5px;
+    background-color: rgba(0, 0, 0, .4);
+    color: #fff;
+    border-radius: 3px;
+    padding: 1px 8px
+}
+
+.personal-favorites-contentBox li.article-collection-item .seperateLine {
+    display: inline-block;
+    border-right: 1px solid #fff;
+    height: 10px;
+    margin: 0 5px
+}
+
+.personal-favorites-contentBox .article-collection-item-articleInfo {
+    margin-left: 206px;
+    height: 108px;
+    position: relative
+}
+
+.personal-favorites-contentBox .article-collection-item-articleTitle {
+    max-width: 400px;
+    word-break: break-all;
+    font-size: 18px;
+    color: #4a4a4a;
+    margin-bottom: 5px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.personal-favorites-contentBox li.article-collection-item:hover .article-collection-item-articleTitle {
+    color: #3b68b8
+}
+
+.personal-favorites-contentBox .article-collection-item-articleInfoFooter {
+    width: 504px;
+    font-size: 12px;
+    color: #787878;
+    position: absolute;
+    bottom: -4px
+}
+
+.article-collection-item-articleInfoFooter span.feedAuthor {
+    max-width: 200px;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: bottom
+}
+
+.article-collection-item-articleInfoFooter span.clazz-span {
+    color: #3b68b8;
+    border: 1px solid #3b68b8;
+    padding: 3px 5px;
+    border-radius: 3px
+}
+
+.article-collection-item-articleInfoFooter span.seedTitle {
+    display: inline-block;
+    width: 90px
+}
+
+.article-collection-item-articleInfoFooter span.feedTime {
+    display: inline-block;
+    width: 120px
+}
+
+li.article-collection-item button.deleteArticleCollect {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #fff;
+    color: #ef636f;
+    border: 1px solid #ef636f;
+    border-radius: 3px;
+    width: 56px;
+    height: 22px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s ease-in-out
+}
+
+li.article-collection-item button.deleteArticleCollect:hover {
+    color: #fff;
+    background-color: #ef636f
+}
+
+.topic-collection-item+.topic-collection-item {
+    border-top: 1px solid #ebf2fb
+}
+
+.personal-favorites-contentBox .topic-collection-item-topicTitle {
+    margin-bottom: 5px;
+    color: #4a4a4a;
+    font-size: 18px;
+    max-width: 600px;
+    word-break: break-all;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.personal-favorites-contentBox .topic-collection-item-topicTitle:hover {
+    color: #3b68b8
+}
+
+.personal-favorites-contentBox .topic-collection-item-topicDescription {
+    margin-bottom: 9px;
+    color: #787878;
+    width: 600px;
+    word-break: break-all
+}
+
+.personal-favorites-contentBox .topic-collection-item-topicImgs {
+    width: 600px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 5px
+}
+
+.personal-favorites-contentBox .topic-collection-item-topicImgs>img {
+    width: 90px;
+    height: 90px;
+    margin-right: 5px
+}
+
+.personal-favorites-contentBox .topic-collection-item-topicImgs span.totalImgNum {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 3px
+}
+
+.personal-favorites-contentBox .topic-collection-item-topicInfo {
+    font-size: 12px;
+    color: #787878
+}
+
+.topic-collection-item-topicInfo span.topic-host {
+    display: inline-block;
+    margin-right: 40px
+}
+
+.topic-collection-item-topicInfo span.topic-title>a {
+    color: #3b68b8
+}
+
+.personal-favorites-contentBox li.topic-collection-item button {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #fff;
+    color: #ef636f;
+    border: 1px solid #ef636f;
+    border-radius: 3px;
+    width: 56px;
+    height: 22px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    outline: 0
+}
+
+.personal-favorites-contentBox li.topic-collection-item button:hover {
+    color: #fff;
+    background-color: #ef636f
+}
+
+.personal-userCenter-contentRightFrame .personal-detail-pagination.articleType, .personal-userCenter-contentRightFrame .personal-detail-pagination.forumType>ul {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    padding: 15px 0
+}
+
+.personal-detail-pagination>ul {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    padding: 15px 0
+}
+
+.personal-detail-pagination>ul>li {
+    float: left;
+    display: inline-block;
+    line-height: 23px;
+    margin-right: 5px
+}
+
+.personal-detail-pagination>ul>li {
+    float: left;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin-right: 10px;
+    background-color: #f7f7f7;
+    font-size: 16px
+}
+
+.personal-detail-pagination>ul>li>a {
+    color: #444
+}
+
+.personal-detail-pagination>ul>li.page_end, .personal-detail-pagination>ul>li.page_first {
+    width: 66px
+}
+
+.personal-detail-pagination>ul>li.page_down, .personal-detail-pagination>ul>li.page_up {
+    width: 89px
+}
+
+.personal-detail-pagination>ul>li.active_page, .personal-detail-pagination>ul>li:hover {
+    background-color: #3b68b8
+}
+
+.personal-detail-pagination>ul>li.active_page>a, .personal-detail-pagination>ul>li:hover>a {
+    color: #fff
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-item {
+    padding: 10px 0
+}
+
+.personal-tasks-item+.personal-tasks-item {
+    border-top: 2px solid #3b68b8
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemTitle {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #444
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemContent {
+    padding-bottom: 20px;
+    text-align: center
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-level-bar {
+    margin-bottom: 5px;
+    text-align: center
+}
+
+.personal-taskAndIntegral-contentBox span.level_num {
+    font-size: 16px;
+    font-weight: 700
+}
+
+.personal-taskAndIntegral-contentBox span.distance-to-next {
+    display: inline-block;
+    width: 370px;
+    text-align: center;
+    margin: 0 8px;
+    font-size: 12px;
+    letter-spacing: 1px
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-credits-bar {
+    height: 14px;
+    line-height: 14px;
+    text-align: center
+}
+
+.personal-taskAndIntegral-contentBox span.credits-progress-bar {
+    width: 370px;
+    display: inline-block;
+    border: 1px solid #3b68b8;
+    border-radius: 30px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: top;
+    margin: 0 12px;
+    text-align: left
+}
+
+.personal-taskAndIntegral-contentBox span.credits-progress-bar>span {
+    background-color: #3b68b8;
+    display: inline-block;
+    border-radius: 30px;
+    height: 12px
+}
+
+.personal-tasks-item .user-task-day {
+    margin: 0;
+    width: 470px;
+    padding-bottom: 30px
+}
+
+.personal-taskAndIntegral-contentBox .user-task-day>.progress {
+    background-color: #cacaca
+}
+
+.personal-taskAndIntegral-contentBox .progress>span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    line-height: 30px
+}
+
+.personal-taskAndIntegral-contentBox .user-task-day .progress-bar {
+    background-color: #3b68b8;
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease
+}
+
+.personal-taskAndIntegral-contentBox .user-task-day .progress-bar-success {
+    background-color: #3b68b8
+}
+
+.personal-taskAndIntegral-contentBox .content-credit {
+    color: #33589b;
+    font-size: 16px
+}
+
+.personal-tasks-item a.mission_detail {
+    color: #3b68b8
+}
+
+.personal-taskAndIntegral-contentBox .user-task-day .progress_task {
+    margin-top: 5px;
+    padding: 15px 0 15px 20px;
+    background: #ededed;
+    border-radius: 3px;
+    border: none
+}
+
+.personal-taskAndIntegral-contentBox .user-task-day .progress_task p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px
+}
+
+.personal-taskAndIntegral-contentBox .user-task-day .progress_task p.tasks-introduce {
+    font-weight: 700;
+    margin-bottom: 10px
+}
+
+.personal-tasks-itemLevelContent {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px
+}
+
+.personal-tasks-itemLevelContentLeft, .personal-tasks-itemLevelContentMiddle, .personal-tasks-itemLevelContentRight {
+    display: inline-block;
+    width: 140px;
+    vertical-align: middle;
+    position: relative
+}
+
+.personal-tasks-itemLevelContentLeft>p, .personal-tasks-itemLevelContentRight>p {
+    text-align: center;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.personal-tasks-itemLevelContentLeft>p.credits-now, .personal-tasks-itemLevelContentRight>p.credits-next {
+    font-size: 26px;
+    color: #444
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-width: 14px;
+    border-color: #3b68b8;
+    border-style: solid;
+    border-radius: 50%
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .bar {
+    position: absolute;
+    width: 70px;
+    height: 140px;
+    overflow: hidden
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .bar-left {
+    top: -14px;
+    left: -13px
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .bar-left .bar-left-an {
+    position: absolute;
+    z-index: 10;
+    width: 140px;
+    height: 140px;
+    border-width: 12px;
+    border-color: transparent transparent #00acff #00acff;
+    border-style: solid;
+    border-radius: 50%;
+    transform: rotate(-135deg)
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .bar-right {
+    top: -14px;
+    left: 55px
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .bar-right .bar-right-an {
+    position: absolute;
+    left: -70px;
+    z-index: 20;
+    width: 140px;
+    height: 140px;
+    border-width: 12px;
+    border-color: #00acff #00acff transparent transparent;
+    border-style: solid;
+    border-radius: 50%;
+    transform: rotate(-135deg)
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .tx {
+    position: absolute;
+    padding-top: 20px
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .tx>p {
+    text-align: center;
+    width: 110px;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.personal-taskAndIntegral-contentBox .personal-tasks-itemLevelContentMiddle .circle .tx>p:first-child {
+    font-size: 40px;
+    color: #4a4a4a;
+    width: 106px;
+    height: 50px
+}
+
+.personal-taskAndIntegral-contentBox .daytask-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 177px;
+    text-align: center
+}
+
+.personal-taskAndIntegral-contentBox .daytask-item .daytask-itemTitle {
+    color: #4a4a4a;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: SimHei
+}
+
+.personal-taskAndIntegral-contentBox .daytask-completeCircl {
+    width: 64px;
+    height: 64px;
+    background: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/static/images/personal/taskComplete.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+    margin-bottom: 15px
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess {
+    margin-bottom: 15px
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess .circle {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    border-width: 4px;
+    border-color: #b9d0fb;
+    border-style: solid;
+    border-radius: 50%;
+    margin: 0 auto
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess .circle .bar {
+    position: absolute;
+    width: 32px;
+    height: 64px;
+    overflow: hidden
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess .circle .bar-left {
+    top: -5px;
+    left: -4px
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess .circle .bar-left .bar-left-an {
+    position: absolute;
+    z-index: 10;
+    width: 64px;
+    height: 64px;
+    border-width: 4px;
+    border-color: transparent transparent #3b68b8 #3b68b8;
+    border-style: solid;
+    border-radius: 50%;
+    transform: rotate(-135deg)
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess .circle .bar-right {
+    top: -5px;
+    left: 28px
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess .circle .bar-right .bar-right-an {
+    position: absolute;
+    left: -32px;
+    z-index: 20;
+    width: 64px;
+    height: 64px;
+    border-width: 4px;
+    border-color: #3b68b8 #3b68b8 transparent transparent;
+    border-style: solid;
+    border-radius: 50%;
+    transform: rotate(-135deg)
+}
+
+.personal-taskAndIntegral-contentBox .daytask-itemProcess .circle .tx {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    text-align: center;
+    font-size: 20px;
+    color: #4a4a4a;
+    padding-top: 15px;
+    padding-right: 5px
+}
+
+.personal-taskAndIntegral-contentBox .daytask-item .daytask-decription {
+    color: #787878;
+    font-size: 12px
+}
+
+.personal-taskAndIntegral-contentBox .daytask-item .daytask-decription.completed {
+    color: #3b68b8
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li {
+    padding: 10px 0;
+    cursor: default
+}
+
+li.day-task-item+li.day-task-item {
+    border-top: 1px solid #e7eff6
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .task-title {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-right: 10px
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .completed-degree {
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li.reach .completed-degree {
+    color: #64af95
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .circle-area {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #64af95;
+    border-radius: 50%;
+    vertical-align: text-top;
+    margin-right: 4px
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li.reach .circle-area {
+    position: relative;
+    background-color: #64af95
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li.reach .circle-area:after {
+    position: absolute;
+    top: -1px;
+    left: 2px;
+    color: #fff;
+    content: '鉁�';
+    font-size: 12px
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .add-experience {
+    margin-left: 210px;
+    margin-right: 15px
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .add-experience>span:first-child {
+    font-size: 14px;
+    color: #9b9b9b;
+    margin-right: 2px
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .add-experience>span:last-child {
+    font-size: 14px;
+    color: #64af95
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .add-fire>span:first-child {
+    font-size: 14px;
+    color: #9b9b9b;
+    margin-right: 2px
+}
+
+.personal-taskAndIntegral-contentBox ul.day-tasks-list>li .add-fire>i {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/yingdiWeb/images/personal/fire_logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 11px;
+    height: 14px;
+    margin-left: 2px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li:not(:nth-child(4n+1)) {
+    margin-left: 10px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-icon {
+    width: 170px;
+    height: 90px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-title {
+    text-align: center;
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-top: 4px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .lock-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 170px;
+    height: 90px;
+    background-color: rgba(0, 0, 0, .8);
+    text-align: center
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .lock-shade>img {
+    width: 38px;
+    margin-top: 16px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-detail {
+    position: absolute;
+    bottom: 30px;
+    left: 120px;
+    width: 239px;
+    padding-bottom: 15px;
+    display: none;
+    background-color: rgba(0, 0, 0, .8);
+    overflow: hidden;
+    z-index: 100;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+    border-radius: 6px;
+    text-align: center
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li:hover .achievement-detail {
+    display: block
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-detail img {
+    width: 220px;
+    height: 117px;
+    margin-top: 10px;
+    border-radius: 3px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-detail .title {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 5px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-detail .detail-info {
+    padding: 0 10px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-detail .detail-info>div {
+    margin-bottom: 10px
+}
+
+.personal-taskAndIntegral-contentBox ul.achievements-area>li .achievement-detail .detail-info p {
+    font-size: 14px;
+    color: #e1e1e1;
+    margin-top: 4px
+}
+
+.personal-myFire-contentBox .content-item:last-child {
+    border-top: 2px solid #3b68b8
+}
+
+.personal-myFire-contentBox .content-item .item-title {
+    padding-top: 10px;
+    font-size: 16px;
+    color: #444
+}
+
+.item_title_fire {
+    float: left;
+    cursor: pointer
+}
+
+.item_title_cash {
+    float: left;
+    margin-left: 28px;
+    cursor: pointer
+}
+
+.item_title_cash.active, .personal-myFire-contentBox .content-item .item_title_fire.active {
+    color: #3b68b8
+}
+
+.content-item-fire {
+    height: 172px
+}
+
+.personal-myFire-contentBox .fires-show {
+    height: 106px;
+    line-height: 106px;
+    text-align: center
+}
+
+.personal-myFire-contentBox .fires-show .fires-num {
+    font-size: 60px;
+    color: #444
+}
+
+.personal-myFire-contentBox .fires-show>i {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/yingdiWeb/images/personal/fire_logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: text-bottom;
+    width: 40px;
+    height: 52px;
+    margin-left: 4px
+}
+
+.personal-myFire-contentBox .screen-type {
+    position: relative
+}
+
+.personal-myFire-contentBox .screen-type>span {
+    font-size: 14px;
+    color: #3b68b8;
+    cursor: pointer
+}
+
+.personal-myFire-contentBox .screen-type>ul {
+    position: absolute;
+    right: 0;
+    display: none;
+    background-color: #f7f7f7;
+    box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, .25);
+    border-radius: 3px;
+    width: 72px;
+    z-index: 2
+}
+
+.personal-myFire-contentBox .screen-type.active>ul {
+    display: block
+}
+
+.personal-myFire-contentBox .screen-type>ul>li {
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    padding: 5px 0
+}
+
+.personal-myFire-contentBox .screen-type>ul>li:hover {
+    color: #3b68b8
+}
+
+.personal-myFire-contentBox .screen-type>ul>li.active {
+    color: #3b68b8
+}
+
+.personal-myFire-contentBox ul.history-list {
+    margin-top: 10px
+}
+
+.personal-myFire-contentBox ul.history-list>li {
+    position: relative;
+    padding: 10px 0;
+    cursor: default
+}
+
+li.fire-history-item+li.fire-history-item {
+    border-top: 1px solid #ecf1f5
+}
+
+.personal-myFire-contentBox ul.history-list>li .fire-used-for {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-bottom: 6px
+}
+
+.personal-myFire-contentBox ul.history-list>li .time {
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.personal-myFire-contentBox ul.history-list>li .fires-num-detail {
+    position: absolute;
+    right: 0;
+    bottom: 10px
+}
+
+.personal-myFire-contentBox ul.history-list>li .fires-num-detail .fire-num {
+    font-size: 20px;
+    color: #4a4a4a
+}
+
+.personal-myFire-contentBox ul.history-list>li .fires-num-detail>i {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/yingdiWeb/images/personal/fire_logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: inherit;
+    width: 12px;
+    height: 15px;
+    margin-left: 4px
+}
+
+.personal-infoConfig-contentBox .personal-infoConfig-Item {
+    padding: 10px 0 40px 0
+}
+
+.personal-infoConfig-Item+.personal-infoConfig-Item {
+    border-top: 2px solid #3b68b8
+}
+
+.personal-infoConfig-contentBox .operate-btn {
+    color: #3b68b8;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.personal-infoConfig-contentBox .personal-config-itemTitle {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px
+}
+
+.personal-infoConfig-contentBox .personal-config-itemTip {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-bottom: 10px
+}
+
+.personal-infoConfig-contentBox .config-headImg .headImgArea {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px
+}
+
+.personal-infoConfig-contentBox .config-headImg .headImgArea>img {
+    width: 100%;
+    height: 100%
+}
+
+.personal-infoConfig-contentBox .config-headImg .shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 50%;
+    color: #fff;
+    line-height: 110px;
+    text-align: center;
+    cursor: pointer
+}
+
+.personal-infoConfig-contentBox .show-description {
+    font-size: 14px;
+    color: #787878
+}
+
+.personal-config-descritpion-modal textarea {
+    width: 100%;
+    height: 230px;
+    padding: 10px
+}
+
+.personal-infoConfig-contentBox .add-game-account>img {
+    width: 40px;
+    cursor: pointer
+}
+
+.personal-infoConfig-contentBox ul.game-account-bind>li {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: default
+}
+
+.personal-infoConfig-contentBox ul.game-account-bind>li .delete-account {
+    position: absolute;
+    right: 0;
+    color: #ef636f;
+    cursor: pointer
+}
+
+.personal-infoConfig-contentBox ul.game-account-bind>li>img {
+    width: 20px;
+    vertical-align: bottom;
+    border-radius: 50%;
+    margin-right: 10px
+}
+
+.personal-infoConfig-contentBox ul.game-account-bind>li .game-name {
+    margin-right: 20px
+}
+
+.user-center-add-gameAccount-modal input {
+    width: 300px;
+    height: 30px;
+    padding-left: 10px;
+    margin-left: 20px
+}
+
+.user-center-add-gameAccount-modal .game-type-select {
+    position: relative;
+    display: inline-block
+}
+
+.user-center-add-gameAccount-modal .game-type-select>a {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 30px;
+    background-color: #3b68b8;
+    color: #fff;
+    font-size: 14px;
+    width: 160px;
+    text-align: left;
+    text-indent: 15px;
+    position: relative;
+    border-radius: 3px
+}
+
+.user-center-add-gameAccount-modal .game-type-select>ul {
+    display: none;
+    width: 160px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    z-index: 1000;
+    background-color: #3b68b8;
+    border: 1px solid #4183d1;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .6);
+    border-radius: 3px
+}
+
+.user-center-add-gameAccount-modal .game-type-select.active>ul {
+    display: block
+}
+
+.user-center-add-gameAccount-modal .game-type-select>ul>li:hover {
+    background-color: #1a5192
+}
+
+.user-center-add-gameAccount-modal .game-type-select>ul>li {
+    line-height: 30px;
+    text-indent: 15px;
+    color: #fff
+}
+
+.user-center-add-gameAccount-modal .game-type-select>img {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 9px;
+    right: 10px
+}
+
+.personal-infoConfig-contentBox .show-bind-item:last-child {
+    margin-top: 15px
+}
+
+.personal-infoConfig-contentBox .show-item-title {
+    font-size: 14px;
+    color: #444
+}
+
+.personal-infoConfig-contentBox .show-item-value {
+    font-size: 14px;
+    color: #787878;
+    margin-left: 30px
+}
+
+.personal-bind-phone-modal>div:last-child {
+    margin-top: 15px
+}
+
+.personal-bind-phone-modal>div input {
+    width: 100%;
+    background: #f7f7f7;
+    border-radius: 4px;
+    border: none;
+    height: 38px;
+    padding-left: 15px
+}
+
+.personal-bind-phone-modal>div input {
+    width: 100%;
+    background: #f7f7f7;
+    border-radius: 4px;
+    border: none;
+    height: 38px;
+    padding-left: 15px;
+    outline: 0
+}
+
+.personal-bind-phone-modal>div:first-child input {
+    width: 400px
+}
+
+.personal-bind-phone-modal>div:first-child button {
+    background-color: #3b68b8;
+    color: #fff;
+    border: none;
+    height: 36px;
+    width: 80px;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.personal-bind-email-modal>div input {
+    width: 100%;
+    height: 38px;
+    background: #f7f7f7;
+    border-radius: 4px;
+    border: none;
+    padding-left: 15px
+}
+
+.personal-modify-pwd-modal>div input {
+    width: 100%;
+    height: 38px;
+    border-radius: 4px;
+    border: none;
+    background-color: #f7f7f7;
+    padding-left: 15px;
+    outline: 0
+}
+
+.personal-modify-pwd-modal>div:not(:first-child) {
+    margin-top: 20px
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.user-select {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none
+}
+
+.clearfix::after, .clearfix::before {
+    content: ' ';
+    display: table
+}
+
+.clearfix::after {
+    clear: both
+}
+
+.personal-myCreated-contentBox {
+    float: left;
+    min-height: 800px;
+    width: 710px;
+    border-top: 2px solid #3b68b8
+}
+
+.pmc_head_box {
+    height: 43px;
+    border-bottom: 1px solid #e7eff6
+}
+
+.pmc_head_box>li {
+    float: left;
+    height: 22px;
+    margin-top: 10px;
+    line-height: 22px
+}
+
+.pmc_head_box>li+li {
+    margin-left: 28px
+}
+
+.pmc_head_box a {
+    display: block;
+    font-size: 16px;
+    color: #4a4a4a
+}
+
+.pmc_head_box>li.active>a {
+    color: #3b68b8
+}
+
+.pmc_common_content, .pmc_post_content, .pmc_review_content {
+    border-bottom: 1px solid #e7eff6
+}
+
+.pmc_body_box>div {
+    display: none
+}
+
+.pmc_body_box>div.active {
+    display: block
+}
+
+.pmc_review_content {
+    padding: 15px 0
+}
+
+.pmc_review_content:hover .pmc_review_img {
+    transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05)
+}
+
+.pmc_review_content:hover .pmc_review_title {
+    color: #3b68b8
+}
+
+.pmc_review_left {
+    float: left
+}
+
+.pmc_review_left_link {
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 102px;
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.pmc_review_img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    -moz-transition: -webkit-transform .3s ease-in-out
+}
+
+.pmc_review_state {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 1;
+    width: 56px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    text-align: center
+}
+
+.pmc_review_state.success {
+    background-color: rgba(102, 186, 113, .68);
+    border-radius: 5px
+}
+
+.pmc_review_state.wait {
+    background: rgba(239, 99, 111, .68);
+    border-radius: 5px
+}
+
+.pmc_review_right {
+    float: left;
+    margin-left: 20px;
+    width: 510px
+}
+
+.pmc_review_title {
+    display: block;
+    line-height: 20px;
+    font-size: 20px;
+    color: #4a4a4a;
+    font-weight: 700
+}
+
+.pmc_review_text {
+    height: 52px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #9b9b9b;
+    line-height: 22px
+}
+
+.pmc_review_other_sec {
+    height: 20px;
+    line-height: 20px
+}
+
+.pmc_review_other_Info {
+    float: left;
+    width: 356px;
+    height: 20px;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.pmc_review_other_Info>span+span {
+    margin-left: 6px
+}
+
+.pmc_review_other_ope {
+    float: right;
+    height: 20px
+}
+
+.pmc_review_other_ope>button {
+    float: right;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer
+}
+
+.pmc_review_del {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #9b9b9b
+}
+
+.pmc_review_other_ope .pmc_review_change {
+    font-size: 12px;
+    color: #fff;
+    background-color: #37f
+}
+
+.pmc_common_content, .pmc_post_content {
+    padding: 10px 0
+}
+
+.pmc_common_content:hover .pmc_common_text {
+    color: #3b68b8
+}
+
+.pmc_post_content:hover .pmc_post_img {
+    transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05)
+}
+
+.pmc_common_left, .pmc_post_left {
+    float: left;
+    width: 48px
+}
+
+.pmc_common_left_link, .pmc_post_left_link {
+    position: relative;
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%
+}
+
+.pmc_common_user_head, .pmc_post_user_head {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 50%
+}
+
+.pmc_common_left_link .head_border, .pmc_post_left_link .head_border {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    left: -9px;
+    top: -11px
+}
+
+.pmc_common_left_link .head_border>img, .pmc_post_left_link .head_border>img {
+    width: 100%;
+    height: 100%
+}
+
+.pmc_common_right, .pmc_post_right {
+    float: right;
+    width: 652px
+}
+
+.pmc_common_sec1, .pmc_post_sec1 {
+    height: 18px;
+    line-height: 18px
+}
+
+.pmc_common_username, .pmc_post_username {
+    font-size: 14px;
+    color: #4a4a4a
+}
+
+.pmc_common_tag, .pmc_post_tag {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #8f8f8f
+}
+
+.pmc_common_sec2, .pmc_post_sec2 {
+    height: 14px;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #8f8f8f;
+    line-height: 14px
+}
+
+.pmc_common_machine, .pmc_post_machine {
+    display: none;
+    margin-left: 10px
+}
+
+.pmc_common_text {
+    display: block;
+    height: 46px;
+    line-height: 46px;
+    font-size: 16px;
+    color: #4a4a4a;
+    font-weight: 700
+}
+
+.pmc_post_sec3 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 266px;
+    margin: 14px 0;
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.pmc_post_img {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    -moz-transition: -webkit-transform .3s ease-in-out
+}
+
+.pmc_post_mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .51) 50%)
+}
+
+.pmc_post_text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 48px;
+    padding-left: 15px;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff
+}
+
+.pmc_common_sec4, .pmc_post_sec4 {
+    height: 20px;
+    margin-top: -2px;
+    line-height: 20px
+}
+
+.pmc_common_sec4_left, .pmc_post_sec4_left {
+    float: left;
+    width: 620px;
+    font-size: 14px;
+    color: #bebebe;
+    line-height: 20px
+}
+
+.pmc_common_sec4_left>span, .pmc_post_sec4_left>span {
+    margin-right: 30px;
+    padding-left: 22px;
+    background-repeat: no-repeat;
+    background-size: auto 20px;
+    background-position: 0 -1px
+}
+
+.pmc_common_like, .pmc_post_like {
+    background-image: url(http://static.iyingdi.cn/yingdiWeb/images/personal/agree.png)
+}
+
+.pmc_common_unlike, .pmc_post_unlike {
+    background-image: url(http://static.iyingdi.cn/yingdiWeb/images/personal/disagree.png)
+}
+
+.pmc_common_commit, .pmc_post_commit {
+    background-image: url(http://static.iyingdi.cn/yingdiWeb/images/personal/reply.png)
+}
+
+.pmc_common_sec4_ope, .pmc_post_sec4_ope {
+    float: right
+}
+
+.pmc_common_del, .pmc_post_del {
+    float: right;
+    height: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    color: #9b9b9b
+}
+
+.pmc_comment {
+    padding: 10px 0;
+    border-bottom: 1px solid #e7eff6
+}
+
+.pmc_comment_sec1_left {
+    float: left;
+    width: 30px
+}
+
+.pmc_comment_left_link {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url(http://static.iyingdi.cn/achievement/badge/frame/admin.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden
+}
+
+.pmc_comment_user_head {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 50%
+}
+
+.pmc_comment_sec1_right {
+    float: right;
+    width: 670px
+}
+
+.pmc_comment_sec1_right_top {
+    height: 18px;
+    line-height: 18px
+}
+
+.pmc_comment_info1 {
+    float: left;
+    width: 600px
+}
+
+.pmc_comment_username {
+    font-size: 14px;
+    color: #4a4a4a
+}
+
+.pmc_comment_tag {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #8f8f8f
+}
+
+.pmc_comment_ope {
+    float: right
+}
+
+.pmc_post_del {
+    float: right;
+    height: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    color: #9b9b9b
+}
+
+.pmc_comment_sec1_right_bottom {
+    height: 14px;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #8f8f8f;
+    line-height: 14px
+}
+
+.pmc_common_machine {
+    margin-left: 10px
+}
+
+.pmc_comment_sec2 {
+    margin-top: 12px
+}
+
+.pmc_comment_text {
+    font-size: 14px;
+    color: #424242;
+    line-height: 20px
+}
+
+.pmc_commom_des {
+    font-size: 14px;
+    color: #4a4a4a
+}
+
+.pmc_common_imgs {
+    display: block;
+    height: 122px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.pmc_common_img_box {
+    float: left;
+    width: 122px;
+    height: 122px
+}
+
+.pmc_common_img_box+.pmc_common_img_box {
+    margin-left: 10px
+}
+
+.pmc_common_img {
+    display: block;
+    width: 100%;
+    height: 100%
+}
+
+.pmc_comment_sec3 {
+    margin-top: 8px
+}
+
+.pmc_comment_target {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    color: #000;
+    line-height: 20px;
+    border-radius: 4px;
+    background-color: #f7f7f7
+}
+
+.pmc_comment_target_name {
+    color: #3b68b8
+}
+
+.pmc_comment_target_text {
+    color: #8f8f8f
+}
+
+.pmc_draft {
+    padding: 10px 0;
+    border-bottom: 1px solid #e7eff6
+}
+
+.pmc_draft:hover .pmc_draft_title {
+    color: #3b68b8
+}
+
+.pmc_draft_title {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 18px;
+    color: #424242;
+    font-weight: 700
+}
+
+.pmc_draft_other {
+    margin-top: 10px
+}
+
+.pmc_draft_info {
+    float: left;
+    width: 356px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.pmc_draft_info>span+span {
+    margin-left: 6px
+}
+
+.pmc_draft_ope {
+    float: right
+}
+
+.pmc_draft_ope>a {
+    float: right;
+    height: 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 12px;
+    color: #37f;
+    font-weight: 700;
+    line-height: 20px
+}
+
+.pmc_draft_ope>.pmc_draft_del {
+    color: #9b9b9b;
+    font-weight: 400
+}
+
+.pmc_draft_tip {
+    height: 40px;
+    line-height: 40px;
+    color: #9b9b9b;
+    text-align: center
+}
+
+.pmc_outer_box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3)
+}
+
+.pmc_help_box {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle
+}
+
+.pmc_alert {
+    display: inline-block;
+    width: 540px;
+    padding: 0 16px 16px 16px;
+    background-color: #fff
+}
+
+.pmc_alert_head {
+    height: 40px;
+    padding-left: 8px;
+    line-height: 40px;
+    border-bottom: 1px solid rgba(59, 104, 184, .24);
+    overflow: hidden
+}
+
+.pmc_alert_type {
+    float: left;
+    font-size: 16px;
+    color: #4a4a4a;
+    font-weight: 700
+}
+
+.pmc_alert_close {
+    float: right;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-right: -5px;
+    background-color: transparent;
+    font-size: 16px;
+    color: #3b68b8;
+    cursor: pointer;
+    outline: 0
+}
+
+.pmc_alert_tip {
+    margin-top: 26px;
+    min-height: 40px;
+    padding: 0 68px;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 20px;
+    text-align: center
+}
+
+.pmc_alert_btns {
+    margin-top: 26px
+}
+
+.pmc_alert_btns>button {
+    float: left;
+    width: 110px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: 0
+}
+
+.pmc_alert_cancel {
+    margin-left: 119px;
+    background-color: #d8d8d8
+}
+
+.pmc_alert_certain {
+    margin-left: 50px;
+    background-color: #3b68b8
+}
+
+.pma_cash_box {
+    width: 710px
+}
+
+.pma_head {
+    height: 174px;
+    border-bottom: 2px solid #4568b2;
+    padding: 10px 0 12px 0
+}
+
+.pma_head_list {
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px
+}
+
+.pma_head_list li {
+    float: left
+}
+
+.pma_head_list li+li {
+    margin-left: 28px
+}
+
+.pma_head_list li a {
+    color: #4a4a4a
+}
+
+.pma_head_list li.active a {
+    color: #3b68b8
+}
+
+.pma_head_rmb {
+    height: 106px;
+    line-height: 106px;
+    font-size: 60px;
+    color: #444;
+    text-align: center
+}
+
+.pma_head_ope {
+    height: 20px
+}
+
+.pma_head_get_cash {
+    float: right;
+    width: 72px;
+    height: 20px;
+    margin-right: 16px;
+    padding: 0;
+    line-height: 20px;
+    font-size: 14px;
+    color: #ef636f;
+    text-align: right;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: 0;
+    background-image: url(http://static.iyingdi.cn/yingdiWeb/images/personal/withdraw.png);
+    background-repeat: no-repeat;
+    background-size: auto 14px;
+    background-position: 0 4px
+}
+
+.pma_body {
+    padding: 10px 18px 0 18px
+}
+
+.pma_body_sec1 {
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px
+}
+
+.pma_body_info>span+span {
+    margin-left: 14px
+}
+
+.pma_body_divider {
+    height: 10px;
+    width: 20px;
+    margin-right: 6px;
+    border-bottom: 1px solid #787878
+}
+
+.pma_body_info>input, .pma_body_info>span {
+    float: left
+}
+
+.pma_body_date {
+    width: 100px;
+    border: none;
+    outline: 0;
+    color: #787878;
+    font-size: 14px;
+    text-indent: 18px;
+    cursor: pointer;
+    background-image: url(http://static.iyingdi.cn/yingdiWeb/images/personal/calendar.png);
+    background-repeat: no-repeat;
+    background-size: auto 14px;
+    background-position: 0 2px
+}
+
+.pma_body_info {
+    float: left;
+    width: 644px;
+    color: #787878
+}
+
+.pma_body_ope {
+    position: relative;
+    float: right;
+    width: 28px
+}
+
+.pma_body_select {
+    width: 28px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: #3b68b8;
+    cursor: pointer;
+    outline: 0
+}
+
+.pma_body_select_list {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+    width: 72px;
+    background-color: #f7f7f7;
+    box-shadow: -1px 1px 2px 0 rgba(0, 0, 0, .25);
+    border-radius: 3px
+}
+
+.pma_body_select_list.active {
+    display: block
+}
+
+.pma_body_select_item {
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    padding: 5px 0;
+    cursor: pointer
+}
+
+.pma_body_select_item.active, .pma_body_select_item:hover {
+    color: #3b68b8
+}
+
+.pma_body_list {
+    margin-top: 15px
+}
+
+.pma_body_list .pma_body_item+.pma_body_item {
+    margin-top: 12px
+}
+
+.pma_body_left {
+    float: left;
+    width: 574px
+}
+
+.pma_body_text {
+    height: 22px;
+    line-height: 22px;
+    font-size: 16px;
+    color: #000
+}
+
+.pma_body_type {
+    color: #4a4a4a
+}
+
+.pma_body_des {
+    margin-left: 4px;
+    color: #787878
+}
+
+.pma_body_time {
+    margin-top: 4px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.pma_body_right {
+    float: right;
+    width: 100px;
+    height: 42px;
+    text-align: right;
+    font-size: 20px;
+    color: #4a4a4a;
+    line-height: 42px
+}
+
+.pmh_co_item {
+    width: 710px;
+    padding: 10px 0 14px 0;
+    border-bottom: 1px solid #e7eff6
+}
+
+.pmh_co_item:hover .phm_co_title {
+    color: #3b68b8
+}
+
+.pmh_co_item:hover .phm_co_img {
+    transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05)
+}
+
+.phm_co_sec1 {
+    height: 28px;
+    line-height: 28px
+}
+
+.phm_co_title {
+    float: left;
+    width: 550px;
+    font-size: 20px;
+    color: #4a4a4a;
+    font-weight: 700
+}
+
+.phn_co_time {
+    float: right;
+    text-align: right;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.phm_co_sec2 {
+    margin-top: 4px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.phm_co_sec3 {
+    margin-top: 10px;
+    height: 20px;
+    line-height: 20px
+}
+
+.phm_co_author {
+    float: left;
+    width: 600px;
+    font-size: 14px;
+    color: #9b9b9b
+}
+
+.phm_co_ope {
+    float: right
+}
+
+.phm_co_del {
+    float: right;
+    padding: 0;
+    margin-top: 2px;
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    color: #9b9b9b;
+    cursor: pointer
+}
+
+.pmh_co_item.pmh_co_item_img .phm_co_left {
+    float: left;
+    width: 180px;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.phm_co_img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: transform .3s ease-in-out;
+    -webkit-transition: -webkit-transform .3s ease-in-out;
+    -moz-transition: -webkit-transform .3s ease-in-out
+}
+
+.pmh_co_item.pmh_co_item_img .phm_co_sec2 {
+    height: 40px
+}
+
+.pmh_co_item.pmh_co_item_img .phm_co_right {
+    float: right;
+    width: 510px
+}
+
+.pmh_co_item.pmh_co_item_img .phm_co_title {
+    width: 350px
+}
+
+.pmh_co_item.pmh_co_item_img .phm_co_author {
+    width: 400px
+}
+
+#personal-favorites-list-articleCollect, #personal-favorites-list-forumCollect {
+    padding-top: 18px
+}
+
+.pmh_his_box {
+    width: 710px
+}
+
+.pmh_his_tip {
+    padding-left: 10px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #9b9b9b;
+    background-color: #f7f7f7
+}
+
+.pmh_his_item {
+    height: 47px;
+    line-height: 46px;
+    border-bottom: 1px solid #e7eff6
+}
+
+#personal-favorites-list-articleCollect .pmh_his_item {
+    position: relative
+}
+
+#personal-favorites-list-articleCollect .pmh_his_item_delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 14px;
+    color: #9b9b9b;
+    cursor: pointer
+}
+
+#personal-favorites-list-articleCollect .phm_his_link {
+    display: block;
+    width: 660px
+}
+
+.pmh_his_item:hover .phm_his_link {
+    color: #3b68b8
+}
+
+.phm_his_link {
+    font-size: 18px;
+    color: #424242
+}
+
+.pml_outer_box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .1)
+}
+
+.pml_help_box {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle
+}
+
+.pml_alert {
+    display: inline-block;
+    width: 590px;
+    padding-bottom: 20px;
+    background-color: #fff
+}
+
+.pml_alert_head {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #d2d7df
+}
+
+.pml_alert_type {
+    float: left;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #4a4a4a;
+    font-weight: 700
+}
+
+.pml_alert_close {
+    float: right;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    background-color: transparent;
+    font-size: 16px;
+    color: #3b68b8;
+    cursor: pointer;
+    outline: 0
+}
+
+.pml_alert_father {
+    width: 550px;
+    padding-top: 16px;
+    padding-bottom: 4px;
+    margin: 0 auto;
+    border-bottom: 1px solid #a1a1a1
+}
+
+.pml_alert_father>div {
+    float: left;
+    height: 24px;
+    margin-right: 10px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #acadad;
+    cursor: pointer
+}
+
+.pml_alert_father_item.active {
+    color: #696b6e
+}
+
+.pml_alert_children {
+    width: 550px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 10px
+}
+
+.pml_alert_children>div {
+    float: left;
+    height: 20px;
+    padding: 0 6px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #acadad;
+    border: 1px solid #a5a5a5;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+.pml_alert_result {
+    width: 550px;
+    margin: 0 auto
+}
+
+.pml_alert_result_title {
+    height: 20px;
+    line-height: 20px;
+    color: #4a4a4a;
+    text-align: left;
+    font-size: 16px
+}
+
+.pml_alert_result_show {
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.pml_alert_result_item {
+    float: left;
+    height: 24px;
+    padding: 0 6px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    line-height: 24px;
+    font-size: 16px;
+    background-color: #cac9c9;
+    color: #585a5e
+}
+
+.pml_alert_result_text {
+    float: left;
+    margin: 0
+}
+
+.pml_alert_result_close {
+    float: left;
+    margin-top: 2px;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #585a5e;
+    outline: 0
+}
+
+.pml_alert_btn_group {
+    width: 550px;
+    margin: 0 auto
+}
+
+.pml_alert_btn_send {
+    float: right;
+    width: 110px;
+    height: 36px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-color: #3b68b8;
+    outline: 0
+}
+
+.pma_body .contribute-remunerationFrame-header {
+    height: 30px;
+    line-height: 30px
+}
+
+.pma_body .pma_body-content {
+    margin-top: 15px;
+    border-top: 1px solid #3b68b8
+}
+
+.contribute-remunerationFrame-header .backPage {
+    font-size: 14px;
+    color: #3b68b8
+}
+
+.contribute-remunerationFrame-header .backPage>i {
+    display: inline-block;
+    vertical-align: text-bottom;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 22" version="1.1" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg"><line x1="5" y1="9" x2="0" y2="14" style="stroke:rgb(59,104,184);stroke-width:2"></line><line x1="0" y1="14" x2="5" y2="19" style="stroke:rgb(59,104,184);stroke-width:2"></line></svg>');
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 22px
+}
+
+.pma_body button.withdraw-money-btn {
+    background-color: #72b7a0;
+    border: 1px solid #64af95;
+    border-radius: 3px;
+    width: 88px;
+    height: 28px;
+    line-height: 26px;
+    color: #fff;
+    margin-left: 20px
+}
+
+.pma_body span.due-in-month {
+    margin-left: 20px
+}
+
+.pma_body span.total-balance {
+    margin-left: 20px
+}
+
+.pma_body i.caculator-logo {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/yingdiWeb/images/contribute/contribute-caculator.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: text-bottom
+}
+
+.pma_body .filter-month-picker {
+    border: none;
+    position: relative;
+    font-size: 16px;
+    color: #3b68b8;
+    font-family: SimHei;
+    height: 28px;
+    line-height: 29px;
+    width: 85px;
+    text-align: center;
+    cursor: pointer
+}
+
+.pma_body ul li.remuneration-details-item {
+    padding: 24px 0 10px 0;
+    position: relative
+}
+
+li.remuneration-details-item+li.remuneration-details-item {
+    border-top: 1px solid #f6f4f4
+}
+
+.pma_body ul li.remuneration-details-item>div:first-child {
+    font-size: 16px;
+    color: #787878
+}
+
+.pma_body ul li.remuneration-details-item .item-type {
+    color: #000;
+    margin-right: 10px
+}
+
+.pma_body ul li.remuneration-details-item .item-link {
+    color: #3b68b8
+}
+
+.pma_body ul li.remuneration-details-item .operate-time {
+    font-size: 14px;
+    color: #9b9b9b;
+    margin-top: 5px
+}
+
+.pma_body li.remuneration-details-item .contribute-name {
+    font-size: 20px;
+    color: #4a4a4a;
+    font-weight: 700;
+    margin-bottom: 20px
+}
+
+.pma_body li.remuneration-details-item span.amountOfMoney {
+    position: absolute;
+    font-size: 20px;
+    color: #787878;
+    top: 24px;
+    right: 0
+}
+
+.pma_body ul li.remuneration-details-item .remark {
+    background-color: #f5f5f5;
+    padding: 10px 20px
+}
+
+.pma_body ul li.remuneration-details-item .modify-info {
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    background-color: #3b68b8;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.pma_body ul li.remuneration-details-item .remark>p:first-child {
+    color: #3b68b8;
+    margin-bottom: 4px
+}
+
+.pma_body-content ul .loading-tip {
+    padding: 20px 0
+}
+
+.pma_body-content ul .loading-more {
+    padding: 20px 0;
+    color: #3b68b8;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer
+}
+
+.contribute-own-remuneration-area {
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: bottom
+}
+
+.contribute-own-remuneration-area span.contribute-reserve-balance {
+    font-size: 16px;
+    color: #444;
+    margin-right: 25px;
+    font-family: SimHei
+}
+
+.contribute-own-remuneration-area span.withdraw-money {
+    font-size: 16px;
+    color: #3b68b8;
+    margin-right: 25px;
+    font-family: SimHei
+}
+
+.contribute-own-remuneration-area span.withdraw-money>i {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/yingdiWeb/images/contribute/contribute-getMoney.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: text-bottom;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 2px
+}
+
+.contribute-own-remuneration-area span.bill-detail {
+    font-size: 16px;
+    color: #3b68b8;
+    font-family: SimHei;
+    position: relative
+}
+
+.contribute-own-remuneration-area span.bill-detail>i {
+    background-image: url(https://iplaymtg.oss-cn-beijing.aliyuncs.com/yingdiWeb/images/contribute/contribute-billDetail.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: text-bottom;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 4px
+}
+
+.contribute-own-remuneration-area span.bill-detail>.unread-count {
+    position: absolute;
+    top: -10px;
+    right: -8px;
+    background-color: #de2121;
+    color: #fff;
+    border: 1px solid #de2121;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 100%;
+    font-size: 12px;
+    text-align: center
+}
+
+.withdraw-money-modal .remind-txt {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px
+}
+
+.withdraw-money-modal .withdraw-money-item {
+    margin-bottom: 15px
+}
+
+.withdraw-money-modal .withdraw-money-item>p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 5px
+}
+
+.withdraw-money-modal .withdraw-money-item>p>span {
+    font-size: 12px;
+    color: #9b9b9b;
+    margin-left: 8px
+}
+
+.withdraw-money-modal .withdraw-money-item>input {
+    border: 1px solid #d8d8d8;
+    border-radius: 3px;
+    width: 100%;
+    height: 29px;
+    padding-left: 10px
+}
+
+.withdraw-money-modal .withdraw-money-item>input[readonly] {
+    background-color: #e6e6e6;
+    color: #9b9b9b
+}
+
+.withdraw-money-modal .remuneration-remind-txt {
+    font-size: 16px;
+    color: #000;
+    line-height: 1.7
+}
+
+.remuneration-remind-txt+.remuneration-remind-txt {
+    border-top: 1px solid #e2e2e2;
+    margin-top: 15px;
+    padding-top: 15px
+}
+
+.withdraw-money-modal .shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .78)
+}
+
+.withdraw-money-modal .second-confirmFrame {
+    margin-top: 100px;
+    margin-left: 212px;
+    background: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .35);
+    border-radius: 6px;
+    width: 423px;
+    padding: 30px
+}
+
+.withdraw-money-modal .amount-show-area {
+    margin-top: 20px;
+    margin-bottom: 25px
+}
+
+.withdraw-money-modal .amount-show-area>p {
+    font-size: 16px;
+    color: #8f8f8f;
+    margin-bottom: 12px
+}
+
+.withdraw-money-modal button.second-cancel-btn {
+    border: none;
+    background-color: #bcbcbc;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
+    border-radius: 3px;
+    width: 118px;
+    height: 30px;
+    color: #fff;
+    cursor: pointer
+}
+
+.withdraw-money-modal button.second-confirm-btn {
+    border: none;
+    background-color: #3b68b8;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
+    border-radius: 3px;
+    width: 118px;
+    height: 30px;
+    float: right;
+    color: #fff;
+    cursor: pointer
+}

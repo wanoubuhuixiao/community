@@ -11,6 +11,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,7 +23,12 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
         return userService.getUserByName(name);
     }
 
-    private boolean flag=false;//是否为管理员，默认不是
+    private void updateUser(User user) {
+        user.setUserLastLoginTime(new Date());
+        userService.updateUser(user);
+    }
+
+    private boolean flag = false;//是否为管理员，默认不是
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -39,10 +45,12 @@ public class UsernamePasswordAuthenticationProvider implements AuthenticationPro
         if (!user.getUserPassword().equals(password)) {
             throw new BadCredentialsException("密码不正确");
         }
-        if(user.getUserStatus()==0)
-        {
-            flag=true;
+        if (user.getUserStatus() == 0) {
+            flag = true;
         }
+
+        updateUser(user);
+
         UsernamePasswordAuthenticationToken result = new UsernamePasswordAuthenticationToken(username,
                 authentication.getCredentials(), listUserGrantedAuthorities(username));
         result.setDetails(authentication.getDetails());

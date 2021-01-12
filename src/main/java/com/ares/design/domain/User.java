@@ -16,6 +16,10 @@ public class User {
     private Date userLastLoginTime;
     private Integer userStatus;
 
+    public User() {
+        userLevel = 1;
+    }
+
     @Override
     public String toString() {
         return "User{" +
