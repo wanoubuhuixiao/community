@@ -176,7 +176,7 @@
                         <div class="col-sm-8">
                             <@spring.bind "userDto.userName" />
                             <input value="${user.userName}" type="text" class="form-control" id="username"
-                                   name="userName" disabled>
+                                   name="userName">
                         </div>
                     </div>
                     <div class="form-group">

@@ -6,6 +6,8 @@ import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.annotation.Resource;
 import javax.validation.Valid;
 import javax.validation.constraints.Null;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -28,8 +31,8 @@ public class UserController {
         model.put("user", getUser(1));
         model.put("users", getAllUsers());
 
-        User user = userService.getUserByName(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
-        String name = user.getUserName();
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
         System.out.println(name);
 
         //返回模板文件名称
@@ -38,14 +41,16 @@ public class UserController {
 
     @GetMapping(value = "/space")
     public String space(ModelMap model) {
-        User user = userService.getUserByName(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
         String redirect = "redirect:/space/" + user.getUserId();
         return redirect;
     }
 
     @GetMapping(value = "/space/{id}")
     public String space(@PathVariable Integer id, ModelMap model) {
-        User user = userService.getUserByName(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
         model.put("user", userService.getUserById(id));
         if (user.getUserId() == id) {
             model.put("identity", "owner");
@@ -58,7 +63,8 @@ public class UserController {
 
     @GetMapping(value = "/info")
     public String info(UserDto userDto, ModelMap model) {
-        User user = userService.getUserByName(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
         model.put("user", user);
         model.put("userDto", userDto);
         return "info";
@@ -77,11 +83,8 @@ public class UserController {
             return "redirect:/info";
         }
 
-        try {
             update(userDto);
-        } catch (DataIntegrityViolationException e) {
-            bindingResult.rejectValue("name", "error.userName", "Name already exists");
-        }
+
 
         return "redirect:/info";
     }
@@ -104,7 +107,7 @@ public class UserController {
         }
         System.out.println("4");
         try {
-            signup(user);
+            userService.signup(user);
         } catch (DataIntegrityViolationException e) {
             bindingResult.rejectValue("name", "error.userName", "Name already exists");
         }
@@ -114,21 +117,25 @@ public class UserController {
 
     @GetMapping("/signin")
     public String getAccessConfirmation() {
-        User user = userService.getUserByName(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
-        if (user == null)
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
             return "signin";
-        else
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
             return "redirect:/index";
+        }
     }
 
     @GetMapping("/signup")
     public String createSignupForm(UserDto user, Model model) {
-        User userr = userService.getUserByName(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
-        if (userr == null) {
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
             model.addAttribute("user", user);
             return "signup";
-        } else
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User userr = userService.getUserByName(name);
             return "redirect:/index";
+        }
     }
 
     private List<User> getAllUsers() {
@@ -139,19 +146,12 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    private void signup(UserDto userDto) {
-        System.out.println("execute --signup()-- method.");
-        User user = new User();
-        user.setUserName(userDto.getUserName());
-        user.setUserPassword(userDto.getUserPassword());
-        user.setUserStatus(userDto.getUserStatus());
-        userService.insertUser(user);
-    }
-
     private void update(UserDto userDto) {
         System.out.println("execute --update()-- method.");
-        User user = userService.getUserByName(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
-        user.setUserPassword(userDto.getUserPassword());
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
+        user.setUserPassword(passwordEncoder.encode(userDto.getUserPassword()));
         user.setUserEmail(userDto.getUserEmail());
         userService.updateUser(user);
     }

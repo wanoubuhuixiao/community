@@ -1,6 +1,7 @@
 package com.ares.design.security;
 
-import com.ares.design.security.provider.UsernamePasswordAuthenticationProvider;
+import com.ares.design.security.theUserDetailsService;
+import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
@@ -21,19 +23,21 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    @Resource
-    private DataSource dataSource;
-
-    // 密码加密
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    @Autowired
+    private UserDetailsService theUserDetailsService;
+
+    @Resource
+    private DataSource dataSource;
+
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .authenticationProvider(usernamePasswordAuthenticationProvider());
+        auth.userDetailsService(theUserDetailsService);
     }
 
     @Override
@@ -54,15 +58,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .rememberMe()
-                .tokenValiditySeconds(60 * 60 * 60)
                 .tokenRepository(tokenRepository())
+                .tokenValiditySeconds(60 * 60 * 60)
                 .rememberMeParameter("remember-me");
     }
 
-    @Bean
-    public UsernamePasswordAuthenticationProvider usernamePasswordAuthenticationProvider() {
-        return new UsernamePasswordAuthenticationProvider();
-    }
 
     public PersistentTokenRepository tokenRepository() {
 
