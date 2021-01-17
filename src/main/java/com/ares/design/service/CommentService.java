@@ -77,6 +77,7 @@ public interface CommentService {
      * 获得最近评论
      *
      * @param limit 查询数量
+     *
      * @return 列表
      */
     List<Comment> listRecentComment(Integer limit);

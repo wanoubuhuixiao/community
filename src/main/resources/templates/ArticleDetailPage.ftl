@@ -308,7 +308,7 @@
                                                         <input type="submit" class="btn btn-lg btn-primary btn-block"
                                                                value="点击回复"/>
                                                     </div>
-                                                    <#if comment.role==1>
+                                                    <#if comment.commentRole==1>
                                                         <a href="/deletecomment">点击删除自己的</a>
                                                     </#if>
                                                 </form>

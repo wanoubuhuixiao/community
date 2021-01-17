@@ -102,18 +102,16 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List<Comment> listRecentComment(Integer limit) {
-        List<Comment> commentList = null;
-        /*try {
-            commentList = commentDao.listRecentComment(limit);
-            for (int i = 0; i < commentList.size(); i++) {
-                Article article = articleDao.getArticleByStatusAndId(ArticleStatus.PUBLISH.getValue(), commentList.get(i).getCommentArticleId());
-                commentList.get(i).setArticle(article);
-            }
+        List<Comment> recentCommentList = null;
+
+        try {
+            recentCommentList =commentDao.listRecentComment(limit);
+            /*commentList = commentDao.listRecentComment(limit);*/
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获得最新评论失败, limit:{}, cause:{}", limit, e);
-        }*/
-        return commentList;
+        }
+        return recentCommentList;
     }
 
    /* @Override
@@ -152,7 +150,7 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> listCommentByAuthorId(Integer authorid, Integer articleid) {
         List<Comment> commentByAuthorIdList = null;
         try {
-            commentByAuthorIdList = commentDao.listCommentByAuthorId(authorid,articleid);
+            commentByAuthorIdList = commentDao.listCommentByAuthorId(authorid, articleid);
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获得子评论失败, id:{}, cause:{}", authorid, e);
