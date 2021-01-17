@@ -283,7 +283,7 @@
                                                 <div><span><a href="">${comment.commentAuthorName}:</a></span>
                                                     <span>${comment.commentContent}</span>
                                                 </div>
-                                                <div>${${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}}</div>
+                                                <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
                                                 <div>发出者的ID为：${comment.commentAuthorId}</div>
                                             <#else >
                                                 <div><span><a href="">${comment.commentAuthorName}</a>回复

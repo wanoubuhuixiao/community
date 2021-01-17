@@ -103,7 +103,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<Comment> listRecentComment(Integer limit) {
         List<Comment> commentList = null;
-        try {
+        /*try {
             commentList = commentDao.listRecentComment(limit);
             for (int i = 0; i < commentList.size(); i++) {
                 Article article = articleDao.getArticleByStatusAndId(ArticleStatus.PUBLISH.getValue(), commentList.get(i).getCommentArticleId());
@@ -112,7 +112,7 @@ public class CommentServiceImpl implements CommentService {
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获得最新评论失败, limit:{}, cause:{}", limit, e);
-        }
+        }*/
         return commentList;
     }
 
