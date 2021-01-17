@@ -187,7 +187,6 @@
                                             <input type="submit" class="btn btn-lg btn-primary btn-block"
                                                    value="发表评论"/>
                                         </div>
-
                                     </form>
                                 </div>
 

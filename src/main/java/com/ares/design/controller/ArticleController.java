@@ -27,10 +27,7 @@ public class ArticleController {
     @Autowired
     private ArticleService articleService;
     @Autowired
-    private UserService userService;
     private CommentService commentService;
-//    @Autowired
-//    private CommentService commentService;//等着那边写出来
 
     //测试热部署
 //    @RequestMapping(value="/article")
