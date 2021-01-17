@@ -150,36 +150,146 @@
                 </div>
 
                 <div class="row mt-2">
+
                     <div class="col-md-12 bgc">
+
                         <div class="new">
-                            <span><i class="el-certificate"></i>推荐图文</span>
-                            <small>New Article</small>
+                            <span><i class="el-certificate"></i>评论专区</span>
+                            <small>共有${commentListCount}条评论</small>
                         </div>
                     </div>
 
                     <div class="container mt-4">
                         <div class="row">
-                            <div class="col-md-4 bgc mb-4 ">
-                                <div class="card mb-4 box-shadow  mt-4">
-                                    <div class="showimg">
-                                        <img class="card-img-top" style=" width: 100%; display: block;" src="/images/7.jpg" data-holder-rendered="true">
+                            <div class="col-md-12 bgc">
+                                <div>
+                                    <form action="/addcomments" method="post">
+
+                                        <div class="form-group">
+                                            <label><input value="${article.articleId}" type="text" class="form-control form-control-lg" id="articleId"
+                                                          name="articleId" style="display: none" readonly="readonly"  > </label>
+                                            <label><input value="${user.userId}" type="text" class="form-control form-control-lg" id="userId"
+                                                          name="userId"  style="display: none" readonly="readonly" > </label>
+                                            <label><input value="${user.userName}" type="text" class="form-control form-control-lg" id="userName"
+                                                          name="userName"  style="display: none" readonly="readonly" > </label>
+                                            <label><input value="${user.userEmail}" type="text" class="form-control form-control-lg" id="userEmail"
+                                                          name="userEmail"  style="display: none" readonly="readonly" > </label>
+                                            <label><input value="${user.userAvatar}" type="text" class="form-control form-control-lg" id="userAvatar"
+                                                          name="userAvatar" style="display: none" readonly="readonly"  > </label>
+
+                                            <label>输入评论内容：</label>
+                                            <textarea type="text" class="form-control form-control-lg"
+                                                      id="commentcontent" placeholder="输入内容"
+                                                      name="commentcontent" required="required"
+                                                      <#--style="width: 200px;height:60px;"-->></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-lg btn-primary btn-block"
+                                                   value="发表评论"/>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+
+                                <#if commentListCount==0>
+
+                                    <div>
+                                        这里还没有评论哦。
                                     </div>
 
-                                    <div class="card-body">
-                                        <a href="#">测试图文</a>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group showtitle">
-                                                <i class="el-time"></i>2019-04-03
+                                <#else >
+
+                                    <div>
+                                        <#list commentList as comment>
+
+                                            <#if comment.commentPid==0><#--进行头像的显示-->
+                                                <div><span><a href="">${comment.commentAuthorName}</a>:</span>
+                                                    <pre>${comment.commentContent}</pre>
+                                                </div>
+                                                <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
+                                                <div>发出者的ID为：${comment.commentAuthorId}</div>
+
+                                            <#else>
+                                                <div><span><a href="">${comment.commentAuthorName}</a>回复
+                                                            ${comment.commentPname}:</span>
+                                                    <pre>${comment.commentContent}</pre>
+                                                </div>
+                                                <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
+                                                <div>发出者的ID为：${comment.commentAuthorId}</div>
+                                            </#if>
+
+                                            <div>
+                                                <#if comment.commentAuthorId==user.userId >
+                                                    <div>
+                                                        <a href="/deletecomment/${comment.commentId}/${article.articleId}">点击删除自己的评论（还没做好内部串联）</a>
+                                                    </div>
+                                                </#if>
+                                                <form action="/replycomment" method="post">
+                                                    <div class="form-group">
+                                                        <label><input value="${comment.commentId}" type="text" class="form-control form-control-lg" id="commentPid"
+                                                                      name="commentPid"  style="display: none" readonly="readonly" > </label>
+                                                        <label><input value="${comment.commentAuthorName}" type="text" class="form-control form-control-lg" id="commentPname"
+                                                                      name="commentPname"   style="display: none" readonly="readonly"> </label>
+                                                        <label><input value="${article.articleId}" type="text" class="form-control form-control-lg" id="articleId"
+                                                                      name="articleId"  style="display: none" readonly="readonly" > </label>
+                                                        <label><input value="${user.userId}" type="text" class="form-control form-control-lg" id="userId"
+                                                                      name="userId"  style="display: none" readonly="readonly" > </label>
+                                                        <label><input value="${user.userName}" type="text" class="form-control form-control-lg" id="userName"
+                                                                      name="userName"   style="display: none" readonly="readonly" > </label>
+                                                        <label><input value="${user.userEmail}" type="text" class="form-control form-control-lg" id="userEmail"
+                                                                      name="userEmail"  style="display: none" readonly="readonly"  > </label>
+                                                        <label><input value="${user.userAvatar}" type="text" class="form-control form-control-lg" id="userAvatar"
+                                                                      name="userAvatar"  style="display: none" readonly="readonly" > </label>
+                                                        <label>输入评论内容：</label>
+                                                        <textarea type="text" class="form-control form-control-lg"
+                                                                  id="replycommentcontent"
+                                                                  placeholder="回复${comment.commentAuthorId}"
+                                                                  name="replycommentcontent"
+                                                                  required="required"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="submit" class="btn btn-lg btn-primary btn-block"
+                                                               value="点击回复"/>
+                                                        <#--<p>"comment.commentAuthorId is "</p>
+                                                        <p>${comment.commentAuthorId}</p>
+                                                        <br>
+                                                        <p>"user.userId is "</p>
+                                                        <p>${user.userId}</p>
+                                                        <br>-->
+                                                    </div>
+
+
+                                                </form>
                                             </div>
-                                            <small class="text-muted"><i class="el-fire"></i>9 mins</small>
-                                        </div>
+
+                                        </#list>
                                     </div>
+                                </#if>
+                                <#--<div class="col-md-4 bgc mb-4 ">-->
+                                <#--<div class="card mb-4 box-shadow  mt-4">-->
+                                <#--<div class="showimg">
+                                    <img class="card-img-top" style=" width: 100%; display: block;"
+                                         src="/images/7.jpg" data-holder-rendered="true">
                                 </div>
+
+                                <div class="card-body">
+                                    <a href="#">测试图文</a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group showtitle">
+                                            <i class="el-time"></i>2019-04-03
+                                        </div>
+                                        <small class="text-muted"><i class="el-fire"></i>9 mins</small>
+                                    </div>
+                                </div>-->
                             </div>
-                            <div class="col-md-4 bgc mb-4">
+                            <#--</div>-->
+
+                            <#--<div class="col-md-4 bgc mb-4">
                                 <div class="card mb-4 box-shadow mt-4">
                                     <div class="showimg showtitle">
-                                        <img class="card-img-top" style=" width: 100%; display: block;" src="/images/8.jpg" data-holder-rendered="true">
+                                        <img class="card-img-top" style=" width: 100%; display: block;"
+                                             src="/images/8.jpg" data-holder-rendered="true">
                                     </div>
                                     <div class="card-body">
                                         <a href="#">测试图文</a>
@@ -195,7 +305,8 @@
                             <div class="col-md-4 bgc mb-4">
                                 <div class="card  box-shadow mt-4">
                                     <div class="showimg">
-                                        <img class="card-img-top" style=" width: 100%; display: block;" src="/images/9.jpg" data-holder-rendered="true">
+                                        <img class="card-img-top" style=" width: 100%; display: block;"
+                                             src="/images/9.jpg" data-holder-rendered="true">
                                     </div>
                                     <div class="card-body">
                                         <a href="#">测试图文</a>
@@ -207,7 +318,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
 
 
                         </div>
@@ -736,6 +847,9 @@
 
     }
 </script>
+
+
+
 <#--<li><a id="likea" title="点赞" href="#"><i class="el-heart"></i><i id="likei">${article.articleLikeCount}</i></a></li>-->
 <#--<li><a title="浏览数"><i class="el-eye-open"></i><i id="viewi">${article.articleViewCount}</i></a></li>-->
 <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>

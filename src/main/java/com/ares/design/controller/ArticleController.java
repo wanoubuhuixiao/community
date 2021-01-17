@@ -1,8 +1,14 @@
 package com.ares.design.controller;
 
 import com.ares.design.domain.Article;
+import com.ares.design.domain.Comment;
+import com.ares.design.domain.User;
 import com.ares.design.service.ArticleService;
+import com.ares.design.service.CommentService;
+import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +22,11 @@ import java.util.List;
 @Controller
 public class ArticleController {
     @Autowired
+    private UserService userService;
+    @Autowired
     private ArticleService articleService;
+    @Autowired
+    private CommentService commentService;
 //    @Autowired
 //    private CommentService commentService;//等着那边写出来
 
@@ -38,6 +48,17 @@ public class ArticleController {
             System.out.println("article为null");
             return "Error/404";
         }
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
+        model.addAttribute("user",user);
+        System.out.println("user.getUserId is "+user.getUserId());
+        List<Comment> commentList =null;
+        commentList= commentService.listCommentByArticleId(articleId);
+        model.addAttribute("commentList", commentList);
+        int commentListCount = 0;
+        System.out.println("commentList's size is "+commentList.size());
+        commentListCount = commentList.size();
+        model.addAttribute("commentListCount", commentListCount);
 
         //文章信息放进model
         model.addAttribute("article", article);
