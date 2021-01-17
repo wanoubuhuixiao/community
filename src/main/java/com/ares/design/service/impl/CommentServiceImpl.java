@@ -61,6 +61,10 @@ public class CommentServiceImpl implements CommentService {
         List<Comment> commentList = null;
         try {
             commentList = commentDao.listComment();
+            for (int count = 0; count < commentList.size(); count++) {
+                Article article = articleDao.getArticleById(commentList.get(count).getCommentArticleId());
+                commentList.get(count).setArticle(article);
+            }
         } catch (Exception e) {
             e.printStackTrace();
             log.error("获得评论列表失败：cause:{}", e);
@@ -105,7 +109,11 @@ public class CommentServiceImpl implements CommentService {
         List<Comment> recentCommentList = null;
 
         try {
-            recentCommentList =commentDao.listRecentComment(limit);
+            recentCommentList = commentDao.listRecentComment(limit);
+            for (int count = 0; count < recentCommentList.size(); count++) {
+                Article article = articleDao.getArticleById(recentCommentList.get(count).getCommentArticleId());
+                recentCommentList.get(count).setArticle(article);
+            }
             /*commentList = commentDao.listRecentComment(limit);*/
         } catch (Exception e) {
             e.printStackTrace();
