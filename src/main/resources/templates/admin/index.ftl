@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>小黑盒后台</title>
+    <title>小黑盒-后台</title>
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">
     <link rel="stylesheet" href="/css/back.css">
     <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
@@ -246,7 +246,7 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
 <#--                    <img src="${sessionScope.user.userAvatar}" class="layui-nav-img">-->
-                    admin
+                    ${user.userName}
                 </a>
 <#--                <dl class="layui-nav-child">-->
 <#--                    <dd><a href="/admin/user/profile">基本资料</a></dd>-->
