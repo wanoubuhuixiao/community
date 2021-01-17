@@ -45,6 +45,7 @@
         article_update_time
     </sql>
 
+<!--    没有article_content-->
     <sql id="Column1">
         article.article_id, article.article_user_id, article.article_title,
         article.article_view_count, article.article_comment_count,
@@ -52,6 +53,12 @@
         article.article_summary
     </sql>
 
+<!--    没有summary-->
+    <sql id="Column2">
+        article.article_id, article.article_user_id, article.article_title,
+        article.article_view_count, article.article_comment_count,
+        article.article_like_count, article.article_create_time, article.article_update_time
+    </sql>
     <!-- 获得查看数最多的文章 -->
     <select id="getArticleListByViewCount" resultType="com.ares.design.domain.Article" parameterType="Integer">
         select <include refid="Base_Column_List"/>
@@ -112,7 +119,7 @@
         limit #{limit}
     </select>
 
-    <!-- 分类 -->
+    <!-- 分类 根据类型id和需要的文章数量获得ArticleList -->
     <select id="findArticleByCategoryId" resultType="com.ares.design.domain.Article" >
 <!--            parameterType="Integer">-->
         SELECT
@@ -120,8 +127,55 @@
         FROM article, article_category_ref
         WHERE
             article.article_id = article_category_ref.article_id AND
-            article_category_ref.category_id = #{catgeoyrId}
+            article_category_ref.category_id = #{categoryId}
         LIMIT #{limit}
     </select>
 
+    <!-- 根据用户id获得ArticleList -->
+    <select id="findArticleByUserId" resultType="com.ares.design.domain.Article" >
+        <!--            parameterType="Integer">-->
+        SELECT
+        <include refid="Column1"/>
+        FROM article
+        WHERE article_user_id = #{userId}
+        LIMIT #{limit}
+    </select>
+
+<!--    最近文章-->
+    <select id="getRecentArticle" resultType="com.ares.design.domain.Article" parameterType="Integer">
+        SELECT
+        <include refid="Column2"/>
+        FROM
+        article
+        ORDER BY article_create_time DESC
+        LIMIT #{limit}
+    </select>
+
+    <!--获取文章总数-->
+    <select id="countArticle" resultType="Integer">
+        SELECT COUNT(*)
+        FROM article
+    </select>
+
+    <!--获得所有文章-->
+    <select id="AllArticle" resultType="com.ares.design.domain.Article">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM article
+    </select>
+
+    <!--通过分页查询文章-->
+    <select id="pageArticle" resultType="com.ares.design.domain.Article">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM article
+        limit #{pageIndex},#{pageSize}
+    </select>
+
+<!--    用户写的文章数-->
+    <select id="countArticleByUser" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*)
+        FROM article
+        WHERE article_user_id=#{id}
+    </select>
 </mapper>

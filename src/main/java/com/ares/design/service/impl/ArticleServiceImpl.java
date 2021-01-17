@@ -50,12 +50,39 @@ public class ArticleServiceImpl implements ArticleService {
         return articleDao.listArticleByCommentCount(limit);
     }
     //文章分类
-    public List<Article> findArticleByCategoryId(Integer catgeoyrId, Integer limit){
-        return articleDao.findArticleByCategoryId(catgeoyrId, limit);
+    public List<Article> findArticleByCategoryId(Integer categoryId, Integer limit){
+        return articleDao.findArticleByCategoryId(categoryId, limit);
     }
 
     //获取评论数最多的limit篇文章给首页显示
     public List<Article> getArticleListForIndex(Integer limit){
         return articleDao.listArticleByCommentCount(limit);
+    }
+
+    //获取“我的文章”
+    public List<Article> findArticleByUserId (Integer userId, Integer limit){
+        return articleDao.findArticleByUserId(userId,limit);
+    }
+
+    public List<Article> getRecentArticle (Integer limit){
+        return articleDao.getRecentArticle(limit);
+    }
+
+    public Integer countArticle(){
+        return articleDao.countArticle();
+    }
+
+    public List<Article> AllArticle(){
+        return articleDao.AllArticle();
+    }
+
+//    public PageInfo<Article> pageArticle(Integer pageIndex,
+//                                         Integer pageSize,
+//                                         HashMap<String, Object> criteria){
+//
+//    }
+
+    public Integer countArticleByUser(Integer userid){
+        return articleDao.countArticleByUser(userid);
     }
 }

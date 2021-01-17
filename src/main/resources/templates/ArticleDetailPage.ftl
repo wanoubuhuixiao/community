@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="/css/font-icon.css">
     <link rel="stylesheet" href="/css/bootstrap-icons.css">
-    <#--用于进行评论的一些查找-->
-    <link rel="stylesheet" href="/css/page.css">
     <link rel="stylesheet" href="https://cdn.max-c.com/version_1_5_58/common.12a94361288ce402f996.css">
 
     <link rel="shortcut icon" sizes="48x48" href="https://cdn.max-c.com/logo/heybox_bbs_128_128.png">
@@ -27,11 +25,10 @@
 <nav class="navbar navbar-expand-lg navbar-light nav-color-nav  navbar-lk text-dark">
     <div class="container">
         <div class="logo-wrapper" data-v-8f2efb28="">
-            <div class="logo" data-v-7d8b0b55="" data-v-8f2efb28="">
-                <svg version="1.1" id="图层_1"
-                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     viewBox="0 0 84 30" xml:space="preserve" style="enable-background:new 0 0 84 30;"
-                     data-v-7d8b0b55="">
+            <div class="logo" data-v-7d8b0b55="" data-v-8f2efb28=""><svg version="1.1" id="图层_1"
+                                                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                                         viewBox="0 0 84 30" xml:space="preserve" style="enable-background:new 0 0 84 30;"
+                                                                         data-v-7d8b0b55="">
                         <g id="Page-1" data-v-7d8b0b55="">
                             <g id="Group-4" transform="translate(-35.000000, -103.000000)" data-v-7d8b0b55="">
                                 <g id="小黑盒-白-copy-3" transform="translate(35.000000, 103.000000)" data-v-7d8b0b55="">
@@ -69,8 +66,7 @@
                                 </g>
                             </g>
                         </g>
-                    </svg>
-            </div>
+                    </svg></div>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nabmune"
                 aria-controls="nabmune" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,15 +119,10 @@
                     <div class="col-md-12 bgc">
                         <div class="article-title">
                             <ul>
-                                <li><a title="发表时间"><i
-                                                class="el-time"></i>${article.articleCreateTime?string("yyyy-MM-dd")}
-                                    </a></li>
-                                <li class="d-none d-sm-none d-md-none d-lg-block"><a title="作者"><i
-                                                class="el-user"></i>${article.user.userName}</a></li>
-                                <li><a id="likea" title="点赞" href="javascript:;"><i class="el-heart"></i><i
-                                                id="likei">${article.articleLikeCount}</i></a></li>
-                                <li><a title="浏览数"><i class="el-eye-open"></i><i
-                                                id="viewi">${article.articleViewCount}</i></a></li>
+                                <li><a title="发表时间"><i class="el-time"></i>${article.articleCreateTime?string("yyyy-MM-dd")}</a></li>
+                                <li class="d-none d-sm-none d-md-none d-lg-block"><a title="作者"><i class="el-user"></i>${article.user.userName}</a></li>
+                                <li><a id="likea" title="点赞" href="javascript:;"><i class="el-heart"></i><i id="likei">${article.articleLikeCount}</i></a></li>
+                                <li><a title="浏览数"><i class="el-eye-open"></i><i id="viewi">${article.articleViewCount}</i></a></li>
 
                             </ul>
                         </div>
@@ -158,189 +149,37 @@
                     </div>
                 </div>
 
-                <#--                这些是评论的部分-->
-                <#-- <div class="row mt-2">
-                     <div class="col-md-12 bgc">
-                         <div class="new">
-                             <span><i class="el-certificate"></i>查看评论</span>
-                             <small>共有xxx条评论</small>
-                         </div>
-                     </div>
-
-                     <div class="container mt-4">
-                         <div class="row">
-                             <div class="col-md-4 bgc mb-4 ">
-                                 <div class="card mb-4 box-shadow  mt-4">
-                                     <div class="showimg">
-                                         <img class="card-img-top" style=" width: 100%; display: block;"
-                                              src="/images/7.jpg" data-holder-rendered="true">
-                                     </div>
-
-                                     <div class="card-body">
-                                         <a href="#">测试图文</a>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <div class="btn-group showtitle">
-                                                 <i class="el-time"></i>2019-04-03
-                                             </div>
-                                             <small class="text-muted"><i class="el-fire"></i>9 mins</small>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-md-4 bgc mb-4">
-                                 <div class="card mb-4 box-shadow mt-4">
-                                     <div class="showimg showtitle">
-                                         <img class="card-img-top" style=" width: 100%; display: block;"
-                                              src="/images/8.jpg" data-holder-rendered="true">
-                                     </div>
-                                     <div class="card-body">
-                                         <a href="#">测试图文</a>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <div class="btn-group showtitle">
-                                                 <i class="el-time"></i>2019-04-03
-                                             </div>
-                                             <small class="text-muted">9 mins</small>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                             <div class="col-md-4 bgc mb-4">
-                                 <div class="card  box-shadow mt-4">
-                                     <div class="showimg">
-                                         <img class="card-img-top" style=" width: 100%; display: block;"
-                                              src="/images/9.jpg" data-holder-rendered="true">
-                                     </div>
-                                     <div class="card-body">
-                                         <a href="#">测试图文</a>
-                                         <div class="d-flex justify-content-between align-items-center">
-                                             <div class="btn-group showtitle">
-                                                 <i class="el-time"></i>2019-04-03
-                                             </div>
-                                             <small class="text-muted">9 mins</small>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-
-
-                         </div>
-                     </div>
-
-
-                 </div>
-
-
-             </div>
-         </div>-->
-                <#--        以上是评论的部分-->
-                <div class="col-md-12 bgc">
-                    <div class="new">
-                        点击查看评论
-                    </div>
-                </div>
-
-
-                <#--以下是普通的推荐内容链接，我想在添加个评论模块在上面可以进行发送评论、显示评论，删除评论，回复评论等功能-->
                 <div class="row mt-2">
                     <div class="col-md-12 bgc">
-
                         <div class="new">
-                            <span><i class="el-certificate"></i>评论专区</span>
-                            <small>共有${commentListCount}条评论</small>
+                            <span><i class="el-certificate"></i>推荐图文</span>
+                            <small>New Article</small>
                         </div>
                     </div>
 
                     <div class="container mt-4">
                         <div class="row">
-                            <div class="col-md-12 bgc">
-                                <div>
-                                    <form action="/addcomments" method="post">
-                                        <div class="form-group">
-                                            <label>输入评论内容：</label>
-                                            <textarea type="text" class="form-control form-control-lg"
-                                                      id="commentcontent" placeholder=""
-                                                      name="commentcontent" required="required"
-                                                      style="width: 200px;height:60px;">
-                                            </textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-lg btn-primary btn-block"
-                                                   value="发表评论"/>
-                                        </div>
-
-                                    </form>
-                                </div>
-
-
-                                <#if commentListCount==0>
-                                    <div>
-                                        这里还没有评论哦。
+                            <div class="col-md-4 bgc mb-4 ">
+                                <div class="card mb-4 box-shadow  mt-4">
+                                    <div class="showimg">
+                                        <img class="card-img-top" style=" width: 100%; display: block;" src="/images/7.jpg" data-holder-rendered="true">
                                     </div>
-                                <#else >
-                                    <div>
-                                        <#list commentList as comment>
-                                            <#if comment.commentPid??><#--进行头像的显示-->
-                                                <div><span><a href="">${comment.commentAuthorName}:</a></span>
-                                                    <span>${comment.commentContent}</span>
-                                                </div>
-                                                <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
-                                                <div>发出者的ID为：${comment.commentAuthorId}</div>
-                                            <#else >
-                                                <div><span><a href="">${comment.commentAuthorName}</a>回复
-                                                            ${comment.commentPname}:</span>
-                                                    <span>${comment.commentContent}</span>
-                                                </div>
-                                                <div>${comment.commentCreateTime}</div>
-                                                <div>发出者的ID为：${comment.commentAuthorId}</div>
-                                            </#if>
-                                            <div>
-                                                <form action="reply" method="post">
-                                                    <div class="form-group">
-                                                        <label>输入评论内容：</label>
-                                                        <textarea type="text" class="form-control form-control-lg"
-                                                                  id="replycommentcontent"
-                                                                  placeholder="回复${comment.commentPname}"
-                                                                  name="replycommentcontent" required="required"
-                                                                  style="width: 200px;height:60px;">
-                                                        </textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="submit" class="btn btn-lg btn-primary btn-block"
-                                                               value="点击回复"/>
-                                                    </div>
-                                                    <#if comment.commentRole==1>
-                                                        <a href="/deletecomment">点击删除自己的</a>
-                                                    </#if>
-                                                </form>
+
+                                    <div class="card-body">
+                                        <a href="#">测试图文</a>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group showtitle">
+                                                <i class="el-time"></i>2019-04-03
                                             </div>
-                                        </#list>
-                                    </div>
-                                </#if>
-                                <#--<div class="col-md-4 bgc mb-4 ">-->
-                                <#--<div class="card mb-4 box-shadow  mt-4">-->
-                                <#--<div class="showimg">
-                                    <img class="card-img-top" style=" width: 100%; display: block;"
-                                         src="/images/7.jpg" data-holder-rendered="true">
-                                </div>
-
-                                <div class="card-body">
-                                    <a href="#">测试图文</a>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group showtitle">
-                                            <i class="el-time"></i>2019-04-03
+                                            <small class="text-muted"><i class="el-fire"></i>9 mins</small>
                                         </div>
-                                        <small class="text-muted"><i class="el-fire"></i>9 mins</small>
                                     </div>
-                                </div>-->
-                                【以下是评论细节（可被删除）】
+                                </div>
                             </div>
-                            <#--</div>-->
-
-                            <#--<div class="col-md-4 bgc mb-4">
+                            <div class="col-md-4 bgc mb-4">
                                 <div class="card mb-4 box-shadow mt-4">
                                     <div class="showimg showtitle">
-                                        <img class="card-img-top" style=" width: 100%; display: block;"
-                                             src="/images/8.jpg" data-holder-rendered="true">
+                                        <img class="card-img-top" style=" width: 100%; display: block;" src="/images/8.jpg" data-holder-rendered="true">
                                     </div>
                                     <div class="card-body">
                                         <a href="#">测试图文</a>
@@ -356,8 +195,7 @@
                             <div class="col-md-4 bgc mb-4">
                                 <div class="card  box-shadow mt-4">
                                     <div class="showimg">
-                                        <img class="card-img-top" style=" width: 100%; display: block;"
-                                             src="/images/9.jpg" data-holder-rendered="true">
+                                        <img class="card-img-top" style=" width: 100%; display: block;" src="/images/9.jpg" data-holder-rendered="true">
                                     </div>
                                     <div class="card-body">
                                         <a href="#">测试图文</a>
@@ -369,7 +207,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
 
 
                         </div>
@@ -381,7 +219,7 @@
 
             </div>
         </div>
-        <#--以上是下半部分的内容-->
+
         <!--右边-->
         <div class="col-md-4">
             <div class="container">
@@ -401,14 +239,14 @@
                                 <li class="rss"><a href="#">Rss<span></span></a></li>
                             </ul><!--/ .social-icons-->
                         </div>
-                        <#--                        <div class="fxtp">-->
-                        <#--                            <ul>-->
-                        <#--                                <li><a href=""></a><span>微博</span></li>-->
-                        <#--                                <li><a href=""></a></li>-->
-                        <#--                                <li><a href=""></a></li>-->
-                        <#--                                <li><a href=""></a></li>-->
-                        <#--                            </ul>-->
-                        <#--                        </div>-->
+<#--                        <div class="fxtp">-->
+<#--                            <ul>-->
+<#--                                <li><a href=""></a><span>微博</span></li>-->
+<#--                                <li><a href=""></a></li>-->
+<#--                                <li><a href=""></a></li>-->
+<#--                                <li><a href=""></a></li>-->
+<#--                            </ul>-->
+<#--                        </div>-->
 
                     </div>
                 </div>
@@ -454,39 +292,39 @@
                 </div>
 
 
-                <#--                <div class="row bgc mt-3">-->
-                <#--                    <!--<form>&ndash;&gt;-->
-                <#--&lt;#&ndash;                    <div class="search">&ndash;&gt;-->
+<#--                <div class="row bgc mt-3">-->
+<#--                    <!--<form>&ndash;&gt;-->
+<#--&lt;#&ndash;                    <div class="search">&ndash;&gt;-->
 
-                <#--&lt;#&ndash;                        <input type="text" class="search-input" placeholder="First name">&ndash;&gt;-->
+<#--&lt;#&ndash;                        <input type="text" class="search-input" placeholder="First name">&ndash;&gt;-->
 
-                <#--&lt;#&ndash;                        <input class="search-submit" value=" " type="submit">&ndash;&gt;-->
-                <#--&lt;#&ndash;                        <i class="el-search"></i>&ndash;&gt;-->
-                <#--&lt;#&ndash;                    </div>&ndash;&gt;-->
+<#--&lt;#&ndash;                        <input class="search-submit" value=" " type="submit">&ndash;&gt;-->
+<#--&lt;#&ndash;                        <i class="el-search"></i>&ndash;&gt;-->
+<#--&lt;#&ndash;                    </div>&ndash;&gt;-->
 
-                <#--                    <!--</form>&ndash;&gt;-->
-                <#--                </div>-->
+<#--                    <!--</form>&ndash;&gt;-->
+<#--                </div>-->
 
 
-                <#--                <div class="row bgc mt-3">-->
-                <#--                    <div class="new new-right">-->
-                <#--                        <span><i class="el-headphones"></i>说说</span>-->
-                <#--                        <small>New Article</small>-->
-                <#--                    </div>-->
-                <#--                    <div class="col-md-12 ">-->
-                <#--                        <div class="fxtp">-->
-                <#--                            <ul>-->
-                <#--                                <li><a href=""></a><span>微博</span></li>-->
-                <#--                                <li><a href=""></a></li>-->
-                <#--                                <li><a href=""></a></li>-->
-                <#--                                <li><a href=""></a></li>-->
-                <#--                            </ul>-->
-                <#--                        </div>-->
+<#--                <div class="row bgc mt-3">-->
+<#--                    <div class="new new-right">-->
+<#--                        <span><i class="el-headphones"></i>说说</span>-->
+<#--                        <small>New Article</small>-->
+<#--                    </div>-->
+<#--                    <div class="col-md-12 ">-->
+<#--                        <div class="fxtp">-->
+<#--                            <ul>-->
+<#--                                <li><a href=""></a><span>微博</span></li>-->
+<#--                                <li><a href=""></a></li>-->
+<#--                                <li><a href=""></a></li>-->
+<#--                                <li><a href=""></a></li>-->
+<#--                            </ul>-->
+<#--                        </div>-->
 
-                <#--                    </div>-->
-                <#--                </div>-->
+<#--                    </div>-->
+<#--                </div>-->
 
-                <#--这里是评论要添加的地方-->
+
                 <div class="row bgc mt-4">
                     <div class="new new-right">
 
@@ -503,9 +341,7 @@
                                 <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
                                 <ul>
                                     <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
-                                                href="/index/article/index/id/32.html" title="查看分类"><i
-                                                    class="el-fire"></i>5</a></li>
+                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="/index/article/index/id/32.html" title="查看分类"><i class="el-fire"></i>5</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -518,9 +354,7 @@
                                 <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
                                 <ul>
                                     <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
-                                                href="/index/article/index/id/32.html" title="查看分类"><i
-                                                    class="el-fire"></i>5</a></li>
+                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="/index/article/index/id/32.html" title="查看分类"><i class="el-fire"></i>5</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -533,9 +367,7 @@
                                 <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
                                 <ul>
                                     <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
-                                                href="/index/article/index/id/32.html" title="查看分类"><i
-                                                    class="el-fire"></i>5</a></li>
+                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="/index/article/index/id/32.html" title="查看分类"><i class="el-fire"></i>5</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -548,15 +380,12 @@
                 <div class="row bgc mt-5">
 
                     <div class="nav nav-tabs tab-atr" id="box" role="tablist">
-                        <a class="nav-item  active actives" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                           role="tab" aria-controls="nav-home" aria-selected="true">文章互动</a>
-                        <a class="nav-item " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                           aria-controls="nav-profile" aria-selected="false">文章排行</a>
+                        <a class="nav-item  active actives" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">文章互动</a>
+                        <a class="nav-item " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">文章排行</a>
                     </div>
 
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                             aria-labelledby="nav-home-tab">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                             <ul class="hd-ul">
                                 <li>
                                     <div class="art-hd-list-left">
@@ -774,6 +603,7 @@
                 </div>
 
 
+
             </div>
         </div>
     </div>
@@ -848,10 +678,9 @@
                     <p class="copy-right-1" data-v-0c3930dc="">清枫（北京）科技有限公司 2015-2020 © All Rights Reserved.</p>
                     <p class="copy-right-2" data-v-0c3930dc=""><a target="_blank"
                                                                   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502034222"
-                                                                  data-v-0c3930dc="" one-link-mark="yes">京公网安备11010502034222号</a>
-                        | <a target="_blank"
-                             href="https://beian.miit.gov.cn/" data-v-0c3930dc=""
-                             one-link-mark="yes">京ICP备15018522号-6</a> | 京网文[2017]8080-895号 | 京ICP证B2-20180020</p>
+                                                                  data-v-0c3930dc="" one-link-mark="yes">京公网安备11010502034222号</a> | <a target="_blank"
+                                                                                                                                       href="https://beian.miit.gov.cn/" data-v-0c3930dc=""
+                                                                                                                                       one-link-mark="yes">京ICP备15018522号-6</a> | 京网文[2017]8080-895号 | 京ICP证B2-20180020</p>
                     <p class="copy-right-2" data-v-0c3930dc="">违法和不良信息举报电话：010-84158300　举报邮箱：jubao@xiaoheihe.cn
                     </p>
                 </div>
@@ -884,22 +713,22 @@
 
 </script>
 <script>
-    window.onload = function () {
-        var art_list = document.getElementById('box');
-        var art_list_a = art_list.getElementsByTagName('a');
+    window.onload=function () {
+        var art_list=document.getElementById('box');
+        var art_list_a=art_list.getElementsByTagName('a');
 
-        for (var i = 0; i < art_list_a.length; i++) {
+        for (var i=0;i<art_list_a.length;i++){
 
             var aclick = art_list_a[i];
 
-            aclick.onclick = function () {
+            aclick.onclick=function(){
 
-                for (var j = 0; j < art_list_a.length; j++) {
-                    art_list_a[j].className = '';
-                    art_list_a[j].style.color = '#000000';
+                for (var j=0;j<art_list_a.length;j++){
+                    art_list_a[j].className='';
+                    art_list_a[j].style.color='#000000';
                 }
-                this.className = 'actives';
-                this.style.color = '#ffffff';
+                this.className='actives';
+                this.style.color='#ffffff';
             };
 
 
@@ -913,55 +742,56 @@
 <script src="/js/jquery.cookie.js" type="text/javascript"></script>
 <script type="text/javascript">
     function increaseViewCount() {
-        if ($.cookie("viewId") != ${article.articleId}) {
+        if($.cookie("viewId")!=${article.articleId})
+        {
             $.ajax({
-                async: false,
-                type: "POST",
-                url: "${springMacroRequestContext.contextPath}/article/view",
+                async:false,
+                type:"POST",
+                url:"${springMacroRequestContext.contextPath}/article/view",
                 // headers: { "X-CSRFtoken":$.cookie("csrftoken")},
-                data: {articleId: ${article.articleId}},
-                dataType: "text",
-                success: function (data) {
+                data: {articleId:${article.articleId}},
+                dataType:"text",
+                success:function (data){
                     //alert(data);
                     $("#viewi").html(data);
                     $.cookie(
                         "viewId",
                         ${article.articleId},//写入cookie
                         {
-                            "path": "/", //cookie的有效路径
+                            "path":"/", //cookie的有效路径
                         }
                     );
                 },
-                error: function () {
+                error:function (){
                     //alert("获取数据出错!");
                 },
             });
         }
     }
-
     increaseViewCount();
 
-    $("#likea").click(function () {
-        if ($.cookie("likeId") != ${article.articleId}) {
+    $("#likea").click(function (){
+        if($.cookie("likeId")!=${article.articleId}){
             $.ajax({
                 async: false,
-                type: "POST",
-                url: "${springMacroRequestContext.contextPath}/article/like",
+                type:"POST",
+                url:"${springMacroRequestContext.contextPath}/article/like",
                 // headers: { "X-CSRFtoken":$.cookie("csrftoken")},
-                data: {articleId: ${article.articleId}},
-                dataType: "text",
-                success: function (data) {
+                data: {articleId:${article.articleId}},
+                dataType:"text",
+                success:function (data) {
                     //alert(data);
                     $("#likei").html(data);
                     $.cookie(
                         "likeId",
                         ${article.articleId},//写入cookie
                         {
-                            "path": "/", //cookie的有效路径
+                            "path":"/", //cookie的有效路径
                         }
                     );
                 },
-                error: function () {
+                error:function()
+                {
                     //alert("获取数据出错!");
                 },
             });

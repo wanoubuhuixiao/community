@@ -2,6 +2,7 @@ package com.ares.design.dao;
 
 import com.ares.design.domain.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

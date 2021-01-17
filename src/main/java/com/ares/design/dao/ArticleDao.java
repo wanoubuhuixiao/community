@@ -17,6 +17,14 @@ public interface ArticleDao {
     Integer deleteById(Integer articleId);
     List<Article> listRandomArticle(Integer limit);
     List<Article> listArticleByCommentCount(Integer limit);
-    List<Article> findArticleByCategoryId(@Param("categoryId") Integer catgeoyrId, @Param("limit") Integer limit);
+    List<Article> findArticleByCategoryId(@Param("categoryId") Integer categoryId, @Param("limit") Integer limit);
+    List<Article> findArticleByUserId(@Param("userId") Integer userId, @Param("limit") Integer limit);
+
+    List<Article> getRecentArticle(Integer limit);
+    Integer countArticle();
+    List<Article> AllArticle();
+    List<Article> pageArticle(@Param(value = "pageIndex") Integer pageIndex,
+                              @Param(value = "pageSize") Integer pageSize);
+    Integer countArticleByUser(Integer userid);
 
 }
