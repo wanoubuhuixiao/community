@@ -31,7 +31,8 @@ public class theUserDetailsService implements UserDetailsService {
                 logger.error("Not Found name " + username);
                 throw new UsernameNotFoundException("Not Found name " + username);
             }
-            Collection<GrantedAuthority> authList = getAuthorities();
+            int role=user.getUserStatus();
+            Collection<GrantedAuthority> authList = getAuthorities(role);
             userDetails = new org.springframework.security.core.userdetails.User(
                     user.getUserName(), user.getUserPassword(), true, true, true, true, authList);
             user.setUserLastLoginTime(new Date());
@@ -42,10 +43,12 @@ public class theUserDetailsService implements UserDetailsService {
         return userDetails;
     }
 
-    private Collection<GrantedAuthority> getAuthorities() {
+    private Collection<GrantedAuthority> getAuthorities(int role) {
         List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
-        authList.add(new SimpleGrantedAuthority("ROLE_USER"));
-        authList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+        if(role==1)
+                authList.add(new SimpleGrantedAuthority("ROLE_USER"));
+        else if(role==0)
+            authList.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         return authList;
     }
 }

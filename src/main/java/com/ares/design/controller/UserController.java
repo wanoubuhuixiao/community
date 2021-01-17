@@ -5,6 +5,7 @@ import com.ares.design.dto.UserDto;
 import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,6 +27,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Secured("ROLE_USER")
     @RequestMapping(value = "/test")
     public String test(ModelMap model) {
         model.put("user", getUser(1));
