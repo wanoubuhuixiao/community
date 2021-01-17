@@ -2,6 +2,7 @@ package com.ares.design.controller;
 
 import com.ares.design.domain.User;
 import com.ares.design.dto.UserDto;
+import com.ares.design.service.ArticleService;
 import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -26,6 +27,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private ArticleService articleService;
 
     @Secured("ROLE_USER")
     @RequestMapping(value = "/test")
@@ -53,6 +56,7 @@ public class UserController {
     public String space(@PathVariable Integer id, ModelMap model) {
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
+        model.put("articleCount", articleService.countArticleByUser(id));
         model.put("user", userService.getUserById(id));
         if (user.getUserId() == id) {
             model.put("identity", "owner");

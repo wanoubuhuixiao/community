@@ -142,9 +142,9 @@
             </div>
             <div class="auth-info">
                 <ul>
+                    <li><strong>${articleCount}</strong><span>发表</span></li>
                     <li><strong>666</strong><span>关注</span></li>
                     <li><strong>666</strong><span>粉丝</span></li>
-                    <li><strong>666</strong><span>点赞</span></li>
                 </ul>
             </div>
 
