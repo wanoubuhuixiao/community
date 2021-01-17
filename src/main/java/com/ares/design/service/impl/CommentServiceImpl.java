@@ -1,6 +1,8 @@
 package com.ares.design.service.impl;
 
 
+import com.ares.design.dao.ArticleDao;
+import com.ares.design.domain.Article;
 import com.ares.design.domain.Comment;
 import com.ares.design.service.CommentService;
 import com.ares.design.dao.CommentDao;
@@ -16,6 +18,8 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private CommentDao commentDao;
+    @Autowired
+    private ArticleDao articleDao;
 
 
     @Override
@@ -96,6 +100,22 @@ public class CommentServiceImpl implements CommentService {
         return commentCount;
     }
 
+    @Override
+    public List<Comment> listRecentComment(Integer limit) {
+        List<Comment> commentList = null;
+        try {
+            commentList = commentDao.listRecentComment(limit);
+            for (int i = 0; i < commentList.size(); i++) {
+                Article article = articleDao.getArticleByStatusAndId(ArticleStatus.PUBLISH.getValue(), commentList.get(i).getCommentArticleId());
+                commentList.get(i).setArticle(article);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获得最新评论失败, limit:{}, cause:{}", limit, e);
+        }
+        return commentList;
+    }
+
    /* @Override
     public List<Comment> listRecentComment(Integer limit) {
         List<Comment> commentList = null;
@@ -127,4 +147,46 @@ public class CommentServiceImpl implements CommentService {
         }
         return childCommentList;
     }
+
+    @Override
+    public List<Comment> listCommentByAuthorId(Integer authorid, Integer articleid) {
+        List<Comment> commentByAuthorIdList = null;
+        try {
+            commentByAuthorIdList = commentDao.listCommentByAuthorId(authorid,articleid);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获得子评论失败, id:{}, cause:{}", authorid, e);
+        }
+        return commentByAuthorIdList;
+    }
+
+
+   /* @Override
+    public List<Comment> listCommentByArticleIdAndPageNumber(Integer articleId, Integer pageNumber) {
+        List<Comment> articleIdAndPageNumberList=null;
+        try {
+            articleIdAndPageNumberList=commentDao.listCommentByArticleIdAndPageNumber(articleId,pageNumber);
+            commentDao.update(comment);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("更新评论，comment:{}, cause:{}", comment, e);
+        }
+
+        return null;
+    }
+
+    @Override
+    public List<Comment> listCommentByAuthorId(Integer authorId) {
+        List<Comment>
+        try {
+            commentDao.update(comment);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("更新评论，comment:{}, cause:{}", comment, e);
+        }
+
+        return null;
+    }
+*/
+
 }

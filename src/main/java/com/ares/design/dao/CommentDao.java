@@ -80,4 +80,9 @@ public interface CommentDao {
      * @return 列表
      */
     List<Comment> listChildComment(@Param(value = "id") Integer id);
+
+    //用于查看哪一个文章下自己的评论
+    List<Comment> listCommentByAuthorId(@Param(value = "commentAuthorId") Integer authorid,
+                                        @Param(value = "commentArticleId") Integer articleid);
+
 }

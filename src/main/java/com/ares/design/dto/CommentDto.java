@@ -43,4 +43,6 @@ public class CommentDto {
      */
     private Article article;
 
+    private Integer commentAuthorId;//用于记录用户的id
+
 }

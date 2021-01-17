@@ -1,7 +1,9 @@
 package com.ares.design.controller;
 
 import com.ares.design.domain.Article;
+import com.ares.design.domain.Comment;
 import com.ares.design.service.ArticleService;
+import com.ares.design.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,8 @@ import java.util.List;
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private CommentService commentService;
 //    @Autowired
 //    private CommentService commentService;//等着那边写出来
 
@@ -27,8 +31,8 @@ public class ArticleController {
 //        return "hhhhh";
 //    }
 
-    @RequestMapping(value="/article/{articleId}")
-    public String getArticleDetailPage(@PathVariable("articleId") Integer articleId, Model model){
+    @RequestMapping(value = "/article/{articleId}")
+    public String getArticleDetailPage(@PathVariable("articleId") Integer articleId, Model model) {
         //System.out.println("进入ArticleController");
         //System.out.println("articleId="+articleId);
         //获得文章信息、作者信息
@@ -38,6 +42,14 @@ public class ArticleController {
             System.out.println("article为null");
             return "Error/404";
         }
+
+        List<Comment> commentList =null;
+        commentList= commentService.listCommentByArticleId(articleId);
+        model.addAttribute("commentList", commentList);
+        int commentListCount = 0;
+        System.out.println("commentList's size is "+commentList.size());
+        commentListCount = commentList.size();
+        model.addAttribute("commentListCount", commentListCount);
 
         //文章信息放进model
         model.addAttribute("article", article);
@@ -56,7 +68,7 @@ public class ArticleController {
     //点赞数增加
     @RequestMapping(value = "/article/like", method = {RequestMethod.POST})
     @ResponseBody
-    public Integer increaseLikeCount(HttpServletRequest request) throws Exception{
+    public Integer increaseLikeCount(HttpServletRequest request) throws Exception {
         Integer articleId = Integer.valueOf(request.getParameter("articleId"));
         Article article = articleService.getArticleById(articleId);
         //System.out.println("获得当前点赞数："+article.getArticleLikeCount());
@@ -69,7 +81,7 @@ public class ArticleController {
     //访问量增加
     @RequestMapping(value = "/article/view", method = {RequestMethod.POST})
     @ResponseBody
-    public Integer increaseViewCount(HttpServletRequest request) throws Exception{
+    public Integer increaseViewCount(HttpServletRequest request) throws Exception {
         //System.out.println("进入ArticleController");
         Integer articleId = Integer.valueOf(request.getParameter("articleId"));
         Article article = articleService.getArticleById(articleId);

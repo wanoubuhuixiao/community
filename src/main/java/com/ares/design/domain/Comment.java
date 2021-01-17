@@ -37,6 +37,8 @@ public class Comment implements Serializable{
 
     private Date commentCreateTime;
 
+    private Integer commentAuthorId;//用于记录用户的id
+
     /**
      * 角色(管理员1，访客0)
      */

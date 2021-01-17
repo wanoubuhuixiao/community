@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC
         "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ares.design.service.dao.CommentDao">
+<mapper namespace="com.ares.design.dao.CommentDao">
     <resultMap id="BaseResultMap" type="com.ares.design.domain.Comment">
         <id column="comment_id" property="commentId" jdbcType="INTEGER"/>
         <result column="comment_pid" property="commentPid" jdbcType="INTEGER"/>
@@ -17,14 +17,16 @@
         <result column="comment_ip" property="commentIp" jdbcType="VARCHAR"/>
         <result column="comment_create_time" property="commentCreateTime" jdbcType="TIMESTAMP"/>
         <result column="comment_role" property="commentRole" jdbcType="INTEGER"/>
+        <result column="comment_author_id" property="commentAuthorId" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="tb">comment</sql>
 
     <sql id="Base_Column_List">
-        comment_id, comment_pid, comment_pname, comment_article_id, comment_author_name,
+        comment_id
+        , comment_pid, comment_pname, comment_article_id, comment_author_name,
     comment_author_email, comment_author_url, comment_author_avatar, comment_content, comment_agent,
-     comment_ip,comment_create_time, comment_role
+     comment_ip,comment_create_time, comment_role, comment_author_id
     </sql>
 
     <select id="getCommentById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
@@ -52,7 +54,8 @@
         #{commentAuthorName,jdbcType=VARCHAR}, #{commentAuthorEmail,jdbcType=VARCHAR},
         #{commentAuthorUrl,jdbcType=VARCHAR},#{commentAuthorAvatar}, #{commentContent,jdbcType=VARCHAR},
         #{commentAgent,jdbcType=VARCHAR},
-        #{commentIp,jdbcType=VARCHAR}, #{commentCreateTime,jdbcType=TIMESTAMP}, #{commentRole,jdbcType=INTEGER})
+        #{commentIp,jdbcType=VARCHAR}, #{commentCreateTime,jdbcType=TIMESTAMP},
+        #{commentRole,jdbcType=INTEGER}), #{commentAuthorId,jdbcType=INTEGER})
     </insert>
 
     <update id="update" parameterType="com.ares.design.domain.Comment">
@@ -71,6 +74,7 @@
             <if test="commentCreateTime != null">comment_create_time = #{commentCreateTime,jdbcType=TIMESTAMP},</if>
             <if test="commentAuthorAvatar != null">comment_author_avatar = #{commentAuthorAvatar},</if>
             <if test="commentRole != null">comment_role = #{commentRole,jdbcType=INTEGER},</if>
+            <if test="commentAuthorId != null">comment_author_id = #{commentAuthorId,jdbcType=INTEGER},</if>
         </set>
         where comment_id = #{commentId,jdbcType=INTEGER}
     </update>
@@ -123,5 +127,14 @@
         comment_pid=#{id}
     </select>
 
-
+    <select id="listCommentByAuthorId" resultType="com.ares.design.domain.Comment">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        <include refid="tb"/>
+        WHERE
+        comment_author_id=#{authorid}
+        AND
+        comment_article_id=#{articleid}
+    </select>
 </mapper>
