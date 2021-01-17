@@ -14,28 +14,30 @@
         <result column="article_view_count" property="articleViewCount" jdbcType="INTEGER"/>
         <result column="article_comment_count" property="articleCommentCount" jdbcType="INTEGER"/>
         <result column="article_like_count" property="articleLikeCount" jdbcType="INTEGER"/>
-<!--        <result column="article_is_comment" property="articleIsComment" jdbcType="INTEGER"/>-->
-<!--        <result column="article_order" property="articleOrder" jdbcType="INTEGER"/>-->
+        <!--        <result column="article_is_comment" property="articleIsComment" jdbcType="INTEGER"/>-->
+        <!--        <result column="article_order" property="articleOrder" jdbcType="INTEGER"/>-->
         <result column="article_create_time" property="articleCreateTime" jdbcType="TIMESTAMP"/>
         <result column="article_update_time" property="articleUpdateTime" jdbcType="TIMESTAMP"/>
-<!--        <result column="article_status" property="articleStatus" jdbcType="INTEGER"/>-->
+        <!--        <result column="article_status" property="articleStatus" jdbcType="INTEGER"/>-->
         <association property="user" javaType="com.ares.design.domain.User">
-            <id property="userId" column="article_user_id" />
-            <result property="userName" column="user_name" />
-            <result property="userEmail" column="user_email" />
-            <result property="userLevel" column="user_level" />
-            <result property="userAvatar" column="user_avatar" />
-            <result property="userRegisterTime" column="user_register_time" />
-            <result property="userLastLoginTime" column="user_last_login_time" />
-            <result property="userStatus" column="user_status" />
+            <id property="userId" column="article_user_id"/>
+            <result property="userName" column="user_name"/>
+            <result property="userEmail" column="user_email"/>
+            <result property="userLevel" column="user_level"/>
+            <result property="userAvatar" column="user_avatar"/>
+            <result property="userRegisterTime" column="user_register_time"/>
+            <result property="userLastLoginTime" column="user_last_login_time"/>
+            <result property="userStatus" column="user_status"/>
         </association>
     </resultMap>
 
     <!--  一对一级联查询 嵌套结果  -->
     <select id="getArticleById" parameterType="Integer" resultMap="ResultMap1">
-        select a.*,u.*
-        from article a,user u
-        where a.article_user_id=u.user_id and a.article_id=#{articleId}
+        select a.*, u.*
+        from article a,
+             user u
+        where a.article_user_id = u.user_id
+          and a.article_id = #{articleId}
     </select>
 
     <sql id="Base_Column_List">
@@ -45,7 +47,7 @@
         article_update_time
     </sql>
 
-<!--    没有article_content-->
+    <!--    没有article_content-->
     <sql id="Column1">
         article.article_id, article.article_user_id, article.article_title,
         article.article_view_count, article.article_comment_count,
@@ -53,7 +55,7 @@
         article.article_summary
     </sql>
 
-<!--    没有summary-->
+    <!--    没有summary-->
     <sql id="Column2">
         article.article_id, article.article_user_id, article.article_title,
         article.article_view_count, article.article_comment_count,
@@ -61,7 +63,8 @@
     </sql>
     <!-- 获得查看数最多的文章 -->
     <select id="getArticleListByViewCount" resultType="com.ares.design.domain.Article" parameterType="Integer">
-        select <include refid="Base_Column_List"/>
+        select
+        <include refid="Base_Column_List"/>
         from article
         order by article_view_count DESC
         limit #{limit}
@@ -72,12 +75,12 @@
                             article_view_count, article_comment_count,
                             article_like_count, article_create_time, article_update_time,
                             article_content, article_summary)
-        values(#{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR},
-               #{articleViewCount,jdbcType=INTEGER},#{articleCommentCount,jdbcType=INTEGER},
-               #{articleLikeCount,jdbcType=INTEGER},
-               #{articleCreateTime,jdbcType=TIMESTAMP},
-               #{articleUpdateTime,jdbcType=TIMESTAMP},
-               #{articleContent,jdbcType=LONGVARCHAR},#{articleSummary,jdbcType=VARCHAR})
+        values (#{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR},
+                #{articleViewCount,jdbcType=INTEGER}, #{articleCommentCount,jdbcType=INTEGER},
+                #{articleLikeCount,jdbcType=INTEGER},
+                #{articleCreateTime,jdbcType=TIMESTAMP},
+                #{articleUpdateTime,jdbcType=TIMESTAMP},
+                #{articleContent,jdbcType=LONGVARCHAR}, #{articleSummary,jdbcType=VARCHAR})
     </insert>
 
     <update id="update" parameterType="com.ares.design.domain.Article">
@@ -97,7 +100,8 @@
     </update>
 
     <delete id="deleteById" parameterType="java.lang.Integer">
-        delete from article
+        delete
+        from article
         where article_id = #{articleId,jdbcType=INTEGER}
     </delete>
 
@@ -120,19 +124,19 @@
     </select>
 
     <!-- 分类 根据类型id和需要的文章数量获得ArticleList -->
-    <select id="findArticleByCategoryId" resultType="com.ares.design.domain.Article" >
-<!--            parameterType="Integer">-->
+    <select id="findArticleByCategoryId" resultType="com.ares.design.domain.Article">
+        <!--            parameterType="Integer">-->
         SELECT
         <include refid="Column1"/>
         FROM article, article_category_ref
         WHERE
-            article.article_id = article_category_ref.article_id AND
-            article_category_ref.category_id = #{categoryId}
+        article.article_id = article_category_ref.article_id AND
+        article_category_ref.category_id = #{categoryId}
         LIMIT #{limit}
     </select>
 
     <!-- 根据用户id获得ArticleList -->
-    <select id="findArticleByUserId" resultType="com.ares.design.domain.Article" >
+    <select id="findArticleByUserId" resultType="com.ares.design.domain.Article">
         <!--            parameterType="Integer">-->
         SELECT
         <include refid="Column1"/>
@@ -141,7 +145,7 @@
         LIMIT #{limit}
     </select>
 
-<!--    最近文章-->
+    <!--    最近文章-->
     <select id="getRecentArticle" resultType="com.ares.design.domain.Article" parameterType="Integer">
         SELECT
         <include refid="Column2"/>
@@ -172,10 +176,10 @@
         limit #{pageIndex},#{pageSize}
     </select>
 
-<!--    用户写的文章数-->
+    <!--    用户写的文章数-->
     <select id="countArticleByUser" parameterType="Integer" resultType="Integer">
         SELECT COUNT(*)
         FROM article
-        WHERE article_user_id=#{id}
+        WHERE article_user_id = #{id}
     </select>
 </mapper>

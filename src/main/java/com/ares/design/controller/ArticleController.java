@@ -1,10 +1,15 @@
 package com.ares.design.controller;
 
 import com.ares.design.domain.Article;
+import com.ares.design.domain.User;
 import com.ares.design.service.ArticleService;
+import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +22,8 @@ import java.util.List;
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
+    @Autowired
+    private UserService userService;
 //    @Autowired
 //    private CommentService commentService;//等着那边写出来
 
@@ -27,8 +34,27 @@ public class ArticleController {
 //        return "hhhhh";
 //    }
 
-    @RequestMapping(value="/article/{articleId}")
-    public String getArticleDetailPage(@PathVariable("articleId") Integer articleId, Model model){
+    //主页
+    @RequestMapping({"/", "/index"})
+    public String index(ModelMap model) {
+        int pageSize = 3;//limit 每页文章数
+        int pageIndex = 1;
+        Integer offset = pageSize * (pageIndex - 1);
+        List<Article> articleList = articleService.pageArticle(pageIndex, pageSize);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "index";
+    }
+
+    @RequestMapping(value = "/article/{articleId}")
+    public String getArticleDetailPage(@PathVariable("articleId") Integer articleId, Model model) {
         //System.out.println("进入ArticleController");
         //System.out.println("articleId="+articleId);
         //获得文章信息、作者信息
@@ -56,7 +82,7 @@ public class ArticleController {
     //点赞数增加
     @RequestMapping(value = "/article/like", method = {RequestMethod.POST})
     @ResponseBody
-    public Integer increaseLikeCount(HttpServletRequest request) throws Exception{
+    public Integer increaseLikeCount(HttpServletRequest request) throws Exception {
         Integer articleId = Integer.valueOf(request.getParameter("articleId"));
         Article article = articleService.getArticleById(articleId);
         //System.out.println("获得当前点赞数："+article.getArticleLikeCount());
@@ -69,7 +95,7 @@ public class ArticleController {
     //访问量增加
     @RequestMapping(value = "/article/view", method = {RequestMethod.POST})
     @ResponseBody
-    public Integer increaseViewCount(HttpServletRequest request) throws Exception{
+    public Integer increaseViewCount(HttpServletRequest request) throws Exception {
         //System.out.println("进入ArticleController");
         Integer articleId = Integer.valueOf(request.getParameter("articleId"));
         Article article = articleService.getArticleById(articleId);
@@ -80,15 +106,16 @@ public class ArticleController {
         return newarticleCount;
     }
 
-    @RequestMapping(value="/category/{categoryId}")
-    public String getArticleCategoriesPage(@PathVariable("categoryId") Integer categoryId, Model model){
-        Integer limit=5;//分类主页要显示多少篇文章？
-        List<Article> articleList=articleService.findArticleByCategoryId(categoryId,limit);
+    @RequestMapping(value = "/category/{categoryId}")
+    public String getArticleCategoriesPage(@PathVariable("categoryId") Integer categoryId, Model model) {
+        Integer limit = 5;//分类主页要显示多少篇文章？
+        List<Article> articleList = articleService.findArticleByCategoryId(categoryId, limit);
         model.addAttribute("articleCategoriesList", articleList);
         return "ArticleCategoriesPage";//分类页面
     }
-    @RequestMapping(value="/hahaha")
-    public String test(){
+
+    @RequestMapping(value = "/hahaha")
+    public String test() {
         System.out.println("进入ArticleController test()");
         return "test2";
     }

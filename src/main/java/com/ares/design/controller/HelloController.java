@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloController {
-    @RequestMapping({"/", "/index"})
+    @RequestMapping({"/index1"})
     public String index(Model model) {
         model.addAttribute("welcome", "Hello World!");
         System.out.println(SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString());
-        return "index";
+        return "index1";
     }
 }

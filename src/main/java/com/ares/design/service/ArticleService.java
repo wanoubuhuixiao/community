@@ -22,11 +22,10 @@ public interface ArticleService {
     List<Article> findArticleByUserId(Integer userId, Integer limit);
 
     List<Article> getRecentArticle(Integer limit);
+
     Integer countArticle();
     List<Article> AllArticle();
-    //还没写实现
-//    PageInfo<Article> pageArticle(Integer pageIndex,
-//                                  Integer pageSize, HashMap<String, Object> criteria);
+    List<Article> pageArticle(Integer pageIndex, Integer pageSize);
     Integer countArticleByUser(Integer userid);
 
 }

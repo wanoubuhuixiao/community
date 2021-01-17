@@ -17,6 +17,7 @@
     <!-- 搜索框 CSS -->
     <link rel="stylesheet" type="text/css" href="/css/search-form.css"/>
     <link rel="stylesheet" type="text/css" href="/css/space.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/mycss.css"/>
     <link rel="shortcut icon" sizes="48x48" href="https://cdn.max-c.com/logo/heybox_bbs_128_128.png">
     <title>个人中心</title>
 </head>
@@ -98,6 +99,9 @@
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="about.html">社区</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/space">我的主页</a>
                 </li>
             </ul>
             <!--<form class="form-inline my-2 my-lg-0">
@@ -225,18 +229,20 @@
 <footer id="footer">
     <div class="container">
         <div class="row footer-row">
-            <div class="col-md-8">
-                <li data-v-0c3930dc="">
-                    <div class="logo" data-v-7d8b0b55="" data-v-0c3930dc="">
-                        <svg version="1.1" id="图层_1"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                             y="0px" viewBox="0 0 84 30" xml:space="preserve"
-                             style="enable-background:new 0 0 84 30;" data-v-7d8b0b55="">
-                                <g id="Page-1" data-v-7d8b0b55="">
-                                    <g id="Group-4" transform="translate(-35.000000, -103.000000)" data-v-7d8b0b55="">
-                                        <g id="小黑盒-白-copy-3" transform="translate(35.000000, 103.000000)"
-                                           data-v-7d8b0b55="">
-                                            <path id="logo_heybox_with_en" d="M23.5,7.8C23.8,7.9,24,8.3,24,8.6v12.7c0,0.3-0.2,0.7-0.5,0.8l-3.8,2.2
+            <div class="col-md-8 heng">
+                <ul>
+                    <li data-v-0c3930dc="">
+                        <div class="logo" data-v-7d8b0b55="" data-v-0c3930dc="">
+                            <svg version="1.1" id="图层_1"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 x="0px" y="0px" viewBox="0 0 84 30" xml:space="preserve"
+                                 style="enable-background:new 0 0 84 30;" data-v-7d8b0b55="">
+                                        <g id="Page-1" data-v-7d8b0b55="">
+                                            <g id="Group-4" transform="translate(-35.000000, -103.000000)"
+                                               data-v-7d8b0b55="">
+                                                <g id="小黑盒-白-copy-3" transform="translate(35.000000, 103.000000)"
+                                                   data-v-7d8b0b55="">
+                                                    <path id="logo_heybox_with_en" d="M23.5,7.8C23.8,7.9,24,8.3,24,8.6v12.7c0,0.3-0.2,0.7-0.5,0.8l-3.8,2.2
                         c-0.3,0.2-0.5,0-0.5-0.3V11.7c0-0.3-0.2-0.7-0.5-0.8l-3.8-2.2c-0.3-0.2-0.5,0-0.5,0.3V12c0,0.3-0.2,0.5-0.6,0.5h-3.7
                         c-0.3,0-0.5-0.2-0.5-0.5V0.3c0-0.3,0.2-0.4,0.5-0.3l1.4,0.8C11.8,1,12,1.2,12,1.2c0,0,0.2,0.1,0.5,0.3L23.5,7.8z M9.6,17.9
                         c0-0.3,0.2-0.5,0.5-0.5h3.7c0.3,0,0.5,0.2,0.6,0.5v11.7c0,0.3-0.2,0.4-0.5,0.3l-4.7-2.7C9,27.1,8.8,27,8.8,27
@@ -266,20 +272,22 @@
                         c-0.3-0.3-0.6-0.5-0.9-0.6s-0.6-0.2-1-0.2c-0.3,0-0.7,0.1-1,0.2c-0.3,0.1-0.6,0.3-0.8,0.5c-0.2,0.2-0.4,0.5-0.6,0.9
                         C65.5,24.2,65.4,24.6,65.4,24.9z M77.6,25.7l-1.8,2.8h-1.2l2.4-3.6l-2.3-3.5h1.2l1.7,2.7l1.7-2.7h1.2l-2.3,3.5l2.3,3.6h-1.2
                         L77.6,25.7z" class="st0" style="fill: #ffffff" data-v-7d8b0b55=""></path>
-                                            <!---->
+                                                    <!---->
+                                                </g>
+                                            </g>
                                         </g>
-                                    </g>
-                                </g>
-                            </svg>
-                </li>
-                <li data-v-0c3930dc=""><a href="/heybox/about" class="nav-item" data-v-0c3930dc=""
-                                          one-link-mark="yes">关于我们</a></li>
-                <li data-v-0c3930dc=""><a href="/heybox/contact" class="nav-item" data-v-0c3930dc=""
-                                          one-link-mark="yes">联系我们</a></li>
-                <li data-v-0c3930dc=""><a href="/joinus/index" class="nav-item" data-v-0c3930dc=""
-                                          one-link-mark="yes">加入我们</a></li>
-                <li data-v-0c3930dc=""><a href="/open" class="nav-item" data-v-0c3930dc=""
-                                          one-link-mark="yes">开放平台</a></li>
+                                    </svg>
+                        </div>
+                    </li>
+
+                    <li data-v-0c3930dc=""><a href="/heybox/about" class="nav-item" data-v-0c3930dc=""
+                                              one-link-mark="yes">关于我们</a></li>
+                    <li data-v-0c3930dc=""><a href="/heybox/contact" class="nav-item" data-v-0c3930dc=""
+                                              one-link-mark="yes">联系我们</a></li>
+                    <li data-v-0c3930dc=""><a href="/joinus/index" class="nav-item" data-v-0c3930dc=""
+                                              one-link-mark="yes">加入我们</a></li>
+                    <li data-v-0c3930dc=""><a href="/open" class="nav-item" data-v-0c3930dc=""
+                                              one-link-mark="yes">开放平台</a></li>
                 </ul>
                 <div class="copy-right" data-v-0c3930dc="">
                     <p class="copy-right-1" data-v-0c3930dc="">清枫（北京）科技有限公司 2015-2020 © All Rights Reserved.</p>
