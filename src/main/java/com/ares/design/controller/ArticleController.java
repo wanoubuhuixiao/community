@@ -6,6 +6,7 @@ import com.ares.design.service.ArticleService;
 import com.ares.design.domain.Comment;
 import com.ares.design.service.CommentService;
 import com.ares.design.service.UserService;
+import com.ares.design.util.PagingResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -55,8 +56,28 @@ public class ArticleController {
         return "index";
     }
 
+    /*
+    * @PathVariable String urlName, @PathVariable Integer page, Model model,
+                                            HttpServletRequest request
+    * */
+
+    /**
+     * 分页显示某个类别下的商品
+     *
+     * @RequestMapping(value = "/category/{urlName}/{page}",method = RequestMethod.GET)
+     * public String listDealsOfDealCategory(@PathVariable String urlName, @PathVariable Integer page, Model model,
+     * HttpServletRequest request){
+     * DealCategory dealCategory=dealCategoryService.getByUrlName(urlName);
+     * model.addAttribute("dealCategory",dealCategory);
+     * PagingResult<Deal> pagingResult=dealService.getDealOfCategories(dealCategory.getSelfAndChildrenIds(),
+     * super.getAreaId(request),page, DealConstant.DEAL_NUM_PER_PAGE_IN_DEALS_OF_CATEGORY_PAGE);
+     * model.addAttribute("pagingDealList", pagingResult);
+     * return "/deal/category";
+     * }
+     */
     @RequestMapping(value = "/article/{articleId}")
-    public String getArticleDetailPage(@PathVariable("articleId") Integer articleId, Model model) {
+    public String getArticleDetailPage(
+            @PathVariable("articleId") Integer articleId, Model model) {
         //System.out.println("进入ArticleController");
         //System.out.println("articleId="+articleId);
         //获得文章信息、作者信息
@@ -68,15 +89,27 @@ public class ArticleController {
         }
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
-        model.addAttribute("user",user);
-        System.out.println("user.getUserId is "+user.getUserId());
-        List<Comment> commentList =null;
-        commentList= commentService.listCommentByArticleId(articleId);
+        model.addAttribute("user", user);
+        System.out.println("user.getUserId is " + user.getUserId());
+        List<Comment> commentList = null;
+        commentList = commentService.listCommentByArticleId(articleId);
         model.addAttribute("commentList", commentList);
         int commentListCount = 0;
-        System.out.println("commentList's size is "+commentList.size());
+        System.out.println("commentList's size is " + commentList.size());
         commentListCount = commentList.size();
         model.addAttribute("commentListCount", commentListCount);
+        model.addAttribute("commentService", commentService);
+        model.addAttribute("userService", userService);
+
+
+
+        PagingResult<Comment> pagingResult = new PagingResult<>();
+        pagingResult.setPage(1);
+        pagingResult.setRows(commentList);
+        pagingResult.setPageSize(5);
+        pagingResult.setTotal(commentListCount);
+        model.addAttribute("pagingDealList", pagingResult);
+
 
         //文章信息放进model
         model.addAttribute("article", article);

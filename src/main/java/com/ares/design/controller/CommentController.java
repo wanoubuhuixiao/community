@@ -39,8 +39,8 @@ public class CommentController {
             , HttpServletRequest request, Model model, Comment comment) {
         //b把整个的comment拿过来看看对不对
         System.out.println("delete");
-        System.out.println("deletecommentid:"+deletecommentid);
-        System.out.println("articleId:"+articleId);
+        System.out.println("deletecommentid:" + deletecommentid);
+        System.out.println("articleId:" + articleId);
 
         commentService.deleteComment(deletecommentid);
 
@@ -48,9 +48,9 @@ public class CommentController {
         User user = userService.getUserByName(name);
         model.addAttribute("user", user);
 
-        String returnurl="redirect:/article/" + articleId;
+        String returnurl = "redirect:/article/"+articleId;
         System.out.println("articleId:" + articleId);
-        System.out.println("returnurl:"+returnurl);
+        System.out.println("returnurl:" + returnurl);
         return returnurl;
     }
 
@@ -76,7 +76,7 @@ public class CommentController {
         comment.setCommentAuthorEmail(userEmail);
         comment.setCommentAuthorAvatar(userAvatar);
         comment.setCommentAuthorId(Integer.valueOf(userId));
-        Article article=articleService.getArticleById(Integer.valueOf(articleId));
+        Article article = articleService.getArticleById(Integer.valueOf(articleId));
         comment.setArticle(article);
 
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
@@ -106,9 +106,9 @@ public class CommentController {
             e.printStackTrace();
             return "error";
         }
-        String returnurl="redirect:/article/" + articleId;
+        String returnurl = "redirect:/article/"+articleId;
         System.out.println("articleId:" + articleId);
-        System.out.println("returnurl:"+returnurl);
+        System.out.println("returnurl:" + returnurl);
         return returnurl;
     }
 
@@ -120,6 +120,8 @@ public class CommentController {
      * @param model
      * @param comment
      */
+
+
     @PostMapping(value = "/addcomments")
     public String addComment(HttpServletRequest request, Model model, Comment comment) {
         /*大的步骤：
@@ -136,7 +138,6 @@ public class CommentController {
         String userEmail = request.getParameter("userEmail");
         String userAvatar = request.getParameter("userAvatar");
         String commentcontent = request.getParameter("commentcontent");
-
 
 
         //查看是否是省略了空格、
@@ -156,7 +157,7 @@ public class CommentController {
         comment.setCommentAuthorId(Integer.valueOf(userId));
         comment.setCommentPname("");
         comment.setCommentPid(0);
-        Article article=articleService.getArticleById(Integer.valueOf(articleId));
+        Article article = articleService.getArticleById(Integer.valueOf(articleId));
         comment.setArticle(article);
 
 
@@ -187,9 +188,9 @@ public class CommentController {
             e.printStackTrace();
             return "error";
         }
-        String returnurl="redirect:/article/" + articleId;
+        String returnurl = "redirect:/article/"+articleId;
         System.out.println("articleId:" + articleId);
-        System.out.println("returnurl:"+returnurl);
+        System.out.println("returnurl:" + returnurl);
         return returnurl;
     }
 

@@ -18,17 +18,65 @@
     <link rel="shortcut icon" sizes="48x48" href="https://cdn.max-c.com/logo/heybox_bbs_128_128.png">
 
     <link rel="stylesheet" href="/css/mycss.css">
+    <style>
+        <#if commentList??>
+        <#list commentList as comment>
+        #pressToShow${comment.commentId} {
+            display: none;
+        }
 
+        #show${comment.commentId} {
+            display: block;
+        }
+
+        #hide${comment.commentId} {
+            display: none;
+        }
+
+        </#list>
+        </#if>
+
+    </style>
+    <script src="F:\迅雷下载\design\src\main\resources\static\js\jquery-1.8.3.min.js">
+    </script>
+    <script type="text/javascript">
+
+
+        <#if commentList??>
+        <#list commentList as comment>
+
+        function showDiv1${comment.commentId}() {
+            //$("#test1").attr("style","display:block");
+            //$("#test1").show();
+            $("#show${comment.commentId}").css("display", "none");
+            $("#pressToShow${comment.commentId}").css("display", "block");
+            $("#hide${comment.commentId}").css("display", "block");
+
+        }
+
+
+        function hiddenDiv1${comment.commentId}() {
+            $("#pressToShow${comment.commentId}").css("display", "none");
+            $("#hide${comment.commentId}").css("display", "none");
+            $("#show${comment.commentId}").css("display", "block");
+        }
+
+        </#list>
+        </#if>
+
+
+    </script>
 </head>
 <body>
 <!--导航-->
 <nav class="navbar navbar-expand-lg navbar-light nav-color-nav  navbar-lk text-dark">
     <div class="container">
         <div class="logo-wrapper" data-v-8f2efb28="">
-            <div class="logo" data-v-7d8b0b55="" data-v-8f2efb28=""><svg version="1.1" id="图层_1"
-                                                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                                         viewBox="0 0 84 30" xml:space="preserve" style="enable-background:new 0 0 84 30;"
-                                                                         data-v-7d8b0b55="">
+            <div class="logo" data-v-7d8b0b55="" data-v-8f2efb28="">
+                <svg version="1.1" id="图层_1"
+                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 84 30" xml:space="preserve" style="enable-background:new 0 0 84 30;"
+                     data-v-7d8b0b55="">
                         <g id="Page-1" data-v-7d8b0b55="">
                             <g id="Group-4" transform="translate(-35.000000, -103.000000)" data-v-7d8b0b55="">
                                 <g id="小黑盒-白-copy-3" transform="translate(35.000000, 103.000000)" data-v-7d8b0b55="">
@@ -66,7 +114,8 @@
                                 </g>
                             </g>
                         </g>
-                    </svg></div>
+                    </svg>
+            </div>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nabmune"
                 aria-controls="nabmune" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,10 +168,15 @@
                     <div class="col-md-12 bgc">
                         <div class="article-title">
                             <ul>
-                                <li><a title="发表时间"><i class="el-time"></i>${article.articleCreateTime?string("yyyy-MM-dd")}</a></li>
-                                <li class="d-none d-sm-none d-md-none d-lg-block"><a title="作者"><i class="el-user"></i>${article.user.userName}</a></li>
-                                <li><a id="likea" title="点赞" href="javascript:;"><i class="el-heart"></i><i id="likei">${article.articleLikeCount}</i></a></li>
-                                <li><a title="浏览数"><i class="el-eye-open"></i><i id="viewi">${article.articleViewCount}</i></a></li>
+                                <li><a title="发表时间"><i
+                                                class="el-time"></i>${article.articleCreateTime?string("yyyy-MM-dd")}
+                                    </a></li>
+                                <li class="d-none d-sm-none d-md-none d-lg-block"><a title="作者"><i
+                                                class="el-user"></i>${article.user.userName}</a></li>
+                                <li><a id="likea" title="点赞" href="javascript:;"><i class="el-heart"></i><i
+                                                id="likei">${article.articleLikeCount}</i></a></li>
+                                <li><a title="浏览数"><i class="el-eye-open"></i><i
+                                                id="viewi">${article.articleViewCount}</i></a></li>
 
                             </ul>
                         </div>
@@ -166,16 +220,26 @@
                                     <form action="/addcomments" method="post">
 
                                         <div class="form-group">
-                                            <label><input value="${article.articleId}" type="text" class="form-control form-control-lg" id="articleId"
-                                                          name="articleId" style="display: none" readonly="readonly"  > </label>
-                                            <label><input value="${user.userId}" type="text" class="form-control form-control-lg" id="userId"
-                                                          name="userId"  style="display: none" readonly="readonly" > </label>
-                                            <label><input value="${user.userName}" type="text" class="form-control form-control-lg" id="userName"
-                                                          name="userName"  style="display: none" readonly="readonly" > </label>
-                                            <label><input value="${user.userEmail}" type="text" class="form-control form-control-lg" id="userEmail"
-                                                          name="userEmail"  style="display: none" readonly="readonly" > </label>
-                                            <label><input value="${user.userAvatar}" type="text" class="form-control form-control-lg" id="userAvatar"
-                                                          name="userAvatar" style="display: none" readonly="readonly"  > </label>
+                                            <label><input value="${article.articleId}" type="text"
+                                                          class="form-control form-control-lg" id="articleId"
+                                                          name="articleId" style="display: none" readonly="readonly">
+                                            </label>
+                                            <label><input value="${user.userId}" type="text"
+                                                          class="form-control form-control-lg" id="userId"
+                                                          name="userId" style="display: none" readonly="readonly">
+                                            </label>
+                                            <label><input value="${user.userName}" type="text"
+                                                          class="form-control form-control-lg" id="userName"
+                                                          name="userName" style="display: none" readonly="readonly">
+                                            </label>
+                                            <label><input value="${user.userEmail}" type="text"
+                                                          class="form-control form-control-lg" id="userEmail"
+                                                          name="userEmail" style="display: none" readonly="readonly">
+                                            </label>
+                                            <label><input value="${user.userAvatar}" type="text"
+                                                          class="form-control form-control-lg" id="userAvatar"
+                                                          name="userAvatar" style="display: none" readonly="readonly">
+                                            </label>
 
                                             <label>输入评论内容：</label>
                                             <textarea type="text" class="form-control form-control-lg"
@@ -199,72 +263,108 @@
 
                                 <#else >
 
-                                    <div>
+                                    <div id="useToLocate">
                                         <#list commentList as comment>
 
                                             <#if comment.commentPid==0><#--进行头像的显示-->
-                                                <div><span><a href="">${comment.commentAuthorName}</a>:</span>
-                                                    <pre>${comment.commentContent}</pre>
+                                                <div><span><a href="">${comment.commentAuthorName}</a>:<pre>${comment.commentContent}</pre></span>
+
                                                 </div>
                                                 <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
-                                                <div>发出者的ID为：${comment.commentAuthorId}</div>
+                                                <#--<div>发出者的ID为：${comment.commentAuthorId}</div>-->
 
                                             <#else>
-                                                <div><span><a href="">${comment.commentAuthorName}</a>回复
-                                                            ${comment.commentPname}:</span>
-                                                    <pre>${comment.commentContent}</pre>
+                                                <div><span>回复
+                                                            ${comment.commentPname}:<pre>${commentService.getCommentById(comment.commentPid).commentContent}</pre></span>
+                                                    <pre><a href="/space/${comment.commentAuthorId}">${comment.commentAuthorName}</a>:${comment.commentContent}</pre>
                                                 </div>
                                                 <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
-                                                <div>发出者的ID为：${comment.commentAuthorId}</div>
+                                                <#--<div>发出者的ID为：${comment.commentAuthorId}</div>-->
+                                            </#if>
+                                            <#if comment.commentAuthorId==user.userId >
+                                                <div>
+                                                    <a href="/deletecomment/${comment.commentId}/${article.articleId}">点击删除自己的评论</a>
+                                                </div>
                                             </#if>
 
-                                            <div>
-                                                <#if comment.commentAuthorId==user.userId >
-                                                    <div>
-                                                        <a href="/deletecomment/${comment.commentId}/${article.articleId}">点击删除自己的评论（还没做好内部串联）</a>
-                                                    </div>
-                                                </#if>
-                                                <form action="/replycomment" method="post">
-                                                    <div class="form-group">
-                                                        <label><input value="${comment.commentId}" type="text" class="form-control form-control-lg" id="commentPid"
-                                                                      name="commentPid"  style="display: none" readonly="readonly" > </label>
-                                                        <label><input value="${comment.commentAuthorName}" type="text" class="form-control form-control-lg" id="commentPname"
-                                                                      name="commentPname"   style="display: none" readonly="readonly"> </label>
-                                                        <label><input value="${article.articleId}" type="text" class="form-control form-control-lg" id="articleId"
-                                                                      name="articleId"  style="display: none" readonly="readonly" > </label>
-                                                        <label><input value="${user.userId}" type="text" class="form-control form-control-lg" id="userId"
-                                                                      name="userId"  style="display: none" readonly="readonly" > </label>
-                                                        <label><input value="${user.userName}" type="text" class="form-control form-control-lg" id="userName"
-                                                                      name="userName"   style="display: none" readonly="readonly" > </label>
-                                                        <label><input value="${user.userEmail}" type="text" class="form-control form-control-lg" id="userEmail"
-                                                                      name="userEmail"  style="display: none" readonly="readonly"  > </label>
-                                                        <label><input value="${user.userAvatar}" type="text" class="form-control form-control-lg" id="userAvatar"
-                                                                      name="userAvatar"  style="display: none" readonly="readonly" > </label>
-                                                        <label>输入评论内容：</label>
-                                                        <textarea type="text" class="form-control form-control-lg"
-                                                                  id="replycommentcontent"
-                                                                  placeholder="回复${comment.commentAuthorId}"
-                                                                  name="replycommentcontent"
-                                                                  required="required"></textarea>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="submit" class="btn btn-lg btn-primary btn-block"
-                                                               value="点击回复"/>
+                                            <div id="pressToShow${comment.commentId}">
+                                                <div>
+
+
+                                                    <form action="/replycomment" method="post">
+                                                        <div class="form-group">
+                                                            <label><input value="${comment.commentId}" type="text"
+                                                                          class="form-control form-control-lg"
+                                                                          id="commentPid"
+                                                                          name="commentPid" style="display: none"
+                                                                          readonly="readonly"> </label>
+                                                            <label><input value="${comment.commentAuthorName}"
+                                                                          type="text"
+                                                                          class="form-control form-control-lg"
+                                                                          id="commentPname"
+                                                                          name="commentPname" style="display: none"
+                                                                          readonly="readonly"> </label>
+                                                            <label><input value="${article.articleId}" type="text"
+                                                                          class="form-control form-control-lg"
+                                                                          id="articleId"
+                                                                          name="articleId" style="display: none"
+                                                                          readonly="readonly"> </label>
+                                                            <label><input value="${user.userId}" type="text"
+                                                                          class="form-control form-control-lg"
+                                                                          id="userId"
+                                                                          name="userId" style="display: none"
+                                                                          readonly="readonly"> </label>
+                                                            <label><input value="${user.userName}" type="text"
+                                                                          class="form-control form-control-lg"
+                                                                          id="userName"
+                                                                          name="userName" style="display: none"
+                                                                          readonly="readonly"> </label>
+                                                            <label><input value="${user.userEmail}" type="text"
+                                                                          class="form-control form-control-lg"
+                                                                          id="userEmail"
+                                                                          name="userEmail" style="display: none"
+                                                                          readonly="readonly"> </label>
+                                                            <label><input value="${user.userAvatar}" type="text"
+                                                                          class="form-control form-control-lg"
+                                                                          id="userAvatar"
+                                                                          name="userAvatar" style="display: none"
+                                                                          readonly="readonly"> </label>
+                                                            <label>输入评论内容：</label>
+                                                            <textarea type="text" class="form-control form-control-lg"
+                                                                      id="replycommentcontent"
+                                                                      placeholder="回复用户${userService.getUserById(comment.commentAuthorId).userName }"
+                                                                      name="replycommentcontent"
+                                                                      required="required"></textarea>
+                                                            <input type="submit" id="show"
+                                                                   class="btn btn-lg btn-primary btn-block"
+                                                                   value="点击回复"/>
+                                                        </div>
+
                                                         <#--<p>"comment.commentAuthorId is "</p>
                                                         <p>${comment.commentAuthorId}</p>
                                                         <br>
                                                         <p>"user.userId is "</p>
                                                         <p>${user.userId}</p>
                                                         <br>-->
-                                                    </div>
 
 
-                                                </form>
+                                                    </form>
+
+                                                </div>
                                             </div>
-
+                                            <button type="button" id="show${comment.commentId}" value="${comment.commentId}"
+                                                    onclick="showDiv1${comment.commentId}()">点击回复
+                                            </button>
+                                            <button type="button" id="hide${comment.commentId}" value="${comment.commentId}"
+                                                    onclick="hiddenDiv1${comment.commentId}()">取消回复
+                                            </button>
                                         </#list>
                                     </div>
                                 </#if>
+                                <#--<#if pagingDealList??>
+                                    <#include "Paging.ftl">
+                                    <@paging_macro.paging pagingList=pagingDealList url="/article/${pagingDealList.rows.get(1).commentAuthorId}"/>
+                                </#if>-->
                                 <#--<div class="col-md-4 bgc mb-4 ">-->
                                 <#--<div class="card mb-4 box-shadow  mt-4">-->
                                 <#--<div class="showimg">
@@ -349,14 +449,14 @@
                                 <li class="rss"><a href="#">Rss<span></span></a></li>
                             </ul><!--/ .social-icons-->
                         </div>
-<#--                        <div class="fxtp">-->
-<#--                            <ul>-->
-<#--                                <li><a href=""></a><span>微博</span></li>-->
-<#--                                <li><a href=""></a></li>-->
-<#--                                <li><a href=""></a></li>-->
-<#--                                <li><a href=""></a></li>-->
-<#--                            </ul>-->
-<#--                        </div>-->
+                        <#--                        <div class="fxtp">-->
+                        <#--                            <ul>-->
+                        <#--                                <li><a href=""></a><span>微博</span></li>-->
+                        <#--                                <li><a href=""></a></li>-->
+                        <#--                                <li><a href=""></a></li>-->
+                        <#--                                <li><a href=""></a></li>-->
+                        <#--                            </ul>-->
+                        <#--                        </div>-->
 
                     </div>
                 </div>
@@ -402,37 +502,37 @@
                 </div>
 
 
-<#--                <div class="row bgc mt-3">-->
-<#--                    <!--<form>&ndash;&gt;-->
-<#--&lt;#&ndash;                    <div class="search">&ndash;&gt;-->
+                <#--                <div class="row bgc mt-3">-->
+                <#--                    <!--<form>&ndash;&gt;-->
+                <#--&lt;#&ndash;                    <div class="search">&ndash;&gt;-->
 
-<#--&lt;#&ndash;                        <input type="text" class="search-input" placeholder="First name">&ndash;&gt;-->
+                <#--&lt;#&ndash;                        <input type="text" class="search-input" placeholder="First name">&ndash;&gt;-->
 
-<#--&lt;#&ndash;                        <input class="search-submit" value=" " type="submit">&ndash;&gt;-->
-<#--&lt;#&ndash;                        <i class="el-search"></i>&ndash;&gt;-->
-<#--&lt;#&ndash;                    </div>&ndash;&gt;-->
+                <#--&lt;#&ndash;                        <input class="search-submit" value=" " type="submit">&ndash;&gt;-->
+                <#--&lt;#&ndash;                        <i class="el-search"></i>&ndash;&gt;-->
+                <#--&lt;#&ndash;                    </div>&ndash;&gt;-->
 
-<#--                    <!--</form>&ndash;&gt;-->
-<#--                </div>-->
+                <#--                    <!--</form>&ndash;&gt;-->
+                <#--                </div>-->
 
 
-<#--                <div class="row bgc mt-3">-->
-<#--                    <div class="new new-right">-->
-<#--                        <span><i class="el-headphones"></i>说说</span>-->
-<#--                        <small>New Article</small>-->
-<#--                    </div>-->
-<#--                    <div class="col-md-12 ">-->
-<#--                        <div class="fxtp">-->
-<#--                            <ul>-->
-<#--                                <li><a href=""></a><span>微博</span></li>-->
-<#--                                <li><a href=""></a></li>-->
-<#--                                <li><a href=""></a></li>-->
-<#--                                <li><a href=""></a></li>-->
-<#--                            </ul>-->
-<#--                        </div>-->
+                <#--                <div class="row bgc mt-3">-->
+                <#--                    <div class="new new-right">-->
+                <#--                        <span><i class="el-headphones"></i>说说</span>-->
+                <#--                        <small>New Article</small>-->
+                <#--                    </div>-->
+                <#--                    <div class="col-md-12 ">-->
+                <#--                        <div class="fxtp">-->
+                <#--                            <ul>-->
+                <#--                                <li><a href=""></a><span>微博</span></li>-->
+                <#--                                <li><a href=""></a></li>-->
+                <#--                                <li><a href=""></a></li>-->
+                <#--                                <li><a href=""></a></li>-->
+                <#--                            </ul>-->
+                <#--                        </div>-->
 
-<#--                    </div>-->
-<#--                </div>-->
+                <#--                    </div>-->
+                <#--                </div>-->
 
 
                 <div class="row bgc mt-4">
@@ -451,7 +551,9 @@
                                 <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
                                 <ul>
                                     <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="/index/article/index/id/32.html" title="查看分类"><i class="el-fire"></i>5</a></li>
+                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
+                                                href="/index/article/index/id/32.html" title="查看分类"><i
+                                                    class="el-fire"></i>5</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -464,7 +566,9 @@
                                 <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
                                 <ul>
                                     <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="/index/article/index/id/32.html" title="查看分类"><i class="el-fire"></i>5</a></li>
+                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
+                                                href="/index/article/index/id/32.html" title="查看分类"><i
+                                                    class="el-fire"></i>5</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -477,7 +581,9 @@
                                 <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
                                 <ul>
                                     <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="/index/article/index/id/32.html" title="查看分类"><i class="el-fire"></i>5</a></li>
+                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
+                                                href="/index/article/index/id/32.html" title="查看分类"><i
+                                                    class="el-fire"></i>5</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -490,12 +596,15 @@
                 <div class="row bgc mt-5">
 
                     <div class="nav nav-tabs tab-atr" id="box" role="tablist">
-                        <a class="nav-item  active actives" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">文章互动</a>
-                        <a class="nav-item " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">文章排行</a>
+                        <a class="nav-item  active actives" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                           role="tab" aria-controls="nav-home" aria-selected="true">文章互动</a>
+                        <a class="nav-item " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                           aria-controls="nav-profile" aria-selected="false">文章排行</a>
                     </div>
 
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                             aria-labelledby="nav-home-tab">
                             <ul class="hd-ul">
                                 <li>
                                     <div class="art-hd-list-left">
@@ -713,7 +822,6 @@
                 </div>
 
 
-
             </div>
         </div>
     </div>
@@ -788,9 +896,10 @@
                     <p class="copy-right-1" data-v-0c3930dc="">清枫（北京）科技有限公司 2015-2020 © All Rights Reserved.</p>
                     <p class="copy-right-2" data-v-0c3930dc=""><a target="_blank"
                                                                   href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502034222"
-                                                                  data-v-0c3930dc="" one-link-mark="yes">京公网安备11010502034222号</a> | <a target="_blank"
-                                                                                                                                       href="https://beian.miit.gov.cn/" data-v-0c3930dc=""
-                                                                                                                                       one-link-mark="yes">京ICP备15018522号-6</a> | 京网文[2017]8080-895号 | 京ICP证B2-20180020</p>
+                                                                  data-v-0c3930dc="" one-link-mark="yes">京公网安备11010502034222号</a>
+                        | <a target="_blank"
+                             href="https://beian.miit.gov.cn/" data-v-0c3930dc=""
+                             one-link-mark="yes">京ICP备15018522号-6</a> | 京网文[2017]8080-895号 | 京ICP证B2-20180020</p>
                     <p class="copy-right-2" data-v-0c3930dc="">违法和不良信息举报电话：010-84158300　举报邮箱：jubao@xiaoheihe.cn
                     </p>
                 </div>
@@ -822,23 +931,25 @@
     new WOW().init();//把wow初始化
 
 </script>
-<script>
-    window.onload=function () {
-        var art_list=document.getElementById('box');
-        var art_list_a=art_list.getElementsByTagName('a');
 
-        for (var i=0;i<art_list_a.length;i++){
+
+<script>
+    window.onload = function () {
+        var art_list = document.getElementById('box');
+        var art_list_a = art_list.getElementsByTagName('a');
+
+        for (var i = 0; i < art_list_a.length; i++) {
 
             var aclick = art_list_a[i];
 
-            aclick.onclick=function(){
+            aclick.onclick = function () {
 
-                for (var j=0;j<art_list_a.length;j++){
-                    art_list_a[j].className='';
-                    art_list_a[j].style.color='#000000';
+                for (var j = 0; j < art_list_a.length; j++) {
+                    art_list_a[j].className = '';
+                    art_list_a[j].style.color = '#000000';
                 }
-                this.className='actives';
-                this.style.color='#ffffff';
+                this.className = 'actives';
+                this.style.color = '#ffffff';
             };
 
 
@@ -848,63 +959,61 @@
 </script>
 
 
-
 <#--<li><a id="likea" title="点赞" href="#"><i class="el-heart"></i><i id="likei">${article.articleLikeCount}</i></a></li>-->
 <#--<li><a title="浏览数"><i class="el-eye-open"></i><i id="viewi">${article.articleViewCount}</i></a></li>-->
 <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
 <script src="/js/jquery.cookie.js" type="text/javascript"></script>
 <script type="text/javascript">
     function increaseViewCount() {
-        if($.cookie("viewId")!=${article.articleId})
-        {
+        if ($.cookie("viewId") != ${article.articleId}) {
             $.ajax({
-                async:false,
-                type:"POST",
-                url:"${springMacroRequestContext.contextPath}/article/view",
+                async: false,
+                type: "POST",
+                url: "${springMacroRequestContext.contextPath}/article/view",
                 // headers: { "X-CSRFtoken":$.cookie("csrftoken")},
-                data: {articleId:${article.articleId}},
-                dataType:"text",
-                success:function (data){
+                data: {articleId: ${article.articleId}},
+                dataType: "text",
+                success: function (data) {
                     //alert(data);
                     $("#viewi").html(data);
                     $.cookie(
                         "viewId",
                         ${article.articleId},//写入cookie
                         {
-                            "path":"/", //cookie的有效路径
+                            "path": "/", //cookie的有效路径
                         }
                     );
                 },
-                error:function (){
+                error: function () {
                     //alert("获取数据出错!");
                 },
             });
         }
     }
+
     increaseViewCount();
 
-    $("#likea").click(function (){
-        if($.cookie("likeId")!=${article.articleId}){
+    $("#likea").click(function () {
+        if ($.cookie("likeId") != ${article.articleId}) {
             $.ajax({
                 async: false,
-                type:"POST",
-                url:"${springMacroRequestContext.contextPath}/article/like",
+                type: "POST",
+                url: "${springMacroRequestContext.contextPath}/article/like",
                 // headers: { "X-CSRFtoken":$.cookie("csrftoken")},
-                data: {articleId:${article.articleId}},
-                dataType:"text",
-                success:function (data) {
+                data: {articleId: ${article.articleId}},
+                dataType: "text",
+                success: function (data) {
                     //alert(data);
                     $("#likei").html(data);
                     $.cookie(
                         "likeId",
                         ${article.articleId},//写入cookie
                         {
-                            "path":"/", //cookie的有效路径
+                            "path": "/", //cookie的有效路径
                         }
                     );
                 },
-                error:function()
-                {
+                error: function () {
                     //alert("获取数据出错!");
                 },
             });
