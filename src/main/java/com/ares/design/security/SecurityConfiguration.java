@@ -1,7 +1,5 @@
 package com.ares.design.security;
 
-import com.ares.design.security.theUserDetailsService;
-import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -52,6 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .formLogin().loginPage("/signin")// 自定义的登录页面
+                .defaultSuccessUrl("/index").successHandler(new LoginSuccessHandle())//根据身份不同，登陆后进入不同页面
                 .permitAll()
 
                 .and()

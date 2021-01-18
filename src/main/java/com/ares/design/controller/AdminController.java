@@ -40,6 +40,4 @@ public class AdminController {
 //        model.addAttribute("commentList", commentList);
         return "admin/index";
     }
-
-
 }

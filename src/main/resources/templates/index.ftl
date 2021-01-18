@@ -105,7 +105,7 @@
                     </li>
                 <#else>
                     <li class="nav-item ">
-                        <a class="nav-link" href="/signin">登录</a>
+                        <a class="nav-link" href="/admin">登录</a>
                     </li>
                 </#if>
             </ul>
