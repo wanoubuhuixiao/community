@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="/css/search-form.css"/>
     <link rel="stylesheet" type="text/css" href="/css/space.css"/>
     <link rel="stylesheet" type="text/css" href="/css/mycss.css"/>
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="shortcut icon" sizes="48x48" href="https://cdn.max-c.com/logo/heybox_bbs_128_128.png">
     <title>个人中心</title>
 </head>

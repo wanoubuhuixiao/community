@@ -24,6 +24,7 @@
     <link href="/css/animate.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/simditor.css"/>
     <link href="/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
     <base target="_blank">
     <title>个人中心</title>
 </head>
@@ -149,9 +150,9 @@
             </div>
             <div class="auth-info">
                 <ul>
+                    <li><strong>${articleCount}</strong><span>发表</span></li>
                     <li><strong>666</strong><span>关注</span></li>
                     <li><strong>666</strong><span>粉丝</span></li>
-                    <li><strong>666</strong><span>点赞</span></li>
                 </ul>
             </div>
 
@@ -209,34 +210,36 @@
                                 </div>
                             </div>
                             <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>文本编辑器</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="form_editors.html#">选项1</a>
-                                            </li>
-                                            <li><a href="form_editors.html#">选项2</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <div class="form-group">
+                                    <div class="ibox-title">
+                                        <h5>文本编辑器</h5>
+                                        <div class="ibox-tools">
+                                            <a class="collapse-link">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </a>
+                                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_editors.html#">
+                                                <i class="fa fa-wrench"></i>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-user">
+                                                <li><a href="form_editors.html#">选项1</a>
+                                                </li>
+                                                <li><a href="form_editors.html#">选项2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <div class="ibox-content">
                                         <@spring.bind "article.articleContent" />
                                         <textarea id="editor" placeholder="输入文章内容" autofocus></textarea>
                                     </div>
                                 </div>
                             </div>
+                            <@spring.bind "article.articleUserId" />
+                            <input hidden type="text" name="articleUserId" value="${user.userId}">
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
                                     <input type="submit" class="btn btn-primary btn-lg" id="denglu"
-                                           value="提交"/>
+                                           value="发表"/>
                                 </div>
                             </div>
                         </form>

@@ -69,6 +69,7 @@ public class UserController {
     public String info(UserDto userDto, ModelMap model) {
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
+        model.put("articleCount", articleService.countArticleByUser(user.getUserId()));
         model.put("user", user);
         model.put("userDto", userDto);
         model.put("identity", "owner");
@@ -98,6 +99,7 @@ public class UserController {
     public String publish(Article article, ModelMap model) {
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
+        model.put("articleCount", articleService.countArticleByUser(user.getUserId()));
         model.put("user", user);
         model.put("identity", "owner");
         model.put("article",article);
@@ -111,6 +113,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("article", article);
             System.out.println("error");
+
             return "redirect:/publish";
         }
 
