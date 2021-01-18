@@ -203,7 +203,7 @@
                                     <@spring.bind "article.articleSummary" />
                                     <input value="" type="text" class="form-control"
                                            id="articleSummary"
-                                           placeholder="请输入文章简介" name="uarticleSummary">
+                                           placeholder="请输入文章简介" name="articleSummary">
                                     <span class="text-danger">
                                                     <@spring.showErrors "" />
                                                 </span>
@@ -230,7 +230,8 @@
                                     </div>
                                     <div class="ibox-content">
                                         <@spring.bind "article.articleContent" />
-                                        <textarea id="editor" placeholder="输入文章内容" autofocus></textarea>
+                                        <textarea id="editor" name="articleContent" placeholder="输入文章内容"
+                                                  autofocus></textarea>
                                     </div>
                                 </div>
                             </div>
