@@ -1,5 +1,6 @@
 package com.ares.design.controller;
 
+import com.ares.design.domain.Article;
 import com.ares.design.domain.User;
 import com.ares.design.dto.UserDto;
 import com.ares.design.service.ArticleService;
@@ -17,10 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
-import javax.validation.constraints.Null;
-import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -73,6 +71,7 @@ public class UserController {
         User user = userService.getUserByName(name);
         model.put("user", user);
         model.put("userDto", userDto);
+        model.put("identity", "owner");
         return "info";
     }
 
@@ -93,6 +92,30 @@ public class UserController {
 
 
         return "redirect:/info";
+    }
+
+    @GetMapping(value = "/publish")
+    public String publish(Article article, ModelMap model) {
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
+        model.put("user", user);
+        model.put("identity", "owner");
+        model.put("article",article);
+        return "publish";
+    }
+
+    @PostMapping(value = "/publish")
+    public String publishArticle(@Valid @ModelAttribute("article") Article article,
+                         BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("article", article);
+            System.out.println("error");
+            return "redirect:/publish";
+        }
+
+        articleService.insert(article);
+        return "redirect:/publish";
     }
 
     @PostMapping("/signup")

@@ -45,7 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()  //csrf不可用
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/signup", "/static/**", "/css/**", "/js/**", "/images/**", "/fonts/**", "/lib/**").permitAll() // 这三个目录不做安全控制
+                .antMatchers("/", "/index", "/signup", "/static/**", "/css/**", "/js/**", "/images/**", "/fonts/**", "/lib/**", "/plugin/**").permitAll() // 这三个目录不做安全控制
                 .anyRequest().authenticated()
 
                 .and()

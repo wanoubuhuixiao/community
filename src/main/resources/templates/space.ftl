@@ -160,11 +160,11 @@
                     <div class="personal-userCenter-tabLeftFrame">
                         <div class="personal-userCenter-columns">
                             <ul class="personal-userCenter-columnList">
-                                <li class="myCreated active"><a href="/space">我发表的</a>
-                                    <#if identity=="owner">
-                                <li class="infoConfig"><a href="/info">资料设置</a></li>
+                                <li class="myCreated active"><a href="/space">我发表的</a></li>
+                                <#if identity=="owner">
+                                    <li class="infoConfig"><a href="/info">资料设置</a></li>
+                                    <li class="infoConfig"><a href="/publish">发表文章</a></li>
                                 </#if>
-                                </li>
                             </ul>
                         </div>
                     </div>
