@@ -44,7 +44,6 @@ public class ArticleController {
         int pageIndex = 1;
         Integer offset = pageSize * (pageIndex - 1);
         List<Article> articleList = articleService.getRecentArticle(10);
-        System.out.println(articleList.get(0).getArticleSummary());
         model.put("articleList", articleList);
         if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
             model.put("login", false);
@@ -101,7 +100,11 @@ public class ArticleController {
         model.addAttribute("commentListCount", commentListCount);
         model.addAttribute("commentService", commentService);
         model.addAttribute("userService", userService);
-
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.addAttribute("login", false);
+        } else {
+            model.addAttribute("login", true);
+        }
 
 
         PagingResult<Comment> pagingResult = new PagingResult<>();

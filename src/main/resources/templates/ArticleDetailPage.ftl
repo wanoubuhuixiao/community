@@ -123,8 +123,8 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="nabmune">
             <ul class="navbar-nav nav-color ">
-                <li class="nav-item active ">
-                    <a class="nav-link" href="index.html">首页 <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">首页 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="chat.html">PC游戏</a>
@@ -145,6 +145,15 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="about.html">社区</a>
                 </li>
+                <#if login>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/space">我的主页</a>
+                    </li>
+                <#else>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/admin">登录</a>
+                    </li>
+                </#if>
             </ul>
             <!--<form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

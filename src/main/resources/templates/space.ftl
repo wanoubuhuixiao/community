@@ -194,7 +194,7 @@
                                     <img class="mr-3" src="images/0.jpg" alt="Generic placeholder image">
                                 </div>
                                 <div class="media-body art-content">
-                                    <h5 class="mt-0 mb-1"><a href="./article.html">${article.articleTitle}</a></h5>
+                                    <h5 class="mt-0 mb-1"><a href="/article/${article.articleId}">${article.articleTitle}</a></h5>
                                     <p>${(article.articleSummary)!'简介为空'}
                                     </p>
                                     <ul>

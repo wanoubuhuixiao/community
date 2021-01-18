@@ -204,7 +204,8 @@
                                     <img class="mr-3" src="images/0.jpg" alt="Generic placeholder image">
                                 </div>
                                 <div class="media-body art-content">
-                                    <h5 class="mt-0 mb-1"><a href="./article.html">${article.articleTitle}</a></h5>
+                                    <h5 class="mt-0 mb-1"><a
+                                                href="/article/${article.articleId}">${article.articleTitle}</a></h5>
                                     <p>${(article.articleSummary)!'简介为空'}
                                     </p>
                                     <ul>
@@ -232,8 +233,47 @@
         <!--右边-->
         <div class="col-md-4 ">
             <div class="container">
-
-
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>告知</h5>
+                        </div>
+                        <div>
+                            <div class="ibox-content no-padding border-left-right">
+                                <img alt="image" class="img-responsive" src="images/4.png">
+                            </div>
+                            <div class="ibox-content profile-content">
+                                <h4><strong>广告位招租</strong></h4>
+                                <p><i class="fa fa-map-marker"></i> 未来的招牌区和广告区</p><br/>
+                                <h5>
+                                    关于我们
+                                </h5>
+                                <p>
+                                    想拿优秀
+                                </p>
+                                <div class="row m-t-lg">
+                                    <div class="col-sm-12">
+                                        <span class="bar">555555555</span>
+                                    </div>
+                                </div>
+                                <div class="user-button">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block"><i
+                                                        class="fa fa-envelope"></i> 投喂
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block"><i
+                                                        class="fa fa-coffee"></i> 赞助
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
