@@ -205,7 +205,7 @@
                                 </div>
                                 <div class="media-body art-content">
                                     <h5 class="mt-0 mb-1"><a href="./article.html">${article.articleTitle}</a></h5>
-                                    <p><
+                                    <p>${(article.articleSummary)!'简介为空'}
                                     </p>
                                     <ul>
                                         <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
@@ -418,6 +418,7 @@
                 this.style.color = '#ffffff';
             };
         }
+
         function myClick() {
             alert("hello world");
             document.getElementById("demo").innerHTML = "222222";

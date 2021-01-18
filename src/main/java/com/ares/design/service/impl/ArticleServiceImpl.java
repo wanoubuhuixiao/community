@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -33,10 +34,16 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     public Integer update(Article article) {
+        article.setArticleUpdateTime(new Date());
         return articleDao.update(article);
     }
 
     public Integer insert(Article article) {
+        article.setArticleCreateTime(new Date());
+        article.setArticleUpdateTime(new Date());
+        article.setArticleViewCount(0);
+        article.setArticleLikeCount(0);
+        article.setArticleCommentCount(0);
         return articleDao.insert(article);
     }
 
@@ -50,6 +57,11 @@ public class ArticleServiceImpl implements ArticleService {
 
     public List<Article> listArticleByCommentCount(Integer limit) {
         return articleDao.listArticleByCommentCount(limit);
+    }
+
+    //获取“我的文章”
+    public List<Article> listArticleByUserId(Integer userId, Integer limit) {
+        return articleDao.findArticleByUserId(userId, limit);
     }
 
     //文章分类
@@ -79,7 +91,7 @@ public class ArticleServiceImpl implements ArticleService {
         return articleDao.AllArticle();
     }
 
-    public List<Article> pageArticle(Integer pageIndex, Integer pageSize){
+    public List<Article> pageArticle(Integer pageIndex, Integer pageSize) {
         return articleDao.AllArticle();
     }
 

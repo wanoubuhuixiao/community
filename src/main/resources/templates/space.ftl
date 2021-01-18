@@ -188,150 +188,31 @@
 
                 <div class="row mt-2 offset-1">
                     <ul class="list-unstyled art-list">
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media wow">
-                            <div class="art-img">
-                                <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1"><a href="./article.html">一篇测试文章的标题</a></h5>
-                                <p>简介简介简介简介简介简介
-                                </p>
-                                <ul>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
-                                                                                         title="查看分类"><i
-                                                    class="el-th-list"></i>生活</a></li>
-                                    <li><a title="发布时间"><i class="bi-clock-fill"></i>2020-1-5</a></li>
-                                    <li><a title="浏览数"><i class="el-eye-open"></i>1</a></li>
-                                    <li><a title="评论数"><i class="bi-chat-left-dots-fill"></i>2</a></li>
-                                </ul>
-                            </div>
-                        </li>
+                        <#list articleList as article>
+                            <li class="media wow">
+                                <div class="art-img">
+                                    <img class="mr-3" src="images/0.jpg" alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body art-content">
+                                    <h5 class="mt-0 mb-1"><a href="./article.html">${article.articleTitle}</a></h5>
+                                    <p>${(article.articleSummary)!'简介为空'}
+                                    </p>
+                                    <ul>
+                                        <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
+                                                                                             title="查看分类"><i
+                                                        class="el-th-list"></i>生活</a></li>
+                                        <li><a title="发布时间"><i
+                                                        class="bi-clock-fill"></i>${article.articleUpdateTime?date}</a>
+                                        </li>
+                                        <li><a title="浏览数"><i class="el-eye-open"></i>${article.articleViewCount}</a>
+                                        </li>
+                                        <li><a title="评论数"><i
+                                                        class="bi-chat-left-dots-fill"></i>${article.articleCommentCount}
+                                            </a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </#list>
                     </ul>
 
                 </div>

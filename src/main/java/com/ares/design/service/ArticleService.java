@@ -13,6 +13,7 @@ public interface ArticleService {
     Integer deleteById(Integer articleId);
     List<Article> listRandomArticle(Integer limit);
     List<Article> listArticleByCommentCount(Integer limit);
+    List<Article> listArticleByUserId(Integer userId, Integer limit);
     List<Article> findArticleByCategoryId(Integer categoryId, Integer limit);
 
     //获取首页显示的limit篇文章（评论数最多的）

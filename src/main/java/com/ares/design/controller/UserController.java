@@ -54,6 +54,8 @@ public class UserController {
     public String space(@PathVariable Integer id, ModelMap model) {
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
+        List<Article> articleList = articleService.findArticleByUserId(user.getUserId(), 10);
+        model.put("articleList", articleList);
         model.put("articleCount", articleService.countArticleByUser(id));
         model.put("user", userService.getUserById(id));
         if (user.getUserId() == id) {
@@ -89,7 +91,7 @@ public class UserController {
             return "redirect:/info";
         }
 
-            update(userDto);
+        update(userDto);
 
 
         return "redirect:/info";
@@ -102,13 +104,13 @@ public class UserController {
         model.put("articleCount", articleService.countArticleByUser(user.getUserId()));
         model.put("user", user);
         model.put("identity", "owner");
-        model.put("article",article);
+        model.put("article", article);
         return "publish";
     }
 
     @PostMapping(value = "/publish")
     public String publishArticle(@Valid @ModelAttribute("article") Article article,
-                         BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+                                 BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("article", article);

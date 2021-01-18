@@ -43,7 +43,8 @@ public class ArticleController {
         int pageSize = 3;//limit 每页文章数
         int pageIndex = 1;
         Integer offset = pageSize * (pageIndex - 1);
-        List<Article> articleList = articleService.pageArticle(pageIndex, pageSize);
+        List<Article> articleList = articleService.getRecentArticle(10);
+        System.out.println(articleList.get(0).getArticleSummary());
         model.put("articleList", articleList);
         if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
             model.put("login", false);
