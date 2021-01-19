@@ -190,6 +190,7 @@ public class CommentController {
         comment.setCommentPid(0);
         Article article = articleService.getArticleById(Integer.valueOf(articleId));
         comment.setArticle(article);
+        comment.setCommentStatus(0);
 
 
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
