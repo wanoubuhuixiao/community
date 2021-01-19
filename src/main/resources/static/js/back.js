@@ -20,6 +20,8 @@ function confirmDelete() {
     }
 }
 
+
+
 //获取相对路径
 function  getPath(){
     var pathName = document.location.pathname;
@@ -84,6 +86,20 @@ function deleteArticle(id) {
             }
         })
     }
+}
+
+//通过/不通过审核
+function examineArticle(id,status){
+        $.ajax({
+            async: false,
+            type: "POST",
+            url:'/admin/article/examinepass/'+id+'/'+status,
+            contentType : "application/x-www-form-urlencoded; charset=utf-8",
+            dataType: "text",
+            complete:function () {
+                window.location.reload();
+            }
+        })
 }
 
 //查询文章

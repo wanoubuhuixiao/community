@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 public class Article implements Serializable {
@@ -22,10 +23,10 @@ public class Article implements Serializable {
     private Date articleCreateTime;
     private Date articleUpdateTime;
     //private Integer articleIsComment;
-    //private Integer articleStatus;
+    private Integer articleStatus;
     //private Integer articleOrder;
     private String articleSummary;
 
 //    private List<Tag> tagList;
-//    private List<Category> categoryList;
+       private List<Category> categoryList;
 }

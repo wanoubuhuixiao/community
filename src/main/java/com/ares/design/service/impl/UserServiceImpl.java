@@ -1,9 +1,9 @@
 package com.ares.design.service.impl;
 
+import com.ares.design.dao.UserDao;
 import com.ares.design.domain.User;
 import com.ares.design.dto.UserDto;
 import com.ares.design.service.UserService;
-import com.ares.design.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

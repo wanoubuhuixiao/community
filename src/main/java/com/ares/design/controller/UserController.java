@@ -1,9 +1,13 @@
 package com.ares.design.controller;
 
+import cn.hutool.http.HtmlUtil;
 import com.ares.design.domain.Article;
+import com.ares.design.domain.Category;
 import com.ares.design.domain.User;
+import com.ares.design.dto.ArticleParam;
 import com.ares.design.dto.UserDto;
 import com.ares.design.service.ArticleService;
+import com.ares.design.service.CategoryService;
 import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -19,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -27,29 +32,9 @@ public class UserController {
     private UserService userService;
     @Autowired
     private ArticleService articleService;
-    @GetMapping({"/", "/index"})
-    public String index(ModelMap model) {
-        String redirect = "redirect:/index/1";
-        return redirect;
-    }
-
-    //主页
-    @GetMapping(value = "/index/{pageIndex}")
-    public String indexAndPage(@PathVariable Integer pageIndex, ModelMap model) {
-        int pageSize = 8;//limit 每页文章数
-        Integer offset = pageSize * (pageIndex - 1);
-        List<Article> articleList = articleService.pageArticle(pageSize, offset);
-        model.put("articleList", articleList);
-        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
-            model.put("login", false);
-        } else {
-            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-            User user = userService.getUserByName(name);
-            model.put("login", true);
-            model.put("user", user);
-        }
-        return "index";
-    }
+    //为了获得类型列表
+    @Autowired
+    private CategoryService categoryService;
 
     @Secured("ROLE_USER")
     @RequestMapping(value = "/test")
@@ -122,6 +107,10 @@ public class UserController {
 
     @GetMapping(value = "/publish")
     public String publish(Article article, ModelMap model) {
+        //加了:获得类型列表
+        List<Category> categoryList = categoryService.listCategory();
+        model.put("categoryList", categoryList);
+
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
         model.put("articleCount", articleService.countArticleByUser(user.getUserId()));
@@ -132,17 +121,32 @@ public class UserController {
     }
 
     @PostMapping(value = "/publish")
-    public String publishArticle(@Valid @ModelAttribute("article") Article article,
-                                 BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-
-        if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("article", article);
-            System.out.println("error");
-
-            return "redirect:/publish";
+    public String publishArticle(ArticleParam articleParam) {
+        Article article = new Article();
+        //获得用户
+        String name=((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user=userService.getUserByName(name);
+        if (user != null) {
+            article.setArticleUserId(user.getUserId());
         }
-
-        articleService.insert(article);
+        article.setArticleTitle(articleParam.getArticleTitle());
+        //文章简介
+        article.setArticleSummary(articleParam.getArticleSummary());
+        article.setArticleContent(articleParam.getArticleContent());
+        article.setArticleStatus(0);
+        //填充分类
+        List<Category> categoryList = new ArrayList<>();
+        if (articleParam.getArticleCategoryId() != null) {
+            categoryList.add(new Category(articleParam.getArticleCategoryId()));
+        }
+        article.setCategoryList(categoryList);
+//        if (bindingResult.hasErrors()) {
+//            redirectAttributes.addFlashAttribute("article", article);
+//            System.out.println("error");
+//
+//            return "redirect:/publish";
+//        }
+        articleService.insertArticle(article);
         return "redirect:/publish";
     }
 

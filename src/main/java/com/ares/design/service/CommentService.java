@@ -1,7 +1,6 @@
 package com.ares.design.service;
 
 import com.ares.design.domain.Comment;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
