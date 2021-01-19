@@ -278,7 +278,7 @@
                     <a href="javascript:;">评论</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/comment/examine">审核</a></dd>
-                        <dd><a href="/admin/comment">删除</a></dd>
+                        <#--<dd><a href="/admin/comment">删除</a></dd>-->
                     </dl>
                 </li>
             </ul>

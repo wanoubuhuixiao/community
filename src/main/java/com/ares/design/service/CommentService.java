@@ -100,4 +100,6 @@ public interface CommentService {
     //commentStatus
 
     List<Comment> listCommentByCommentStatus(Integer commentStatus);
+    //更新被举报的状态
+    void updateStatus(Comment comment);
 }

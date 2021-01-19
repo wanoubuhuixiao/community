@@ -33,6 +33,37 @@ public class CommentController {
     @Autowired
     private ArticleService articleService;
 
+    @RequestMapping(value = "/report/{commentid}/{articleid}")
+    public String ChangeCommentStatus(@PathVariable("commentid") int commentid,
+                     @PathVariable("articleid") int articleid,
+            HttpServletRequest request, Model model) {
+        System.out.println("举报功能");
+        Comment thiscomment=commentService.getCommentById(commentid);
+
+        thiscomment.setCommentStatus(1);
+        commentService.updateStatus(thiscomment);
+
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
+        model.addAttribute("user", user);
+
+        String returnurl = "redirect:/article/" + articleid;
+        System.out.println("articleid:" + articleid);
+        System.out.println("returnurl:" + returnurl);
+        return returnurl;
+    }
+
+    @RequestMapping(value = "/admin/comment/examine}")
+    public String StatusComments(HttpServletRequest request, Model model) {
+        System.out.println("进行举报的评论进行编辑");
+        List<Comment> statusCommentsList=commentService.listCommentByCommentStatus(1);
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
+        model.addAttribute("user", user);
+        model.addAttribute("statusCommentsList",statusCommentsList);
+        return "/admin/comment/examine";
+    }
+
     @RequestMapping(value = "/deletecomment/{deletecommentid}/{articleid}")
     public String deleteComments(@PathVariable("deletecommentid") int deletecommentid,
                                  @PathVariable("articleid") int articleId
@@ -48,7 +79,7 @@ public class CommentController {
         User user = userService.getUserByName(name);
         model.addAttribute("user", user);
 
-        String returnurl = "redirect:/article/"+articleId;
+        String returnurl = "redirect:/article/" + articleId;
         System.out.println("articleId:" + articleId);
         System.out.println("returnurl:" + returnurl);
         return returnurl;
@@ -106,7 +137,7 @@ public class CommentController {
             e.printStackTrace();
             return "error";
         }
-        String returnurl = "redirect:/article/"+articleId;
+        String returnurl = "redirect:/article/" + articleId;
         System.out.println("articleId:" + articleId);
         System.out.println("returnurl:" + returnurl);
         return returnurl;
@@ -188,7 +219,7 @@ public class CommentController {
             e.printStackTrace();
             return "error";
         }
-        String returnurl = "redirect:/article/"+articleId;
+        String returnurl = "redirect:/article/" + articleId;
         System.out.println("articleId:" + articleId);
         System.out.println("returnurl:" + returnurl);
         return returnurl;

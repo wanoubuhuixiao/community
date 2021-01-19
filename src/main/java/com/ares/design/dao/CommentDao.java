@@ -33,13 +33,17 @@ public interface CommentDao {
      * @return 评论
      */
     Comment getCommentById(Integer commentId);
-
+    //修改status
+    int updateStatus(Comment comment);
     /**
      * 更新
      *
      * @param comment 评论
      * @return 影响行数
      */
+
+
+
     int update(Comment comment);
 
     /**
@@ -87,4 +91,6 @@ public interface CommentDao {
 
     //管理员用于查看被举报的评论
     List<Comment> listCommentByCommentStatus(@Param(value = "commentStatus") Integer commentstatus);
+
+
 }

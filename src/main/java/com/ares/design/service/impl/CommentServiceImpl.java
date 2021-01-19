@@ -178,6 +178,17 @@ public class CommentServiceImpl implements CommentService {
         return commentByCommentStatusList;
     }
 
+    @Override
+    public void updateStatus(Comment comment) {
+        List<Comment> commentStatusList = null;
+        try {
+            int temp = commentDao.updateStatus(comment);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获得子评论失败, id:{}, cause:{}", comment, e);
+        }
+    }
+
 
    /* @Override
     public List<Comment> listCommentByArticleIdAndPageNumber(Integer articleId, Integer pageNumber) {

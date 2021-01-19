@@ -367,6 +367,9 @@
                                             <button type="button" id="hide${comment.commentId}" value="${comment.commentId}"
                                                     onclick="hiddenDiv1${comment.commentId}()">取消回复
                                             </button>
+                                            <div>
+                                                <a href="/report/${comment.commentId}/${article.articleId}">点击举报</a>
+                                            </div>
                                         </#list>
                                     </div>
                                 </#if>
