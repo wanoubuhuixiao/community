@@ -166,6 +166,18 @@ public class CommentServiceImpl implements CommentService {
         return commentByAuthorIdList;
     }
 
+    @Override
+    public List<Comment> listCommentByCommentStatus(Integer commentStatus) {
+        List<Comment> commentByCommentStatusList = null;
+        try {
+            commentByCommentStatusList = commentDao.listCommentByCommentStatus(commentStatus);
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("获得子评论失败, id:{}, cause:{}", commentStatus, e);
+        }
+        return commentByCommentStatusList;
+    }
+
 
    /* @Override
     public List<Comment> listCommentByArticleIdAndPageNumber(Integer articleId, Integer pageNumber) {

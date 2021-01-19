@@ -45,4 +45,6 @@ public class CommentDto {
 
     private Integer commentAuthorId;//用于记录用户的id
 
+    //用于记录是否被举报，默认为0，被举报为1，此时应该在管理员处显示
+    private Integer commentStatus;
 }

@@ -85,4 +85,6 @@ public interface CommentDao {
     List<Comment> listCommentByAuthorId(@Param(value = "commentAuthorId") Integer authorid,
                                         @Param(value = "commentArticleId") Integer articleid);
 
+    //管理员用于查看被举报的评论
+    List<Comment> listCommentByCommentStatus(@Param(value = "commentStatus") Integer commentstatus);
 }

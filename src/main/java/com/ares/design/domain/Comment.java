@@ -48,5 +48,7 @@ public class Comment implements Serializable{
      * 非数据库字段
      */
     private Article article;
+    //用于记录是否被举报，默认为0，被举报为1，此时应该在管理员处显示
+    private Integer commentStatus;
 
 }

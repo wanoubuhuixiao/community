@@ -95,4 +95,9 @@ public interface CommentService {
     //暂时无法实现一个评论下面有很多子评论，目前只能一个评论回复另一个评论。
 
     List<Comment> listCommentByAuthorId(Integer authorId);//用于对相应id的评论查找*/
+
+    //管理员用于查看被举报的评论
+    //commentStatus
+
+    List<Comment> listCommentByCommentStatus(Integer commentStatus);
 }
