@@ -108,7 +108,7 @@
                     <a class="nav-link" href="about.html">社区</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/space">我的主页</a>
+                    <a class="nav-link" href="/logout">登出</a>
                 </li>
             </ul>
             <!--<form class="form-inline my-2 my-lg-0">
