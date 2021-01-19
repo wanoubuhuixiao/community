@@ -27,6 +27,29 @@ public class UserController {
     private UserService userService;
     @Autowired
     private ArticleService articleService;
+    @GetMapping({"/", "/index"})
+    public String index(ModelMap model) {
+        String redirect = "redirect:/index/1";
+        return redirect;
+    }
+
+    //主页
+    @GetMapping(value = "/index/{pageIndex}")
+    public String indexAndPage(@PathVariable Integer pageIndex, ModelMap model) {
+        int pageSize = 8;//limit 每页文章数
+        Integer offset = pageSize * (pageIndex - 1);
+        List<Article> articleList = articleService.pageArticle(pageSize, offset);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "index";
+    }
 
     @Secured("ROLE_USER")
     @RequestMapping(value = "/test")

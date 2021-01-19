@@ -174,7 +174,7 @@
         SELECT
         <include refid="Base_Column_List"/>
         FROM article
-        limit #{pageIndex},#{pageSize}
+        LIMIT #{pageSize} OFFSET #{pageIndex};
     </select>
 
     <!--    用户写的文章数-->

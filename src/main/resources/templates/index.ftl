@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <base href="/">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
@@ -225,7 +226,24 @@
                             </li>
                         </#list>
                     </ul>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-2 offset-4">
+                                <#if pageIndex<=1>
+                                    <a href="/index/${pageIndex+1}" class="btn btn-white btn-sm btn-block" data-toggle="tooltip"
+                                       data-placement="top" title="下一页"><i class="fa fa-times"></i>上一页</a>
+                                <#else>
 
+                                    <a href="/index/${pageIndex-1}" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip"
+                                       data-placement="top" title="上一页"><i class="fa fa-reply"></i>上一页</a>
+                                </#if>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="/index/${pageIndex+1}" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip"
+                                   data-placement="top" title="下一页"><i class="fa fa-times"></i>下一页</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -260,12 +278,12 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <button type="button" class="btn btn-primary btn-sm btn-block"><i
-                                                        class="fa fa-envelope"></i> 投喂
+                                                        class="fa fa-envelope"></i>投喂
                                             </button>
                                         </div>
                                         <div class="col-sm-6">
                                             <button type="button" class="btn btn-primary btn-sm btn-block"><i
-                                                        class="fa fa-coffee"></i> 赞助
+                                                        class="fa fa-coffee"></i>赞助
                                             </button>
                                         </div>
                                     </div>

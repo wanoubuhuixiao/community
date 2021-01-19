@@ -1,9 +1,9 @@
 package com.ares.design.controller;
 
 import com.ares.design.domain.Article;
+import com.ares.design.domain.Comment;
 import com.ares.design.domain.User;
 import com.ares.design.service.ArticleService;
-import com.ares.design.domain.Comment;
 import com.ares.design.service.CommentService;
 import com.ares.design.service.UserService;
 import com.ares.design.util.PagingResult;
@@ -12,7 +12,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,25 +35,6 @@ public class ArticleController {
 //    public String test(){
 //        return "hhhhh";
 //    }
-
-    //主页
-    @RequestMapping({"/", "/index"})
-    public String index(ModelMap model) {
-        int pageSize = 3;//limit 每页文章数
-        int pageIndex = 1;
-        Integer offset = pageSize * (pageIndex - 1);
-        List<Article> articleList = articleService.getRecentArticle(10);
-        model.put("articleList", articleList);
-        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
-            model.put("login", false);
-        } else {
-            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-            User user = userService.getUserByName(name);
-            model.put("login", true);
-            model.put("user", user);
-        }
-        return "index";
-    }
 
     /*
     * @PathVariable String urlName, @PathVariable Integer page, Model model,

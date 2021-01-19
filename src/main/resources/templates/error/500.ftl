@@ -10,7 +10,7 @@
     <title>小黑盒-错误</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-
+    <base href="/">
     <link rel="shortcut icon" href="favicon.ico"> <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
     <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 

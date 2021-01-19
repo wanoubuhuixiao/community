@@ -34,8 +34,7 @@ public interface ArticleDao {
 
     List<Article> AllArticle();
 
-    List<Article> pageArticle(@Param(value = "pageIndex") Integer pageIndex,
-                              @Param(value = "pageSize") Integer pageSize);
+    List<Article> pageArticle(@Param(value = "pageSize") Integer pageSize, @Param(value = "pageIndex") Integer pageIndex);
 
     Integer countArticleByUser(Integer userid);
 

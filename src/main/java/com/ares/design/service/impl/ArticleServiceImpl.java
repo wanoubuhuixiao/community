@@ -91,8 +91,8 @@ public class ArticleServiceImpl implements ArticleService {
         return articleDao.AllArticle();
     }
 
-    public List<Article> pageArticle(Integer pageIndex, Integer pageSize) {
-        return articleDao.AllArticle();
+    public List<Article> pageArticle(Integer pageSize,Integer pageIndex) {
+        return articleDao.pageArticle(pageSize,pageIndex);
     }
 
     public Integer countArticleByUser(Integer userid) {
