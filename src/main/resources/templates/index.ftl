@@ -241,10 +241,10 @@
                             <div class="col-sm-2">
                                 <a href="/index/${pageIndex+1}" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip"
                                    data-placement="top" title="下一页"><i class="fa fa-times"></i>下一页</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
+                        </div>
             </div>
         </div>
 

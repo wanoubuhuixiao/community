@@ -292,7 +292,7 @@
                                             </#if>
                                             <#if comment.commentAuthorId==user.userId >
                                                 <div>
-                                                    <a href="/deletecomment/${comment.commentId}/${article.articleId}">点击删除自己的评论</a>
+                                                    <a href="/deletecomment/${comment.commentId}/${article.articleId}" class="text-primary">点击删除自己的评论</a>
                                                 </div>
                                             </#if>
 

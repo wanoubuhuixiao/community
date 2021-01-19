@@ -235,6 +235,20 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="password" class="col-sm-4 control-label">分类</label>
+                                <div class="col-sm-8">
+                                    <@spring.bind "article.articleSummary" />
+                                    <select class="form-control" name="articleCategoryId">
+                                        <#list categoryList as c>
+                                            <option value="${c.categoryId}">${c.categoryName}</option>
+                                        </#list>
+                                        </select>
+                                    <span class="text-danger">
+                                                    <@spring.showErrors "" />
+                                    </span>
+                                </div>
+                            </div>
                             <@spring.bind "article.articleUserId" />
                             <input hidden type="text" name="articleUserId" value="${user.userId}">
                             <div class="form-group">

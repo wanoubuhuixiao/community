@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ares.design.dao.CategoryDao">
+
+    <select id="listCategoryByArticleId" parameterType="java.lang.Integer"
+            resultType="com.ares.design.domain.Category">
+        SELECT
+        category.category_id, category.category_name
+        FROM category, article_category_ref
+        WHERE article_category_ref.article_id = #{value} AND
+        article_category_ref.category_id = category.category_id
+    </select>
+
+    <sql id="Base_Column_List">
+    category_id, category_name, category_description, category_icon
+  </sql>
+
+<!--获得分类列表-->
+    <select id="listCategory" resultType="com.ares.design.domain.Category">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        category
+--         order by category_order desc,category_id asc
+    </select>
+
+    <!--添加文章和类别的关联-->
+    <insert id="insert" parameterType="java.lang.Integer">
+        insert into
+        article_category_ref(article_id, category_id)
+        values (#{articleId}, #{categoryId})
+    </insert>
+
+    <delete id="deleteByArticleId" parameterType="java.lang.Integer">
+        delete from
+        article_category_ref
+        where article_id = #{value}
+    </delete>
+
+
+
+
+</mapper>

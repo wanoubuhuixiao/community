@@ -271,6 +271,7 @@
                     <a class="" href="javascript:;">文章</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/article">全部文章</a></dd>
+                        <dd><a href="/admin/article/insert">写文章</a></dd>
                         <dd><a href="/admin/article/examine">文章审核</a></dd>
                     </dl>
                 </li>
@@ -278,7 +279,7 @@
                     <a href="javascript:;">评论</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/comment/examine">审核</a></dd>
-                        <#--<dd><a href="/admin/comment">删除</a></dd>-->
+                        <dd><a href="/admin/comment">删除</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -288,10 +289,116 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-<#--            <rapid:block name="content">  这里放右边的东西-->
+            <div class="layui-container">
 
-<#--            </rapid:block>-->
+                <div class="layui-row">
+                    <div class="layui-col-md6">
+                        <div id="dashboard_activity" class="postbox ">
+                            <div class="inside">
+                                <div id="activity-widget">
+                                    <div id="published-posts" class="activity-block"><h3>最近发布</h3> <br>
+                                        <ul>
+                                            <#list articleList as a>
+                                                <li><span>${a.articleCreateTime?string("yyyy-MM-dd")}</span>
+                                                    <a href="/article/${a.articleId}"
+                                                       target="_blank">${a.articleTitle}</a>
+                                                </li>
+                                            </#list>
+                                        </ul>
+                                    </div>
+                                    <br>
+                                    <div id="latest-comments" class="activity-block"><h3>近期评论</h3>
+                                        <ul id="the-comment-list" data-wp-lists="list:comment">
+                                            <#--                                        <#list commentList as c>-->
+                                            <#--                                            <li class="comment   thread-even comment-item approved">-->
+
+                                            <#--                                                <img alt="" src="/images/icon_83.5@3x.png"-->
+                                            <#--                                                     class="avatar avatar-50 photo" height="50" width="50">-->
+                                            <#--                                                <div class="dashboard-comment-wrap has-row-actions">-->
+                                            <#--                                                    <p class="comment-meta">-->
+                                            <#--                                                        由<cite class="comment-author">-->
+                                            <#--                                                            <a target="_blank" href="${c.commentAuthorUrl}"-->
+                                            <#--                                                               rel="external nofollow"-->
+                                            <#--                                                               class="url">${c.commentAuthorName}</a>-->
+                                            <#--                                                        </cite>发表在-->
+                                            <#--                                                        《<a href="/article/${c.commentArticleId}">${c.article.articleTitle}</a>》-->
+                                            <#--                                                    </p>-->
+
+                                            <#--                                                    <blockquote><p>${c.commentContent}</p></blockquote>-->
+                                            <#--                                                    <p class="row-actions">|-->
+                                            <#--                                                        <span class="">-->
+                                            <#--                                            <a data-comment-id="1268"-->
+                                            <#--                                               href="/admin/comment/reply/${c.commentId}">-->
+                                            <#--                                                回复-->
+                                            <#--                                            </a>-->
+                                            <#--                                            </span>-->
+                                            <#--                                                        <span class=""> |-->
+                                            <#--                                                <a href="/admin/comment/edit/${c.commentId}">编辑</a>-->
+                                            <#--                                            </span>-->
+                                            <#--                                                        <span class=""> |-->
+                                            <#--                                                <a href="javascript:void(0)"-->
+                                            <#--                                                   onclick="deleteComment(${c.commentId})">删除</a>-->
+                                            <#--                                            </span>-->
+                                            <#--                                                    </p>-->
+                                            <#--                                                </div>-->
+                                            <#--                                            </li>-->
+
+                                            <#--                                        </#list>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div id="dashboard_quick_press" class="postbox ">
+                            <div class="inside">
+                                <#--                            <form name="post" method="post" id="insertDraftForm"-->
+                                <#--                                  class="initial-form hide-if-no-js" action="/admin/article/insertDraftSubmit">-->
+
+                                <#--                                <div class="layui-form-item">-->
+                                <#--                                    <div class="layui-input-block">-->
+                                <#--                                        <input type="text" name="articleTitle" id="articleTitle" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">-->
+                                <#--                                    </div>-->
+                                <#--                                </div>-->
+                                <#--                                <div class="layui-form-item layui-form-text">-->
+                                <#--                                    <div class="layui-input-block">-->
+                                <#--                                        <textarea name="articleContent" placeholder="请输入内容" id="articleContent" class="layui-textarea" required></textarea>-->
+                                <#--                                    </div>-->
+                                <#--                                </div>-->
+                                <#--                                <input type="hidden" name="articleStatus" value="0">-->
+                                <#--                                <div class="layui-form-item">-->
+                                <#--                                    <div class="layui-input-block">-->
+                                <#--                                        <button class="layui-btn layui-btn-small" lay-submit lay-filter="formDemo" onclick="insertDraft()">保存草稿</button>-->
+                                <#--                                        <button type="reset" class="layui-btn layui-btn-small layui-btn-primary">重置</button>-->
+                                <#--                                    </div>-->
+                                <#--                                </div>-->
+
+                                <#--                            </form>-->
+                                <#--                            <div class="drafts"><p class="view-all"><a-->
+                                <#--                                            href="/admin/article"-->
+                                <#--                                            aria-label="查看所有草稿">查看所有</a></p>-->
+                                <#--                                <h2 class="hide-if-no-js">草稿</h2>-->
+                                <#--                                <ul>-->
+                                <#--                                    <c:forEach items="${articleList}" var="a">-->
+                                <#--                                        <c:if test="${a.articleStatus==0}">-->
+                                <#--                                            <li>-->
+                                <#--                                                <div class="draft-title"><a-->
+                                <#--                                                            href="/admin/article/edit/${a.articleId}">${a.articleTitle}</a>-->
+                                <#--                                                    <time ><fmt:formatDate value="${a.articleCreateTime}" pattern="yyyy年MM月dd日"/></time>-->
+                                <#--                                                </div>-->
+                                <#--                                            </li>-->
+                                <#--                                        </c:if>-->
+                                <#--                                    </c:forEach>-->
+                                <#--                                </ul>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     </div>
 
     <div class="layui-footer">
