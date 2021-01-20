@@ -170,7 +170,7 @@ public class UserController {
 //            return "redirect:/publish";
 //        }
         articleService.insertArticle(article);
-        return "redirect:/publish";
+        return "redirect:/space";
     }
 
     @PostMapping("/signup")

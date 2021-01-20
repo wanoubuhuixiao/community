@@ -39,8 +39,7 @@
         </#if>
 
     </style>
-    <script src="F:\迅雷下载\design\src\main\resources\static\js\jquery-1.8.3.min.js">
-    </script>
+
     <script type="text/javascript">
 
 
@@ -188,7 +187,6 @@
                                                 id="likei">${article.articleLikeCount}</i></a></li>
                                 <li><a title="浏览数"><i class="el-eye-open"></i><i
                                                 id="viewi">${article.articleViewCount}</i></a></li>
-
                             </ul>
                         </div>
                     </div>

@@ -191,7 +191,7 @@
                         <#list articleList as article>
                             <li class="media wow">
                                 <div class="art-img">
-                                    <img class="mr-3" src="images/0.jpg" alt="Generic placeholder image">
+                                    <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
                                 </div>
                                 <div class="media-body art-content">
                                     <h5 class="mt-0 mb-1"><a href="/article/${article.articleId}">${article.articleTitle}</a></h5>
