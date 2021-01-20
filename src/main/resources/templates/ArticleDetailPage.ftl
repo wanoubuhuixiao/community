@@ -18,6 +18,8 @@
     <link rel="shortcut icon" sizes="48x48" href="https://cdn.max-c.com/logo/heybox_bbs_128_128.png">
 
     <link rel="stylesheet" href="/css/mycss.css">
+    <link href="/css/style.min.css?v=4.0.0" rel="stylesheet">
+    <base target="_blank">
     <style>
         <#if commentList??>
         <#list commentList as comment>
@@ -167,7 +169,7 @@
 <!--内容-->
 <div class="container mt-3">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="container">
                 <div class="row mt-2">
 
@@ -199,16 +201,23 @@
                         </h1>
                     </header>
 
-                    <div class="article-body">
-                        <!--                            <p>js前端实现模糊查询</p><p>对于模糊查询，一般都是传关键字给后端，由后端来做。但是有时候一些轻量级的列表前端来做可以减少ajax请求，在一定程度上提高用户体验。废话不多说，直接上代码。</p>-->
-                        <!--                            <p><br></p><p>//字符串方法indexOf</p><p>var len = list.length;</p><p>var arr = [];</p><p>for(var i=0;i&lt;len;i++){</p><p>&nbsp; &nbsp; //如果字符串中不包含目标字符会返回-1</p>-->
-                        <!--                            <p>&nbsp; &nbsp; if(list[i].indexOf(keyWord)&gt;=0){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; arr.push(list[i]);</p><p>&nbsp; &nbsp; }</p><p>}</p><p>return arr;</p><p><br></p><p>//正则表达式</p>-->
-                        <!--                            <p>var len = list.length;</p><p>var arr = [];</p><p>var reg = new RegExp(keyWord);</p><p>for(var i=0;i&lt;len;i++){</p><p>&nbsp; &nbsp; //如果字符串中不包含目标字符会返回-1</p>-->
-                        <!--                            <p>&nbsp; &nbsp; if(list[i].match(reg)){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; arr.push(list[i]);</p><p>&nbsp; &nbsp; }</p><p>}</p><p>return arr;</p><p><br></p>-->
-                        <pre>
-                                ${article.articleContent}
-                            </pre>
+                    <div class="wrapper wrapper-content  animated fadeInRight article">
+                        <div class="row">
+                            <div class="col-lg-12 col-lg-offset-1">
+                                <div class="ibox">
+                                    <div class="ibox-content">
+                                        <!--                            <p>js前端实现模糊查询</p><p>对于模糊查询，一般都是传关键字给后端，由后端来做。但是有时候一些轻量级的列表前端来做可以减少ajax请求，在一定程度上提高用户体验。废话不多说，直接上代码。</p>-->
+                                        <!--                            <p><br></p><p>//字符串方法indexOf</p><p>var len = list.length;</p><p>var arr = [];</p><p>for(var i=0;i&lt;len;i++){</p><p>&nbsp; &nbsp; //如果字符串中不包含目标字符会返回-1</p>-->
+                                        <!--                            <p>&nbsp; &nbsp; if(list[i].indexOf(keyWord)&gt;=0){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; arr.push(list[i]);</p><p>&nbsp; &nbsp; }</p><p>}</p><p>return arr;</p><p><br></p><p>//正则表达式</p>-->
+                                        <!--                            <p>var len = list.length;</p><p>var arr = [];</p><p>var reg = new RegExp(keyWord);</p><p>for(var i=0;i&lt;len;i++){</p><p>&nbsp; &nbsp; //如果字符串中不包含目标字符会返回-1</p>-->
+                                        <!--                            <p>&nbsp; &nbsp; if(list[i].match(reg)){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; arr.push(list[i]);</p><p>&nbsp; &nbsp; }</p><p>}</p><p>return arr;</p><p><br></p>-->
 
+                                        ${article.articleContent}
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -280,7 +289,7 @@
 
                                                 </div>
                                                 <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
-                                                <#--<div>发出者的ID为：${comment.commentAuthorId}</div>-->
+                                            <#--<div>发出者的ID为：${comment.commentAuthorId}</div>-->
 
                                             <#else>
                                                 <div><span>回复
@@ -288,11 +297,12 @@
                                                     <pre><a href="/space/${comment.commentAuthorId}">${comment.commentAuthorName}</a>:${comment.commentContent}</pre>
                                                 </div>
                                                 <div>${comment.commentCreateTime?string("yyyy-MM-dd HH:mm:ss")}</div>
-                                                <#--<div>发出者的ID为：${comment.commentAuthorId}</div>-->
+                                            <#--<div>发出者的ID为：${comment.commentAuthorId}</div>-->
                                             </#if>
                                             <#if comment.commentAuthorId==user.userId >
                                                 <div>
-                                                    <a href="/deletecomment/${comment.commentId}/${article.articleId}" class="text-primary">点击删除自己的评论</a>
+                                                    <a href="/deletecomment/${comment.commentId}/${article.articleId}"
+                                                       class="text-primary">点击删除自己的评论</a>
                                                 </div>
                                             </#if>
 
@@ -361,10 +371,12 @@
 
                                                 </div>
                                             </div>
-                                            <button type="button" id="show${comment.commentId}" value="${comment.commentId}"
+                                            <button type="button" id="show${comment.commentId}"
+                                                    value="${comment.commentId}"
                                                     onclick="showDiv1${comment.commentId}()">点击回复
                                             </button>
-                                            <button type="button" id="hide${comment.commentId}" value="${comment.commentId}"
+                                            <button type="button" id="hide${comment.commentId}"
+                                                    value="${comment.commentId}"
                                                     onclick="hiddenDiv1${comment.commentId}()">取消回复
                                             </button>
                                             <div>
@@ -436,401 +448,6 @@
                     </div>
 
 
-                </div>
-
-
-            </div>
-        </div>
-
-        <!--右边-->
-        <div class="col-md-4">
-            <div class="container">
-                <div class="row bgc">
-                    <div class="new new-right">
-                        <span>分享</span>
-                        <small>Share</small>
-                    </div>
-                    <div class="col-md-12 ">
-                        <div class="widget widget_social">
-
-                            <ul class="social-icons clearfix">
-                                <li class="twitter"><a href="#">Twitter<span></span></a></li>
-                                <li class="facebook"><a href="#">Facebook<span></span></a></li>
-                                <li class="dribble"><a href="#">Dribble<span></span></a></li>
-                                <li class="vimeo"><a href="#">Vimeo<span></span></a></li>
-                                <li class="rss"><a href="#">Rss<span></span></a></li>
-                            </ul><!--/ .social-icons-->
-                        </div>
-                        <#--                        <div class="fxtp">-->
-                        <#--                            <ul>-->
-                        <#--                                <li><a href=""></a><span>微博</span></li>-->
-                        <#--                                <li><a href=""></a></li>-->
-                        <#--                                <li><a href=""></a></li>-->
-                        <#--                                <li><a href=""></a></li>-->
-                        <#--                            </ul>-->
-                        <#--                        </div>-->
-
-                    </div>
-                </div>
-
-                <div class="row bgc mt-5 right-author">
-                    <div class="col-md-12 ">
-                        <div class="auth-img">
-                            <img src="/images/logo.png" alt="">
-                        </div>
-                        <div class="auth-name">
-                            <span>惜缘</span>
-                            <p>一个前端开发</p>
-                        </div>
-                        <div class="auth-info">
-                            <ul>
-                                <li><strong>2</strong><span>今日访问量</span></li>
-                                <li><strong>2</strong><span>今日访问量</span></li>
-                                <li><strong>2</strong><span>今日访问量</span></li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <div class="row bgc mt-4">
-                    <div class="new new-right">
-                        <span>网站公告</span>
-                        <small>New Article</small>
-                    </div>
-                    <div class="col-md-12 ">
-                        <div class="notice">
-                            <ul>
-                                <li><a href="">Thinkphp5模型添加数据方法</a></li>
-                                <li><a href="">Thinkphp5模型添加数据方法</a></li>
-                                <li><a href="">Thinkphp5模型添加数据方法</a></li>
-                                <li><a href="">Thinkphp5模型添加数据方法</a></li>
-
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <#--                <div class="row bgc mt-3">-->
-                <#--                    <!--<form>&ndash;&gt;-->
-                <#--&lt;#&ndash;                    <div class="search">&ndash;&gt;-->
-
-                <#--&lt;#&ndash;                        <input type="text" class="search-input" placeholder="First name">&ndash;&gt;-->
-
-                <#--&lt;#&ndash;                        <input class="search-submit" value=" " type="submit">&ndash;&gt;-->
-                <#--&lt;#&ndash;                        <i class="el-search"></i>&ndash;&gt;-->
-                <#--&lt;#&ndash;                    </div>&ndash;&gt;-->
-
-                <#--                    <!--</form>&ndash;&gt;-->
-                <#--                </div>-->
-
-
-                <#--                <div class="row bgc mt-3">-->
-                <#--                    <div class="new new-right">-->
-                <#--                        <span><i class="el-headphones"></i>说说</span>-->
-                <#--                        <small>New Article</small>-->
-                <#--                    </div>-->
-                <#--                    <div class="col-md-12 ">-->
-                <#--                        <div class="fxtp">-->
-                <#--                            <ul>-->
-                <#--                                <li><a href=""></a><span>微博</span></li>-->
-                <#--                                <li><a href=""></a></li>-->
-                <#--                                <li><a href=""></a></li>-->
-                <#--                                <li><a href=""></a></li>-->
-                <#--                            </ul>-->
-                <#--                        </div>-->
-
-                <#--                    </div>-->
-                <#--                </div>-->
-
-
-                <div class="row bgc mt-4">
-                    <div class="new new-right">
-
-                        <span><i class="el-asl"></i>推荐图文</span>
-                        <small>New Article</small>
-                    </div>
-                    <ul class="list-unstyled artimg-list">
-                        <li class="media">
-                            <div class="artimg-img">
-                                <img class="mr-3" src="/images/7.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1">js前端实现模糊查询</h5>
-                                <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
-                                <ul>
-                                    <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
-                                                href="/index/article/index/id/32.html" title="查看分类"><i
-                                                    class="el-fire"></i>5</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <div class="artimg-img">
-                                <img class="mr-3" src="/images/8.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1">js前端实现模糊查询</h5>
-                                <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
-                                <ul>
-                                    <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
-                                                href="/index/article/index/id/32.html" title="查看分类"><i
-                                                    class="el-fire"></i>5</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="media">
-                            <div class="artimg-img">
-                                <img class="mr-3" src="/images/9.jpg" alt="Generic placeholder image">
-                            </div>
-                            <div class="media-body art-content">
-                                <h5 class="mt-0 mb-1">js前端实现模糊查询</h5>
-                                <p>js前端实现模糊查询对于模糊查询，一般都是传关键字给后端</p>
-                                <ul>
-                                    <li><a title="惜缘2019-04-03发表"><i class="el-time"></i>2019-04-03</a></li>
-                                    <li class="d-none d-sm-none d-md-none d-lg-block"><a
-                                                href="/index/article/index/id/32.html" title="查看分类"><i
-                                                    class="el-fire"></i>5</a></li>
-                                </ul>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <div class="row bgc mt-5">
-
-                    <div class="nav nav-tabs tab-atr" id="box" role="tablist">
-                        <a class="nav-item  active actives" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-                           role="tab" aria-controls="nav-home" aria-selected="true">文章互动</a>
-                        <a class="nav-item " id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-                           aria-controls="nav-profile" aria-selected="false">文章排行</a>
-                    </div>
-
-                    <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                             aria-labelledby="nav-home-tab">
-                            <ul class="hd-ul">
-                                <li>
-                                    <div class="art-hd-list-left">
-                                        <a href="#"><img src="/images/logo.png" alt=""></a>
-                                    </div>
-                                    <div class="art-hd-list-right">
-                                        <span><i class="el-user"></i>惜缘</span>
-                                        <time>2020-3-7</time>
-                                        <p>一般都是传关键字给后端，由后端来做...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="art-hd-list-left">
-                                        <a href="#"><img src="/images/logo.png" alt=""></a>
-                                    </div>
-                                    <div class="art-hd-list-right">
-                                        <span><i class="el-user"></i>惜缘</span>
-                                        <time>2020-3-7</time>
-                                        <p>一般都是传关键字给后端，由后端来做...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="art-hd-list-left">
-                                        <a href="#"><img src="/images/logo.png" alt=""></a>
-                                    </div>
-                                    <div class="art-hd-list-right">
-                                        <span><i class="el-user"></i>惜缘</span>
-                                        <time>2020-3-7</time>
-                                        <p>一般都是传关键字给后端，由后端来做...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="art-hd-list-left">
-                                        <a href="#"><img src="/images/logo.png" alt=""></a>
-                                    </div>
-                                    <div class="art-hd-list-right">
-                                        <span><i class="el-user"></i>惜缘</span>
-                                        <time>2020-3-7</time>
-                                        <p>一般都是传关键字给后端，由后端来做...</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="art-hd-list-left">
-                                        <a href="#"><img src="/images/logo.png" alt=""></a>
-                                    </div>
-                                    <div class="art-hd-list-right">
-                                        <span><i class="el-user"></i>惜缘</span>
-                                        <time>2020-3-7</time>
-                                        <p>一般都是传关键字给后端，由后端来做...</p>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <ul class="art-sort">
-                                <li>
-                                    <span>1</span>
-                                    <a href="#">thinkphp5随机抽取数据的方法
-                                        <b>(235)</b>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span>2</span>
-                                    <a href="#">thinkphp5随机抽取数据的方法
-                                        <b>(235)</b>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span>3</span>
-                                    <a href="#">thinkphp5随机抽取数据的方法
-                                        <b>(235)</b>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span>4</span>
-                                    <a href="#">thinkphp5随机抽取数据的方法
-                                        <b>(235)</b>
-                                    </a>
-                                </li>
-                                <li>
-                                    <span>5</span>
-                                    <a href="#">thinkphp5随机抽取数据的方法
-                                        <b>(235)</b>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="row bgc mt-5">
-                    <div class="new new-right">
-                        <span><i class="el-tags"></i>标签云</span>
-                        <small>New Article</small>
-                    </div>
-                    <div class="col-md-12 ">
-                        <ul class="label">
-                            <li>
-                                <a href="#" title="生活">生活&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="模糊查询">模糊查询&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="遍历二维数组">遍历二维数组&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="Mui">Mui&nbsp;&nbsp;(2)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="随机">随机&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="文章月统计">文章月统计&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="时间戳">时间戳&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="一周每天的数据">一周每天的数据&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="无限极分类">无限极分类&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="tp5">tp5&nbsp;&nbsp;(2)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="面试">面试&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="layui">layui&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="Thinkphp5">Thinkphp5&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="QQ互联">QQ互联&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="惜缘">惜缘&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="发斯蒂芬">发斯蒂芬&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="擦擦">擦擦&nbsp;&nbsp;(3)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="发">发&nbsp;&nbsp;(2)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="测试">测试&nbsp;&nbsp;(5)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="fasdfasd">fasdfasd&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="测试数据2">测试数据2&nbsp;&nbsp;(1)</a>
-
-                            </li>
-
-                            <li>
-                                <a href="#" title="测试数据">测试数据&nbsp;&nbsp;(2)</a>
-
-                            </li>
-
-                        </ul>
-                    </div>
                 </div>
 
 
