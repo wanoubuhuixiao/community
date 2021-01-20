@@ -34,7 +34,7 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <#--                    <img src="${sessionScope.user.userAvatar}" class="layui-nav-img">-->
-                    admin
+                    ${user.userName}
                 </a>
                 <#--                <dl class="layui-nav-child">-->
                 <#--                    <dd><a href="/admin/user/profile">基本资料</a></dd>-->
@@ -248,7 +248,6 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/plugin/layui/layui.all.js"></script>
 <script src="/js/back.js"></script>
-\
 
 </body>
 </html>

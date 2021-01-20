@@ -4,6 +4,8 @@ import com.ares.design.domain.*;
 import com.ares.design.service.*;
 import com.ares.design.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,9 +28,12 @@ public class AdminController {
         //最近文章列表
         List<Comment> commentList=commentService.getRecentComment(7);
         List<Article> articleList = articleService.getRecentArticle(5);
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
         model.addAttribute("articleList", articleList);
         model.addAttribute("commentList",commentList);
         model.addAttribute("articleService",articleService);
+        model.addAttribute("user",user);
         //最近评论列表 等那边写好
 //        List<Comment> commentList = commentService.listRecentComment(5);
 //        model.addAttribute("commentList", commentList);

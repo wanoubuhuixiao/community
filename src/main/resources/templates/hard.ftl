@@ -6,20 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <base href="/">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/animate.css">
-    <link rel="stylesheet" href="/css/font-icon.css">
-    <link rel="stylesheet" href="/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-icon.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.max-c.com/version_1_5_58/common.12a94361288ce402f996.css">
     <!-- 搜索框 CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/search-form.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/space.css"/>
+    <link rel="stylesheet" type="text/css" href="css/search-form.css"/>
     <link rel="stylesheet" type="text/css" href="/css/mycss.css"/>
-    <link rel="stylesheet" href="/css/login.css">
+
     <link rel="shortcut icon" sizes="48x48" href="https://cdn.max-c.com/logo/heybox_bbs_128_128.png">
-    <title>个人中心</title>
+    <title>小黑盒</title>
 </head>
 
 <body>
@@ -78,8 +78,8 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="nabmune">
             <ul class="navbar-nav nav-color ">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/index">首页</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">首页 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/PCgame">PC游戏</a>
@@ -88,21 +88,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/zhuji">主机游戏</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a class="nav-link" href="/mobile">手机游戏</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item">
                     <a class="nav-link" href="/desktop">桌游综合</a>
                 </li>
-                <li class="nav-item ">
+                <li class="nav-item active">
                     <a class="nav-link" href="/hard">数码硬件</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link" href="/comm">社区</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/logout">登出</a>
-                </li>
+                <#if login>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/space">我的主页</a>
+                    </li>
+                <#else>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/admin">登录</a>
+                    </li>
+                </#if>
             </ul>
             <!--<form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -129,64 +135,69 @@
 </nav>
 
 <!--内容-->
-<!--个人信息长图-->
-<div class="container">
+<!--轮播图-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row wow">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://pic.iyingdi.com/manage/image/2020/12/31/b1128e3d-d19d-4eaf-a03f-27e3dc634a1d_w_660_h_144.png"
+                                 class="d-block w-100" alt="...">
 
-    <div class="row bgc mt-5 right-author">
-        <div class="col-md-12 namecard">
-            <div class="auth-img" style="text-align: center;display: table-cell;">
-                <img src="/images/icon_83.5@3x.png" alt="">
+                            <div class="top-item-title">
+                                <div>
+                                    <div>2021许愿贴 留愿望送盒电</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://pic.iyingdi.com/manage/image/2021/01/06/9a54dfd8-200c-41dd-a4d4-6ffa72910eeb_w_660_h_144.png"
+                                 class="d-block w-100" alt="...">
+                            <div class="top-item-title">
+                                <div>
+                                    <div>跨年惊喜！盘点2020！</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                       data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                       data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
-            <div class="auth-name">
-                <span>${user.userName}</span>
-                <p>Lv${user.userLevel}</p>
-            </div>
-            <div class="auth-info">
-                <ul>
-                    <li><strong>${articleCount}</strong><span>发表</span></li>
-                    <li><strong>666</strong><span>关注</span></li>
-                    <li><strong>666</strong><span>粉丝</span></li>
-                </ul>
-            </div>
-
         </div>
     </div>
 </div>
 <div class="container mt-3">
     <div class="row">
         <!--左边-->
-        <div class="col-md-2 ">
-            <div class="container">
-                <div class="row bgc mt-auto">
-                    <div class="personal-userCenter-tabLeftFrame">
-                        <div class="personal-userCenter-columns">
-                            <ul class="personal-userCenter-columnList">
-                                <li class="myCreated active"><a href="/space">我发表的</a></li>
-                                <#if identity=="owner">
-                                    <li class="infoConfig"><a href="/info">资料设置</a></li>
-                                    <li class="infoConfig"><a href="/publish">发表文章</a></li>
-                                </#if>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--右边-->
-        <div class="col-md-10">
+        <div class="col-md-8">
             <div class="container">
 
-                <div class="row mt-2 wow offset-1">
+                <div class="row mt-2 wow">
                     <div class="col-md-12 bgc">
                         <div class="new">
                             <span><i class="bi-battery-charging"></i></span>
-                            <span>投稿</span>
-                            <small>Contribution</small>
+                            <span>推荐</span>
+                            <small>Recommend</small>
                         </div>
                     </div>
                 </div>
 
-                <div class="row mt-2 offset-1">
+                <div class="row mt-2 ">
                     <ul class="list-unstyled art-list">
                         <#list articleList as article>
                             <li class="media wow">
@@ -194,7 +205,8 @@
                                     <img class="mr-3" src="/images/0.jpg" alt="Generic placeholder image">
                                 </div>
                                 <div class="media-body art-content">
-                                    <h5 class="mt-0 mb-1"><a href="/article/${article.articleId}">${article.articleTitle}</a></h5>
+                                    <h5 class="mt-0 mb-1"><a
+                                                href="/article/${article.articleId}">${article.articleTitle}</a></h5>
                                     <p>${(article.articleSummary)!'简介为空'}
                                     </p>
                                     <ul>
@@ -214,7 +226,71 @@
                             </li>
                         </#list>
                     </ul>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-sm-2 offset-4">
+                                <#if pageIndex<=1>
+                                    <a href="/index/${pageIndex+1}" class="btn btn-white btn-sm btn-block" data-toggle="tooltip"
+                                       data-placement="top" title="下一页"><i class="fa fa-times"></i>上一页</a>
+                                <#else>
 
+                                    <a href="/index/${pageIndex-1}" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip"
+                                       data-placement="top" title="上一页"><i class="fa fa-reply"></i>上一页</a>
+                                </#if>
+                            </div>
+                            <div class="col-sm-2">
+                                <a href="/index/${pageIndex+1}" class="btn btn-sm btn-primary btn-block" data-toggle="tooltip"
+                                   data-placement="top" title="下一页"><i class="fa fa-times"></i>下一页</a>
+                </div>
+            </div>
+        </div>
+                        </div>
+            </div>
+        </div>
+
+        <!--右边-->
+        <div class="col-md-4 ">
+            <div class="container">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>告知</h5>
+                        </div>
+                        <div>
+                            <div class="ibox-content no-padding border-left-right">
+                                <img alt="image" class="img-responsive" src="images/4.png">
+                            </div>
+                            <div class="ibox-content profile-content">
+                                <h4><strong>广告位招租</strong></h4>
+                                <p><i class="fa fa-map-marker"></i> 未来的招牌区和广告区</p><br/>
+                                <h5>
+                                    关于我们
+                                </h5>
+                                <p>
+                                    想拿优秀
+                                </p>
+                                <div class="row m-t-lg">
+                                    <div class="col-sm-12">
+                                        <span class="bar">555555555</span>
+                                    </div>
+                                </div>
+                                <div class="user-button">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block"><i
+                                                        class="fa fa-envelope"></i>投喂
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block"><i
+                                                        class="fa fa-coffee"></i>赞助
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,7 +298,7 @@
 </div>
 
 <!--返回顶部-->
-<div class="goTop" id="js-go_top"><img src="/images/icon_top.png" alt="回到顶部图片"></div>
+<div class="goTop" id="js-go_top"><img src="images/icon_top.png" alt="回到顶部图片"></div>
 
 <!--底部-->
 <footer id="footer">
@@ -321,11 +397,11 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
 <script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-<script src="/lib/bootstrap/js/bootstrap.js"></script>
-<script src="/js/wow.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="js/wow.js"></script>
 
 <!--返回顶部插件-->
-<script src="/js/GoToTop.js"></script>
+<script src="js/GoToTop.js"></script>
 <script>
     $('#js-go_top').gotoTop({
         offset: 500, //距离顶部的位置
@@ -399,6 +475,11 @@
                 this.className = 'actives';
                 this.style.color = '#ffffff';
             };
+        }
+
+        function myClick() {
+            alert("hello world");
+            document.getElementById("demo").innerHTML = "222222";
         }
     }
 </script>

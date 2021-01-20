@@ -88,27 +88,24 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="/index">首页</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="chat.html">PC游戏</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/PCgame">PC游戏</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="chat.html">主机游戏</a>
+                    <a class="nav-link" href="/zhuji">主机游戏</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mobile">手机游戏</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="picture.html">手机游戏</a>
+                    <a class="nav-link" href="/desktop">桌游综合</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="life.html">桌游综合</a>
+                    <a class="nav-link" href="/hard">数码硬件</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="chat.html">数码硬件</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="about.html">社区</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/logout">登出</a>
+                    <a class="nav-link" href="/comm">社区</a>
                 </li>
             </ul>
             <!--<form class="form-inline my-2 my-lg-0">

@@ -46,6 +46,9 @@ public class BackArticleController {
             model.addAttribute("pageUrlPrefix", "/admin/article?status=" + status + "&pageIndex");
         }
         PageInfo<Article> articlePageInfo = articleService.pageArticle(pageIndex, pageSize, criteria);
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
+        model.addAttribute("user",user);
         model.addAttribute("pageInfo", articlePageInfo);
         return "admin/article";
     }
@@ -63,6 +66,9 @@ public class BackArticleController {
             model.addAttribute("pageUrlPrefix", "/admin/article?status=" + status + "&pageIndex");
        // }
         PageInfo<Article> articlePageInfo = articleService.pageArticle(pageIndex, pageSize, criteria);
+        String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        User user = userService.getUserByName(name);
+        model.addAttribute("user",user);
         model.addAttribute("pageInfo", articlePageInfo);
         return "admin/articleExamine";
     }

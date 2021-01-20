@@ -59,6 +59,98 @@ public class UserController {
         }
         return "index";
     }
+
+    @GetMapping(value = "/PCgame")
+    public String PCgame(ModelMap model) {
+        int pageSize = 8;//limit 每页文章数
+        List<Article> articleList = articleService.findArticleByCategoryId(1, pageSize);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "PCgame";
+    }
+    @GetMapping(value = "/comm")
+    public String comm(ModelMap model) {
+        int pageSize = 8;//limit 每页文章数
+        List<Article> articleList = articleService.findArticleByCategoryId(6, pageSize);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "PCgame";
+    }
+    @GetMapping(value = "/desktop")
+    public String desktop(ModelMap model) {
+        int pageSize = 8;//limit 每页文章数
+        List<Article> articleList = articleService.findArticleByCategoryId(4, pageSize);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "PCgame";
+    }
+    @GetMapping(value = "/zhuji")
+    public String zhuji(ModelMap model) {
+        int pageSize = 8;//limit 每页文章数
+        List<Article> articleList = articleService.findArticleByCategoryId(2, pageSize);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "PCgame";
+    }
+    @GetMapping(value = "/mobile")
+    public String mobile(ModelMap model) {
+        int pageSize = 8;//limit 每页文章数
+        List<Article> articleList = articleService.findArticleByCategoryId(3, pageSize);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "PCgame";
+    }
+    @GetMapping(value = "/hard")
+    public String hard(ModelMap model) {
+        int pageSize = 8;//limit 每页文章数
+        List<Article> articleList = articleService.findArticleByCategoryId(5, pageSize);
+        model.put("articleList", articleList);
+        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
+            model.put("login", false);
+        } else {
+            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+            User user = userService.getUserByName(name);
+            model.put("login", true);
+            model.put("user", user);
+        }
+        return "PCgame";
+    }
+
     @Secured("ROLE_USER")
     @RequestMapping(value = "/test")
     public String test(ModelMap model) {
