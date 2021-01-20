@@ -63,7 +63,7 @@
                         <dd><a href="/admin/article/examine">文章审核</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">评论</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/comment/examine">审核</a></dd>
@@ -80,7 +80,7 @@
             <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
           <a href="/admin">首页</a>
-          <a><cite>待审核文章列表</cite></a>
+          <a><cite>需要审核评论列表</cite></a>
         </span>
             </blockquote>
 
@@ -104,8 +104,8 @@
                             <th>发布者id</th>
                             <th>发布者IP地址</th>
                             <th>操作</th>
-                            <th>文章名称</th>
                             <th>文章ID</th>
+                            <th>文章名称</th>
                         </tr>
                         </thead>
                         <tbody>
