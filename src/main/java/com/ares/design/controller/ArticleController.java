@@ -111,23 +111,4 @@ public class ArticleController {
 //        System.out.println("进入ArticleController test()");
 //        return "test2";
 //    }
-
-    //主页
-    @RequestMapping({"/", "/index"})
-    public String index(ModelMap model) {
-        int pageSize = 3;//limit 每页文章数
-        int pageIndex = 1;
-        Integer offset = pageSize * (pageIndex - 1);
-        List<Article> articleList = articleService.getRecentArticle(10);
-        model.put("articleList", articleList);
-        if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
-            model.put("login", false);
-        } else {
-            String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-            User user = userService.getUserByName(name);
-            model.put("login", true);
-            model.put("user", user);
-        }
-        return "index";
-    }
 }
