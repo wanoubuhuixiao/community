@@ -200,6 +200,14 @@
         WHERE article_status=1
         LIMIT #{pageSize} OFFSET #{pageIndex};
     </select>
+    <!--主页分页查询文章-->
+    <select id="indexArticle" resultType="com.ares.design.domain.Article">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM article
+        WHERE article_status=1
+        LIMIT #{pageSize} OFFSET #{pageIndex};
+    </select>
 
 <!--    用户写的文章数-->
     <select id="countArticleByUser" parameterType="Integer" resultType="Integer">

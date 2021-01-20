@@ -27,8 +27,7 @@ public class ArticleServiceImpl implements ArticleService {
     private CategoryDao categoryDao;
 
 
-
-    public Article getArticleById(Integer articleId){
+    public Article getArticleById(Integer articleId) {
         Article article = articleDao.getArticleById(articleId);
         if (article != null) {
             //System.out.println("获得文章！");
@@ -40,58 +39,65 @@ public class ArticleServiceImpl implements ArticleService {
         return article;
     }
 
-    public List<Article> getArticleListByViewCount(int limit){
-        List<Article> articleList=articleDao.getArticleListByViewCount(limit);
+    public List<Article> getArticleListByViewCount(int limit) {
+        List<Article> articleList = articleDao.getArticleListByViewCount(limit);
         return articleList;
     }
-    public Integer update(Article article){
+
+    public Integer update(Article article) {
         return articleDao.update(article);
     }
 
-    public Integer insert(Article article){
+    public Integer insert(Article article) {
         return articleDao.insert(article);
     }
 
-    public Integer deleteById(Integer articleId){
+    public Integer deleteById(Integer articleId) {
         return articleDao.deleteById(articleId);
     }
 
-    public List<Article> listRandomArticle(Integer limit){
+    public List<Article> listRandomArticle(Integer limit) {
         return articleDao.listRandomArticle(limit);
     }
-    public List<Article> listArticleByCommentCount(Integer limit){
+
+    public List<Article> listArticleByCommentCount(Integer limit) {
         return articleDao.listArticleByCommentCount(limit);
     }
+
     //文章分类
-    public List<Article> findArticleByCategoryId(Integer categoryId, Integer limit){
+    public List<Article> findArticleByCategoryId(Integer categoryId, Integer limit) {
         return articleDao.findArticleByCategoryId(categoryId, limit);
     }
 
     //获取评论数最多的limit篇文章给首页显示
-    public List<Article> getArticleListForIndex(Integer limit){
+    public List<Article> getArticleListForIndex(Integer limit) {
         return articleDao.listArticleByCommentCount(limit);
     }
 
     //获取“我的文章”
-    public List<Article> findArticleByUserId (Integer userId, Integer limit){
-        return articleDao.findArticleByUserId(userId,limit);
+    public List<Article> findArticleByUserId(Integer userId, Integer limit) {
+        return articleDao.findArticleByUserId(userId, limit);
     }
 
-    public List<Article> getRecentArticle (Integer limit){
+    public List<Article> getRecentArticle(Integer limit) {
         return articleDao.getRecentArticle(limit);
     }
 
-    public Integer countArticle(){
+    public Integer countArticle() {
         return articleDao.countArticle();
     }
 
-    public List<Article> AllArticle(){
+    public List<Article> AllArticle() {
         return articleDao.AllArticle();
+    }
+
+    public List<Article> indexArticle(Integer pageSize, Integer pageIndex) {
+        return articleDao.indexArticle(pageSize,pageIndex);
     }
 
     public PageInfo<Article> pageArticle(Integer pageIndex,
                                          Integer pageSize,
-                                         HashMap<String, Object> criteria){
+                                         HashMap<String, Object> criteria) {
         PageHelper.startPage(pageIndex, pageSize);
         List<Article> articleList = articleDao.findAll(criteria);
         for (int i = 0; i < articleList.size(); i++) {
@@ -110,7 +116,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     }
 
-    public Integer countArticleByUser(Integer userid){
+    public Integer countArticleByUser(Integer userid) {
         return articleDao.countArticleByUser(userid);
     }
 

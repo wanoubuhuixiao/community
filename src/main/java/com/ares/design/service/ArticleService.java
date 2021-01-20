@@ -27,6 +27,8 @@ public interface ArticleService {
     Integer countArticle();
     List<Article> AllArticle();
 
+    List<Article> indexArticle(Integer pageSize,Integer pageIndex);
+
     PageInfo<Article> pageArticle(Integer pageIndex,
                                   Integer pageSize, HashMap<String, Object> criteria);
     Integer countArticleByUser(Integer userid);
