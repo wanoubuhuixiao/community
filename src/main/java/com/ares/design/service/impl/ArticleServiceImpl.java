@@ -66,7 +66,20 @@ public class ArticleServiceImpl implements ArticleService {
 
     //文章分类
     public List<Article> findArticleByCategoryId(Integer categoryId, Integer limit) {
-        return articleDao.findArticleByCategoryId(categoryId, limit);
+        List<Article> articleList=articleDao.findArticleByCategoryId(categoryId, limit);
+        for (int i = 0; i < articleList.size(); i++) {
+            //封装CategoryList
+            List<Category> categoryList = categoryDao.listCategoryByArticleId(articleList.get(i).getArticleId());
+            if (categoryList == null || categoryList.size() == 0) {
+                categoryList = new ArrayList<>();
+                categoryList.add(Category.Default());
+            }
+            articleList.get(i).setCategoryList(categoryList);
+////            //封装TagList
+////            List<Tag> tagList = articleTagRefMapper.listTagByArticleId(articleList.get(i).getArticleId());
+////            articleList.get(i).setTagList(tagList);
+        }
+        return articleList;
     }
 
     //获取评论数最多的limit篇文章给首页显示

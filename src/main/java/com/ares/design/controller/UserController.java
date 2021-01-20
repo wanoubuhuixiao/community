@@ -45,7 +45,7 @@ public class UserController {
     //主页
     @GetMapping(value = "/index/{pageIndex}")
     public String indexAndPage(@PathVariable Integer pageIndex, ModelMap model) {
-        int pageSize = 8;//limit 每页文章数
+        int pageSize = 4;//limit 每页文章数
         Integer offset = pageSize * (pageIndex - 1);
         List<Article> articleList = articleService.indexArticle(pageSize, offset);
         model.put("articleList", articleList);
