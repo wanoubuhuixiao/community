@@ -101,7 +101,16 @@
         comment_article_id = #{id}
         ORDER BY comment_id DESC
     </select>
-
+    <!--    近期评论-->
+    <select id="getRecentComment" resultType="com.ares.design.domain.Comment" parameterType="Integer">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        comment
+        where comment_status=0
+        ORDER BY comment_create_time DESC
+        LIMIT #{limit}
+    </select>
 
     <!--获取评论列表-->
     <select id="listComment" resultType="com.ares.design.domain.Comment">
@@ -156,7 +165,7 @@
         FROM
         <include refid="tb"/>
         WHERE
-        comment_status=#{commentstatus}
+        comment_status=#{commentStatus,jdbcType=INTEGER}
     </select>
 
 </mapper>

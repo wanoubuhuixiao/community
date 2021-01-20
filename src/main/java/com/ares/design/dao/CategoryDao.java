@@ -11,8 +11,13 @@ import java.util.List;
 @Mapper
 public interface CategoryDao {
     List<Category> listCategoryByArticleId(Integer articleId);
+
     List<Category> listCategory();
+
     int insert(@Param(value = "articleId") Integer articleId,
                @Param(value = "categoryId") Integer categoryId);
+
     int deleteByArticleId(Integer articleId);
+
+
 }

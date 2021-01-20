@@ -1,11 +1,13 @@
 package com.ares.design.dao;
 
 
+import com.ares.design.domain.Article;
 import com.ares.design.domain.Comment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Repository
@@ -92,7 +94,10 @@ public interface CommentDao {
                                         @Param(value = "commentArticleId") Integer articleid);
 
     //管理员用于查看被举报的评论
-    List<Comment> listCommentByCommentStatus(@Param(value = "commentStatus") Integer commentstatus);
+    List<Comment> listCommentByCommentStatus(Integer commentStatus);
 
 
+    List<Article> findAll(HashMap<String, Object> criteria);
+
+    List<Comment> getRecentComment(Integer limit);
 }

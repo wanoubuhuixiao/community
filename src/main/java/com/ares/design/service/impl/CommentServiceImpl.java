@@ -2,14 +2,20 @@ package com.ares.design.service.impl;
 
 
 import com.ares.design.dao.ArticleDao;
+import com.ares.design.dao.CategoryDao;
 import com.ares.design.dao.CommentDao;
 import com.ares.design.domain.Article;
+import com.ares.design.domain.Category;
 import com.ares.design.domain.Comment;
 import com.ares.design.service.CommentService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -20,6 +26,8 @@ public class CommentServiceImpl implements CommentService {
     private CommentDao commentDao;
     @Autowired
     private ArticleDao articleDao;
+    @Autowired
+    private CategoryDao categoryDao;
 
 
     @Override
@@ -189,6 +197,10 @@ public class CommentServiceImpl implements CommentService {
         }
     }
 
+    @Override
+    public List<Comment> getRecentComment(Integer limit) {
+        return commentDao.getRecentComment(limit);
+    }
 
    /* @Override
     public List<Comment> listCommentByArticleIdAndPageNumber(Integer articleId, Integer pageNumber) {

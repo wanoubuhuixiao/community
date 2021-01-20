@@ -35,13 +35,15 @@ public class CommentController {
 
     @RequestMapping(value = "/report/{commentid}/{articleid}")
     public String ChangeCommentStatus(@PathVariable("commentid") int commentid,
-                     @PathVariable("articleid") int articleid,
-            HttpServletRequest request, Model model) {
+                                      @PathVariable("articleid") int articleid,
+                                      HttpServletRequest request, Model model) {
         System.out.println("举报功能");
-        Comment thiscomment=commentService.getCommentById(commentid);
+        Comment thiscomment = commentService.getCommentById(commentid);
+        System.out.println("commentid：" + commentid);
+        System.out.println("articleid：" + articleid);
 
         thiscomment.setCommentStatus(1);
-        commentService.updateStatus(thiscomment);
+        commentService.updateComment(thiscomment);
 
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
@@ -53,15 +55,15 @@ public class CommentController {
         return returnurl;
     }
 
-    @RequestMapping(value = "/admin/comment/examine}")
+    @RequestMapping(value = "/admin/comment/examine")
     public String StatusComments(HttpServletRequest request, Model model) {
         System.out.println("进行举报的评论进行编辑");
-        List<Comment> statusCommentsList=commentService.listCommentByCommentStatus(1);
+        List<Comment> statusCommentsList = commentService.listCommentByCommentStatus(1);
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
         model.addAttribute("user", user);
-        model.addAttribute("statusCommentsList",statusCommentsList);
-        return "/admin/comment/examine";
+        model.addAttribute("statusCommentsList", statusCommentsList);
+        return "redirect:/admin/comment/";
     }
 
     @RequestMapping(value = "/deletecomment/{deletecommentid}/{articleid}")

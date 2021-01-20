@@ -9,7 +9,7 @@
 
     <style>
         .layui-input-block {
-            margin-left: 0!important;;
+            margin-left: 0 !important;;
         }
 
         .layui-col-md6 {
@@ -20,7 +20,7 @@
             min-width: 255px;
             border: 1px solid #e5e5e5;
             /* -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04); */
-            box-shadow: 0 1px 1px rgba(0,0,0,.04);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
             background: #fff;
         }
 
@@ -34,6 +34,7 @@
         .js .postbox .handlediv {
             display: block;
         }
+
         .wp-core-ui .button-link {
             margin: 0;
             padding: 0;
@@ -64,8 +65,9 @@
             overflow: hidden;
             clip: rect(0 0 0 0);
             border: 0;
-            word-wrap: normal!important;
+            word-wrap: normal !important;
         }
+
         .screen-reader-text span {
             position: absolute;
             margin: -1px;
@@ -75,41 +77,47 @@
             overflow: hidden;
             clip: rect(0 0 0 0);
             border: 0;
-            word-wrap: normal!important;
+            word-wrap: normal !important;
         }
 
-        .metabox-holder .postbox>h3, .metabox-holder .stuffbox>h3, .metabox-holder h2.hndle, .metabox-holder h3.hndle {
+        .metabox-holder .postbox > h3, .metabox-holder .stuffbox > h3, .metabox-holder h2.hndle, .metabox-holder h3.hndle {
             font-size: 14px;
             padding: 8px 12px;
             margin: 0;
             line-height: 1.4;
         }
+
         #dashboard_quick_press form {
             margin: 12px;
         }
+
         form {
             display: block;
             margin-top: 0em;
         }
+
         .postbox .inside, .stuffbox .inside {
             padding: 0 12px 12px;
             line-height: 1.4em;
             font-size: 13px;
         }
+
         .postbox, .stuffbox {
             margin-bottom: 20px;
             padding: 0;
             line-height: 1;
         }
-        Inherited from div#wpwrap
 
+        Inherited from div#wpwrap
         a, div {
             outline: 0;
         }
+
         user agent stylesheet
         div {
             display: block;
         }
+
         Inherited from div.inside
         .postbox .inside, .stuffbox .inside {
             padding: 0 12px 12px;
@@ -120,6 +128,7 @@
         #dashboard_quick_press .drafts li time {
             color: #72777c;
         }
+
         #description-wrap label, #title-wrap label {
             cursor: text;
         }
@@ -152,20 +161,25 @@
         .meta-box-sortables select {
             max-width: 100%;
         }
+
         .js #dashboard_quick_press .drafts {
             border-top: 1px solid #eee;
         }
+
         #dashboard_quick_press .drafts {
             padding: 10px 0 0;
         }
+
         #dashboard_quick_press .drafts .view-all {
             float: right;
             margin: 0 12px 0 0;
         }
+
         #dashboard_quick_press .drafts p {
             margin: 0;
             word-wrap: break-word;
         }
+
         #dashboard_quick_press .drafts h2 {
             line-height: inherit;
         }
@@ -177,18 +191,23 @@
             font-weight: 400;
             color: #23282d;
         }
+
         #dashboard_quick_press .drafts ul {
             margin: 0 12px;
         }
+
         ul {
             list-style: none;
         }
+
         ol, ul {
             padding: 0;
         }
+
         #dashboard_quick_press .drafts li {
             margin-bottom: 1em;
         }
+
         dd, li {
             /* margin-bottom: 6px; */
         }
@@ -198,24 +217,30 @@
             display: list-item;
             text-align: -webkit-match-parent;
         }
-        #dashboard_quick_press .draft-title,.dashboard-comment-wrap {
+
+        #dashboard_quick_press .draft-title, .dashboard-comment-wrap {
             word-wrap: break-word;
         }
+
         a, div {
             outline: 0;
         }
+
         user agent stylesheet
         div {
             display: block;
         }
+
         #dashboard_quick_press .drafts p {
             /* margin: 0; */
             word-wrap: break-word;
         }
+
         p {
             font-size: 13px;
             line-height: 1.5;
         }
+
         h2, h3, p {
             margin: 1em 0;
         }
@@ -231,26 +256,26 @@
         <!-- 头部区域（配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/index" target="_blank">前台</a></li>
-<#--            <li class="layui-nav-item">-->
-<#--                <a href="javascript:;">新建</a>-->
-<#--                <dl class="layui-nav-child">-->
-<#--                    <dd><a href="/admin/article/insert">文章</a></dd>-->
-<#--                    <dd><a href="/admin/page/insert">页面</a></dd>-->
-<#--                    <dd><a href="/admin/category/insert">分类</a></dd>-->
-<#--                    <dd><a href="/admin/notice/insert">公告</a></dd>-->
-<#--                    <dd><a href="/admin/link/insert">链接</a></dd>-->
-<#--                </dl>-->
-<#--            </li>-->
+            <#--            <li class="layui-nav-item">-->
+            <#--                <a href="javascript:;">新建</a>-->
+            <#--                <dl class="layui-nav-child">-->
+            <#--                    <dd><a href="/admin/article/insert">文章</a></dd>-->
+            <#--                    <dd><a href="/admin/page/insert">页面</a></dd>-->
+            <#--                    <dd><a href="/admin/category/insert">分类</a></dd>-->
+            <#--                    <dd><a href="/admin/notice/insert">公告</a></dd>-->
+            <#--                    <dd><a href="/admin/link/insert">链接</a></dd>-->
+            <#--                </dl>-->
+            <#--            </li>-->
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
-<#--                    <img src="${sessionScope.user.userAvatar}" class="layui-nav-img">-->
+                    <#--                    <img src="${sessionScope.user.userAvatar}" class="layui-nav-img">-->
                     ${user.userName}
                 </a>
-<#--                <dl class="layui-nav-child">-->
-<#--                    <dd><a href="/admin/user/profile">基本资料</a></dd>-->
-<#--                </dl>-->
+                <#--                <dl class="layui-nav-child">-->
+                <#--                    <dd><a href="/admin/user/profile">基本资料</a></dd>-->
+                <#--                </dl>-->
             </li>
             <li class="layui-nav-item">
                 <a href="/logout">退出</a>
@@ -261,7 +286,7 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域 -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item">
                     <a href="/admin">
                         首页
@@ -279,7 +304,7 @@
                     <a href="javascript:;">评论</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/comment/examine">审核</a></dd>
-                        <dd><a href="/admin/comment">删除</a></dd>
+                        <#--<dd><a href="/admin/comment">删除</a></dd>-->
                     </dl>
                 </li>
             </ul>
@@ -309,41 +334,41 @@
                                     <br>
                                     <div id="latest-comments" class="activity-block"><h3>近期评论</h3>
                                         <ul id="the-comment-list" data-wp-lists="list:comment">
-                                            <#--                                        <#list commentList as c>-->
-                                            <#--                                            <li class="comment   thread-even comment-item approved">-->
+                                            <#list commentList as c>
+                                                <li class="comment   thread-even comment-item approved">
 
-                                            <#--                                                <img alt="" src="/images/icon_83.5@3x.png"-->
-                                            <#--                                                     class="avatar avatar-50 photo" height="50" width="50">-->
-                                            <#--                                                <div class="dashboard-comment-wrap has-row-actions">-->
-                                            <#--                                                    <p class="comment-meta">-->
-                                            <#--                                                        由<cite class="comment-author">-->
-                                            <#--                                                            <a target="_blank" href="${c.commentAuthorUrl}"-->
-                                            <#--                                                               rel="external nofollow"-->
-                                            <#--                                                               class="url">${c.commentAuthorName}</a>-->
-                                            <#--                                                        </cite>发表在-->
-                                            <#--                                                        《<a href="/article/${c.commentArticleId}">${c.article.articleTitle}</a>》-->
-                                            <#--                                                    </p>-->
+                                                    <img alt="" src="/images/icon_83.5@3x.png"
+                                                         class="avatar avatar-50 photo" height="50" width="50">
+                                                    <div class="dashboard-comment-wrap has-row-actions">
+                                                        <p class="comment-meta">
+                                                            由<cite class="comment-author">
+                                                                <a target="_blank" href="${c.commentAuthorUrl}"
+                                                                   rel="external nofollow"
+                                                                   class="url">${c.commentAuthorName}</a>
+                                                            </cite>发表在
+                                                            《<a href="/article/${c.commentArticleId}">${articleService.getArticleById(c.commentArticleId).articleTitle}</a>》
+                                                        </p>
 
-                                            <#--                                                    <blockquote><p>${c.commentContent}</p></blockquote>-->
-                                            <#--                                                    <p class="row-actions">|-->
-                                            <#--                                                        <span class="">-->
-                                            <#--                                            <a data-comment-id="1268"-->
-                                            <#--                                               href="/admin/comment/reply/${c.commentId}">-->
-                                            <#--                                                回复-->
-                                            <#--                                            </a>-->
-                                            <#--                                            </span>-->
-                                            <#--                                                        <span class=""> |-->
-                                            <#--                                                <a href="/admin/comment/edit/${c.commentId}">编辑</a>-->
-                                            <#--                                            </span>-->
-                                            <#--                                                        <span class=""> |-->
-                                            <#--                                                <a href="javascript:void(0)"-->
-                                            <#--                                                   onclick="deleteComment(${c.commentId})">删除</a>-->
-                                            <#--                                            </span>-->
-                                            <#--                                                    </p>-->
-                                            <#--                                                </div>-->
-                                            <#--                                            </li>-->
+                                                        <blockquote><p>${c.commentContent}</p></blockquote>
+                                                        <p class="row-actions">|
+                                                            <span class="">
+                                                                                        <a data-comment-id="1268"
+                                                                                           href="/admin/comment/reply/${c.commentId}">
+                                                                                            回复
+                                                                                        </a>
+                                                                                        </span>
+                                                            <span class=""> |
+                                                                                            <a href="/admin/comment/edit/${c.commentId}">编辑</a>
+                                                                                        </span>
+                                                            <span class=""> |
+                                                                                            <a href="javascript:void(0)"
+                                                                                               onclick="deleteComment(${c.commentId})">删除</a>
+                                                                                        </span>
+                                                        </p>
+                                                    </div>
+                                                </li>
 
-                                            <#--                                        </#list>-->
+                                            </#list>
                                         </ul>
                                     </div>
                                 </div>
@@ -403,7 +428,7 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-       小黑盒管理员页面
+        小黑盒管理员页面
     </div>
 </div>
 <script src="/js/jquery.min.js"></script>

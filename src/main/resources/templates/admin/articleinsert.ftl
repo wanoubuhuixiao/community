@@ -41,7 +41,7 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域 -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
                 <li class="layui-nav-item">
                     <a href="/admin">
                         首页
@@ -78,20 +78,21 @@
             </blockquote>
 
 
-
-            <form class="layui-form"  method="post" id="myForm" action="/admin/article/insertSubmit">
+            <form class="layui-form" method="post" id="myForm" action="/admin/article/insertSubmit">
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">标题 <span style="color: #FF5722; ">*</span></label>
                     <div class="layui-input-block">
-                        <input type="text" name="articleTitle" lay-verify="title" id="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                        <input type="text" name="articleTitle" lay-verify="title" id="title" autocomplete="off"
+                               placeholder="请输入标题" class="layui-input">
                     </div>
                 </div>
 
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
                     <div class="layui-input-block">
-                        <textarea class="layui-textarea layui-hide" name="articleContent" lay-verify="content" id="content"></textarea>
+                        <textarea class="layui-textarea layui-hide" name="articleContent" lay-verify="content"
+                                  id="content"></textarea>
                     </div>
 
                 </div>
@@ -99,34 +100,35 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">分类 <span style="color: #FF5722; ">*</span> </label>
                     <div class="layui-input-inline">
-                        <select name="articleCategoryId" id="articleParentCategoryId" lay-filter="articleParentCategoryId" required>
+                        <select name="articleCategoryId" id="articleParentCategoryId"
+                                lay-filter="articleParentCategoryId" required>
                             <option value="" selected="">分类</option>
                             <#list categoryList as c>
                                 <option value="${c.categoryId}">${c.categoryName}</option>
                             </#list>
                         </select>
                     </div>
-<#--                    <div class="layui-input-inline">-->
-<#--                        <select name="articleChildCategoryId" id="articleChildCategoryId">-->
-<#--                            <option value="" selected>二级分类</option>-->
-<#--                        </select>-->
-<#--                    </div>-->
+                    <#--                    <div class="layui-input-inline">-->
+                    <#--                        <select name="articleChildCategoryId" id="articleChildCategoryId">-->
+                    <#--                            <option value="" selected>二级分类</option>-->
+                    <#--                        </select>-->
+                    <#--                    </div>-->
                 </div>
 
-<#--                <div class="layui-form-item" pane="">-->
-<#--                    <label class="layui-form-label">标签</label>-->
-<#--                    <div class="layui-input-block">-->
-<#--                        <c:forEach items="${tagList}" var="t">-->
-<#--                            <input type="checkbox" name="articleTagIds" lay-skin="primary" title="${t.tagName}" value="${t.tagId}">-->
-<#--                        </c:forEach>-->
-<#--                    </div>-->
-<#--                </div>-->
+                <#--                <div class="layui-form-item" pane="">-->
+                <#--                    <label class="layui-form-label">标签</label>-->
+                <#--                    <div class="layui-input-block">-->
+                <#--                        <c:forEach items="${tagList}" var="t">-->
+                <#--                            <input type="checkbox" name="articleTagIds" lay-skin="primary" title="${t.tagName}" value="${t.tagId}">-->
+                <#--                        </c:forEach>-->
+                <#--                    </div>-->
+                <#--                </div>-->
                 <div class="layui-form-item">
                     <label class="layui-form-label">状态</label>
                     <div class="layui-input-block">
                         <input type="radio" name="articleStatus" value="0" title="待审核" checked>
-                        <input type="radio" name="articleStatus" value="1" title="已通过" >
-                        <input type="radio" name="articleStatus" value="2" title="未通过" >
+                        <input type="radio" name="articleStatus" value="1" title="已通过">
+                        <input type="radio" name="articleStatus" value="2" title="未通过">
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -158,7 +160,7 @@
 <script src="/js/back.js"></script>
 
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function() {
+    layui.use(['form', 'layedit', 'laydate'], function () {
         var form = layui.form
             , layer = layui.layer
             , layedit = layui.layedit
@@ -169,13 +171,13 @@
         layedit.set({
             uploadImage: {
                 url: '/admin/upload/img' //接口url
-                ,type: 'post' //默认post
+                , type: 'post' //默认post
             }
         });
 
         //创建一个编辑器
-        var editIndex = layedit.build('content',{
-                height:350,
+        var editIndex = layedit.build('content', {
+                height: 350,
             }
         );
 
@@ -195,22 +197,22 @@
         layedit.build('content', {
             tool: [
                 'strong' //加粗
-                ,'italic' //斜体
-                ,'underline' //下划线
-                ,'del' //删除线
-                ,'|' //分割线
-                ,'left' //左对齐
-                ,'center' //居中对齐
-                ,'right' //右对齐
-                ,'link' //超链接
-                ,'unlink' //清除链接
-                ,'face' //表情
-                ,'image' //插入图片
-                ,'code'
+                , 'italic' //斜体
+                , 'underline' //下划线
+                , 'del' //删除线
+                , '|' //分割线
+                , 'left' //左对齐
+                , 'center' //居中对齐
+                , 'right' //右对齐
+                , 'link' //超链接
+                , 'unlink' //清除链接
+                , 'face' //表情
+                , 'image' //插入图片
+                , 'code'
             ]
         });
 
-        layui.use('code', function(){ //加载code模块
+        layui.use('code', function () { //加载code模块
             layui.code();
         });
 

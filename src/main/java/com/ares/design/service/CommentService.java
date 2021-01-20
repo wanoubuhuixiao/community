@@ -1,8 +1,11 @@
 package com.ares.design.service;
 
+import com.ares.design.domain.Article;
 import com.ares.design.domain.Comment;
+import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -72,14 +75,16 @@ public interface CommentService {
      */
     Integer countComment();
     /*
-     *//**
+     */
+
+    /**
      * 获得最近评论
      *
      * @param limit 查询数量
-     *
      * @return 列表
      */
     List<Comment> listRecentComment(Integer limit);
+
     /**
      * 获得评论的子评论
      *
@@ -99,6 +104,8 @@ public interface CommentService {
     //commentStatus
 
     List<Comment> listCommentByCommentStatus(Integer commentStatus);
+
     //更新被举报的状态
     void updateStatus(Comment comment);
+    List<Comment> getRecentComment(Integer limit);
 }
