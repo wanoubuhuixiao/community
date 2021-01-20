@@ -108,4 +108,6 @@ public interface CommentService {
     //更新被举报的状态
     void updateStatus(Comment comment);
     List<Comment> getRecentComment(Integer limit);
+
+    PageInfo<Comment> pageComment(Integer pageIndex, Integer pageSize, HashMap<String, Object> criteria);
 }

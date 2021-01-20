@@ -48,6 +48,10 @@ public class BackCommentController {
             criteria.put("status", status);
             model.addAttribute("pageUrlPrefix", "/admin/comment?status=" + status + "&pageIndex");
         }
+
+        PageInfo<Comment> commentPageInfo = commentService.pageComment(pageIndex, pageSize, criteria);
+        model.addAttribute("pageInfo", commentPageInfo);
+
         List<Comment> commentList = commentService.listCommentByCommentStatus(1);
         model.addAttribute("commentList", commentList);
         model.addAttribute("articleService",articleService);

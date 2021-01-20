@@ -168,4 +168,15 @@
         comment_status=#{commentStatus,jdbcType=INTEGER}
     </select>
 
+    <!--    根据条件查找文章-->
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM
+        comment
+        where
+        comment_status=1
+        ORDER BY `comment`.`comment_create_time` DESC 
+    </select>
+
 </mapper>

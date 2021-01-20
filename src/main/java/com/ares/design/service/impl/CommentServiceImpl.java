@@ -202,6 +202,13 @@ public class CommentServiceImpl implements CommentService {
         return commentDao.getRecentComment(limit);
     }
 
+    @Override
+    public PageInfo<Comment> pageComment(Integer pageIndex, Integer pageSize, HashMap<String, Object> criteria) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<Comment> commentList = commentDao.findAll(criteria);
+        return new PageInfo<>(commentList);
+    }
+
    /* @Override
     public List<Comment> listCommentByArticleIdAndPageNumber(Integer articleId, Integer pageNumber) {
         List<Comment> articleIdAndPageNumberList=null;

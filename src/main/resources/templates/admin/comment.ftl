@@ -109,7 +109,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <#list commentList as a>
+                        <#list pageInfo.list as a>
                             <tr>
                                 <td>
                                         ${a.commentId}
@@ -167,9 +167,9 @@
                         </#list>
                         </tbody>
                     </table>
-                </form><#--
+                </form>
                 <#if (pageInfo.pages > 1)>
-                &lt;#&ndash; 分页 start&ndash;&gt;
+                <#-- 分页 start-->
                     <nav class="navigation pagination" role="navigation">
                         <div class="nav-links">
                             <#if (pageInfo.pages <= 3)>
@@ -185,54 +185,54 @@
 
                                 </#if>
 
-                            </#if>-->
-                <#--  &lt;#&ndash;上一页 &ndash;&gt;
+                            </#if>
+                  <#--上一页 -->
                   <#if pageInfo.pageNum == 1>
-                  &lt;#&ndash;                          当前页为第一页，隐藏上一页按钮&ndash;&gt;
+                  <#--                          当前页为第一页，隐藏上一页按钮-->
                   <#else>
                       <a class="page-numbers"
                          href="${pageUrlPrefix}=${pageInfo.pageNum-1}">
                           <i class="layui-icon">&#xe603;</i>
                       </a>
-                  </#if>-->
-                <#-- &lt;#&ndash;                        显示第一页的页码&ndash;&gt;
+                  </#if>
+                 <#--                        显示第一页的页码-->
                  <#if (begin >= 2)>
                      <a class="page-numbers" href="${pageUrlPrefix}=1">1</a>
-                 </#if>-->
-                <#--&lt;#&ndash;                        显示点点点 &ndash;&gt;
+                 </#if>
+                <#--                        显示点点点 -->
                 <#if (begin >= 2)>
                     <span class="page-numbers dots">…</span>
-                </#if>-->
-                <#--  &lt;#&ndash;                            打印 页码&ndash;&gt;
+                </#if>
+                  <#--                            打印 页码-->
                   <#list begin..end as i>
                       <#if i == pageInfo.pageNum>
                           <a class="page-numbers current">${i}</a>
                       <#else>
                           <a class="page-numbers" href="${pageUrlPrefix}=${i}">${i}</a>
                       </#if>
-                  </#list>-->
-                <#--&lt;#&ndash;                            显示点点点&ndash;&gt;
+                  </#list>
+                <#--                            显示点点点-->
                 <#if (end < pageInfo.pages-1)>
                     <span class="page-numbers dots">…</span>
                 </#if>
-                &lt;#&ndash;                            显示最后一页的数字&ndash;&gt;
+                <#--                            显示最后一页的数字-->
                 <#if (end < pageInfo.pages)>
                     <a href="${pageUrlPrefix}=${pageInfo.pages}">
                         ${pageInfo.pages}
                     </a>
                 </#if>
-                &lt;#&ndash;                            下一页&ndash;&gt;
+                <#--                            下一页-->
                 <#if pageInfo.pageNum == pageInfo.pages>
-                &lt;#&ndash;到了尾页隐藏下一页按钮&ndash;&gt;
+                <#--到了尾页隐藏下一页按钮-->
                 <#else>
                     <a class="page-numbers"
                        href="${pageUrlPrefix}=${pageInfo.pageNum+1}">
                         <i class="layui-icon">&#xe602;</i>
                     </a>
-                </#if>--><#--
+                </#if>
                         </div>
                     </nav>
-                </#if>-->
+                </#if>
             </div>
 
         </div>

@@ -342,7 +342,7 @@
                                                     <div class="dashboard-comment-wrap has-row-actions">
                                                         <p class="comment-meta">
                                                             由<cite class="comment-author">
-                                                                <a target="_blank" href="${c.commentAuthorUrl}"
+                                                                <a target="_blank" href="/space/${c.commentAuthorUrl}"
                                                                    rel="external nofollow"
                                                                    class="url">${c.commentAuthorName}</a>
                                                             </cite>发表在

@@ -97,7 +97,7 @@ public interface CommentDao {
     List<Comment> listCommentByCommentStatus(Integer commentStatus);
 
 
-    List<Article> findAll(HashMap<String, Object> criteria);
+    List<Comment> findAll(HashMap<String, Object> criteria);
 
     List<Comment> getRecentComment(Integer limit);
 }
