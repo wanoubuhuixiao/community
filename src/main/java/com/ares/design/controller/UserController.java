@@ -48,6 +48,7 @@ public class UserController {
         int pageSize = 4;//limit 每页文章数
         Integer offset = pageSize * (pageIndex - 1);
         List<Article> articleList = articleService.indexArticle(pageSize, offset);
+
         model.put("articleList", articleList);
         if ((SecurityContextHolder.getContext().getAuthentication().getPrincipal()).equals("anonymousUser")) {
             model.put("login", false);

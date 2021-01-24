@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 @Controller
 public class ArticleController {
     @Autowired
@@ -77,11 +79,16 @@ public class ArticleController {
     @ResponseBody
     public Integer increaseLikeCount(HttpServletRequest request) throws Exception{
         Integer articleId = Integer.valueOf(request.getParameter("articleId"));
-        Article article = articleService.getArticleById(articleId);
-        //System.out.println("获得当前点赞数："+article.getArticleLikeCount());
-        Integer newArticleLikeCount = article.getArticleLikeCount() + 1;
-        article.setArticleLikeCount(newArticleLikeCount);
-        articleService.update(article);
+        Integer newArticleLikeCount = 0;
+        synchronized (this) {
+            Article article = articleService.getArticleById(articleId);
+            //System.out.println("旧点赞数："+article.getArticleLikeCount());
+            //sleep(60000);//睡一分钟
+            newArticleLikeCount = article.getArticleLikeCount() + 1;
+            article.setArticleLikeCount(newArticleLikeCount);
+            articleService.update(article);
+            //System.out.println("新点赞数："+article.getArticleLikeCount());
+        }
         return newArticleLikeCount;
     }
 
@@ -91,21 +98,26 @@ public class ArticleController {
     public Integer increaseViewCount(HttpServletRequest request) throws Exception{
         //System.out.println("进入ArticleController");
         Integer articleId = Integer.valueOf(request.getParameter("articleId"));
-        Article article = articleService.getArticleById(articleId);
-        //System.out.println("获得当前访问量："+article.getArticleViewCount());
-        Integer newarticleCount = article.getArticleViewCount() + 1;
-        article.setArticleViewCount(newarticleCount);
-        articleService.update(article);
+        Integer newarticleCount =0;
+        synchronized (this){
+            Article article = articleService.getArticleById(articleId);
+            //sleep(100000);
+            newarticleCount = article.getArticleViewCount() + 1;
+            article.setArticleViewCount(newarticleCount);
+            articleService.update(article);
+            //System.out.println("当前访问量："+article.getArticleViewCount());
+        }
+
         return newarticleCount;
     }
 
-    @RequestMapping(value="/category/{categoryId}")
-    public String getArticleCategoriesPage(@PathVariable("categoryId") Integer categoryId, Model model){
-        Integer limit=5;//分类主页要显示多少篇文章？
-        List<Article> articleList=articleService.findArticleByCategoryId(categoryId,limit);
-        model.addAttribute("articleCategoriesList", articleList);
-        return "ArticleCategoriesPage";//分类页面
-    }
+//    @RequestMapping(value="/category/{categoryId}")
+//    public String getArticleCategoriesPage(@PathVariable("categoryId") Integer categoryId, Model model){
+//        Integer limit=5;//分类主页要显示多少篇文章？
+//        List<Article> articleList=articleService.findArticleByCategoryId(categoryId,limit);
+//        model.addAttribute("articleCategoriesList", articleList);
+//        return "ArticleCategoriesPage";//分类页面
+//    }
 //    @RequestMapping(value="/hahaha")
 //    public String test(){
 //        System.out.println("进入ArticleController test()");

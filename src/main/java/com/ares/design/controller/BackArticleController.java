@@ -59,12 +59,9 @@ public class BackArticleController {
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                         @RequestParam(required = false) String status, Model model) {
         HashMap<String, Object> criteria = new HashMap<>(1);
-//        if (status == null) {
-//            model.addAttribute("pageUrlPrefix", "/admin/article?pageIndex");
-//        } else {
             criteria.put("status", 0);
             model.addAttribute("pageUrlPrefix", "/admin/article?status=" + status + "&pageIndex");
-       // }
+
         PageInfo<Article> articlePageInfo = articleService.pageArticle(pageIndex, pageSize, criteria);
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);
@@ -75,7 +72,8 @@ public class BackArticleController {
 
     //通过/不通过审核
     @RequestMapping(value = "/examinepass/{id}/{status}", method = RequestMethod.POST)
-    public void editArticleSubmit(@PathVariable("id") Integer id,@PathVariable("status") Integer status) {
+    public void editArticleSubmit(@PathVariable("id") Integer id,
+                                  @PathVariable("status") Integer status) {
         Article article = new Article();
         article.setArticleId(id);
         article.setArticleStatus(status);

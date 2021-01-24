@@ -8,7 +8,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -25,8 +27,8 @@ public class AdminController {
     //管理员登录扔到这里
     @RequestMapping("/admin")
     public String getAdminIndex(Model model) {
-        //最近文章列表
         List<Comment> commentList=commentService.getRecentComment(7);
+        //最近文章列表
         List<Article> articleList = articleService.getRecentArticle(5);
         String name = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
         User user = userService.getUserByName(name);

@@ -183,7 +183,7 @@
                                     </a></li>
                                 <li class="d-none d-sm-none d-md-none d-lg-block"><a title="作者"><i
                                                 class="el-user"></i>${article.user.userName}</a></li>
-                                <li><a id="likea" title="点赞""><i class="el-heart"></i><i
+                                <li><a id="likea" title="点赞"><i class="el-heart"></i><i
                                                 id="likei">${article.articleLikeCount}</i></a></li>
                                 <li><a title="浏览数"><i class="el-eye-open"></i><i
                                                 id="viewi">${article.articleViewCount}</i></a></li>

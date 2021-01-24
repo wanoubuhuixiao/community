@@ -212,7 +212,7 @@
                                     <ul>
                                         <li class="d-none d-sm-none d-md-none d-lg-block"><a href="./article.html"
                                                                                              title="查看分类"><i
-                                                        class="el-th-list"></i>生活</a></li>
+                                                        class="el-th-list"></i>数码硬件</a></li>
                                         <li><a title="发布时间"><i
                                                         class="bi-clock-fill"></i>${article.articleUpdateTime?date}</a>
                                         </li>

@@ -117,8 +117,28 @@
                                     </a></td>
                                 <td>
                                     <#list a.categoryList as c>
-                                        <a href="/category/${c.categoryId}"
-                                           target="_blank">${c.categoryName}</a>
+                                        <#if c.categoryId==1>
+                                            <a href="/PCgame"
+                                               target="_blank">${c.categoryName}</a>
+                                        <#elseif c.categoryId==2>
+                                            <a href="/zhuji"
+                                               target="_blank">${c.categoryName}</a>
+                                        <#elseif c.categoryId==3>
+                                            <a href="/mobile"
+                                               target="_blank">${c.categoryName}</a>
+                                        <#elseif c.categoryId==4>
+                                            <a href="/desktop"
+                                               target="_blank">${c.categoryName}</a>
+                                        <#elseif c.categoryId==5>
+                                            <a href="/hard"
+                                               target="_blank">${c.categoryName}</a>
+                                        <#elseif c.categoryId==6>
+                                            <a href="/comm"
+                                               target="_blank">${c.categoryName}</a>
+                                        <#else>
+                                            <a href="#"
+                                               target="_blank">${c.categoryName}</a>
+                                        </#if>
                                     </#list>
                                     <#--                                    <c:forEach items="${a.categoryList}" var="c">-->
                                     <#--                                        <a href="/category/${c.categoryId}"-->

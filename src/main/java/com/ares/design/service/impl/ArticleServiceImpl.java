@@ -105,7 +105,18 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     public List<Article> indexArticle(Integer pageSize, Integer pageIndex) {
-        return articleDao.indexArticle(pageSize,pageIndex);
+        List<Article> articleList=articleDao.indexArticle(pageSize,pageIndex);
+        for (int i = 0; i < articleList.size(); i++) {
+            //封装CategoryList
+            List<Category> categoryList = categoryDao.listCategoryByArticleId(articleList.get(i).getArticleId());
+            if (categoryList == null || categoryList.size() == 0) {
+                categoryList = new ArrayList<>();
+                categoryList.add(Category.Default());
+            }
+            articleList.get(i).setCategoryList(categoryList);
+        }
+
+        return articleList;
     }
 
     public PageInfo<Article> pageArticle(Integer pageIndex,

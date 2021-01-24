@@ -145,10 +145,11 @@
     </select>
 
     <!-- 分类 根据类型id和需要的文章数量获得ArticleList -->
-    <select id="findArticleByCategoryId" resultType="com.ares.design.domain.Article" >
+    <select id="findArticleByCategoryId" resultMap="BaseResultMap">
+--             resultType="com.ares.design.domain.Article" >
 <!--            parameterType="Integer">-->
         SELECT
-        <include refid="Column1"/>
+        article.*
         FROM article, article_category_ref
         WHERE
         article_status=1 AND article.article_id = article_category_ref.article_id AND
